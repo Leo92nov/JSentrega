@@ -1,7 +1,7 @@
 let usuario = "Juan";
 let apellido = "Perez";
 let contraseña = "Juan-Perez";
-
+let login = false
 
 const SueldosAhorrados = [25000, 24000, 26000, 23000, 27000, 25000, 20000, 30000, 40000, 10000 ];
 
@@ -9,12 +9,18 @@ for (let i = 0; i < 3; i ++) {
     usuarioIngresado = prompt("Ingrese su usuario");
     contraseñaIngresada = prompt("Ingrese su contraseña");
     if (usuarioIngresado === usuario && contraseñaIngresada === contraseña) {
+        login = true
         alert ("Bienvenido sr " + apellido + ".");
         break;
     }else{
         alert("Datos incorrectos, le quedan " + (2 - i) + " intentos.");
     }
 }
+
+if(login){
+    
+}
+
 
 
 let ahorros = 250000;
