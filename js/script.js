@@ -1,3 +1,7 @@
+const usuarios = [
+    {nombre: "Leonardo", nombreUsuario: "36765496", contrasena: "starplatinum", ahorros: 265000, numeroCcomitente: 54687879,}
+]
+
 let usuario = "Juan";
 let apellido = "Perez";
 let contraseña = "Juan-Perez";
