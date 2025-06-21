@@ -1,6 +1,7 @@
 .bodyIndex{
+    height: 100vh;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
     padding: 0;
     margin: 0;
 
@@ -53,7 +54,82 @@
         }
 
     }
+
+    .form{
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        object-fit: cover;
+        .formIngreso{
+            width: 28rem;
+            height: 45rem;
+
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+            background-color: #ffffff;
+
+            .contenidoFormulario{
+                padding: 0;
+                margin: 0;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+
+                .imagenTextoForm{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    p{
+                        font-size: 1.5rem;
+                    }
+
+                    .formImagen{
+                        height: 10rem;
+                        width: 10rem;
+                        margin: 0;
+                        padding-top: 1rem;
+                    }
+                }
+                
+
+                .sectionform{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 1rem;
+
+                    input{
+                        width: 85%;
+                        height: 3rem;
+                        border: 1px solid gray;
+                        border-radius: 4px ;
+                        font-size: 1rem;
+
+                        &:hover{
+                           border: 1px solid black;
+                        }
+
+                        &:focus{
+                            border: 2px solid #000ba0;
+                            outline: none;
+                            top: -0.6rem;
+                            left: 0.5rem;
+                            
+                        }
+                    }
+
+                    .boton{
+                        background-color: #0a2540;
+                        color: aliceblue;
+                    }
+                }
+            }
+        }
+    }
 }
-
-
-

@@ -2,17 +2,17 @@ const usuarios = [
     {nombre: "Leonardo", nombreUsuario: "36765496", contrasena: "starplatinum", ahorros: 265000, numeroCcomitente: 54687879,}
 ]
 
-let usuario = "Juan";
-let apellido = "Perez";
-let contraseña = "Juan-Perez";
+let usuario = prompt("Ingrese su nombre de usuario");
+let apellido = "perez";
+let contrasena = prompt("Ingrese su contraseña");
 let login = false
 
 const SueldosAhorrados = [25000, 24000, 26000, 23000, 27000, 25000, 20000, 30000, 40000, 10000 ];
 
 for (let i = 0; i < 3; i ++) {
-    usuarioIngresado = prompt("Ingrese su usuario");
-    contraseñaIngresada = prompt("Ingrese su contraseña");
-    if (usuarioIngresado === usuario && contraseñaIngresada === contraseña) {
+    const user =  usuarios.find(u => u.nombreUsuario === usuario)
+
+    if (usuario === user.nombreUsuario  && contrasena === user.contrasena) {
         login = true
         alert ("Bienvenido sr " + apellido + ".");
         break;
@@ -21,9 +21,6 @@ for (let i = 0; i < 3; i ++) {
     }
 }
 
-if(login){
-    
-}
 
 
 
