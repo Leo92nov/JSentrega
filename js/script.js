@@ -1,12 +1,61 @@
 const usuarios = [
-    {nombre: "Leonardo", nombreUsuario: "36765496", contrasena: "starplatinum", ahorros: 265000, numeroCcomitente: 54687879,}
+    {nombre: "Leonardo", nombreUsuario: "36765496", contrasena: "starplatinum", ahorros: 265000, numeroCcomitente: 54687879},
+    {nombre: "Diego", nombreUsuario: "diego", contrasena: "brando", ahorros: 295000, numeroCcomitente: 54687880},
+    {nombre: "Pablo", nombreUsuario: "pablin", contrasena: "guitarra", ahorros: 25000, numeroCcomitente: 54687881},
+    {nombre: "Alejandro", nombreUsuario: "ale", contrasena: "discordia", ahorros: 465000, numeroCcomitente: 54687882},
+    {nombre: "Santiago", nombreUsuario: "santi", contrasena: "martin", ahorros: 65000, numeroCcomitente: 54687883},
+    {nombre: "Juan", nombreUsuario: "juan", contrasena: "pablo", ahorros: 5000, numeroCcomitente: 54687884},
+    {nombre: "Gabriel", nombreUsuario: "gabi", contrasena: "sosa", ahorros: 635000, numeroCcomitente: 54687885,}
 ]
 
-let usuario = prompt("Ingrese su nombre de usuario");
-let apellido = "perez";
+let usuarioIngresado = document.querySelector("#usuario");
+let contrasenaIngresada = document.querySelector("#contrasena")
+let intentos = 0
+
+
+const ingreso = document.getElementById("ingresoBoton")
+ 
+    ingreso.addEventListener("click", (event) => {
+        event.preventDefault();
+        let usuarioExistente = false
+
+        for (const usuario of usuarios) {
+            if(usuarioIngresado.value === usuario.nombreUsuario && contrasenaIngresada.value === usuario.contrasena){
+                
+                alert("bienvenido " + usuario.nombre)
+                usuarioExistente = true
+                break
+            }
+        }
+        if(!usuarioExistente){
+            intentos += 1;
+            console.log(intentos);
+                
+            alert("Datos incorrectos, intenta nuevamente")
+
+            if (intentos === 3){
+            window.location.replace("https://es.javascript.info/forms-submit")
+            }
+        } 
+    })
+            
+
+
+
+
+
+
+
+/* let apellido = "perez";
 let contrasena = prompt("Ingrese su contraseña");
 let login = false
+let intentos
 
+while (intentos < 3) {
+    
+
+
+}
 const SueldosAhorrados = [25000, 24000, 26000, 23000, 27000, 25000, 20000, 30000, 40000, 10000 ];
 
 for (let i = 0; i < 3; i ++) {
@@ -115,3 +164,4 @@ console.log(SueldosAhorrados);
 
 alert("Gracias");
 
+ */
