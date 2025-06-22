@@ -24,6 +24,7 @@ const ingreso = document.getElementById("ingresoBoton")
                 
                 alert("bienvenido " + usuario.nombre)
                 usuarioExistente = true
+                window.location.href = "../index.html"
                 break
             }
         }
@@ -39,6 +40,11 @@ const ingreso = document.getElementById("ingresoBoton")
         } 
     })
             
+    const registro = document.getElementById("registro")
+
+    registro.addEventListener("click", () => {
+        window.location.href = "../pages/crearUsuario.html"
+    })
 
 
 
