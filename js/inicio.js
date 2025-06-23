@@ -8,9 +8,14 @@ const usuarios = [
     {nombre: "Gabriel", nombreUsuario: "gabi", contrasena: "sosa", ahorros: 635000, numeroCcomitente: 54687885,}
 ]
 
+let usuariosJSON = JSON.stringify(usuarios)
+localStorage.setItem("arrayDeUsuarios", usuariosJSON)
+
 let usuarioIngresado = document.querySelector("#usuario");
 let contrasenaIngresada = document.querySelector("#contrasena")
 let intentos = 0
+let usuarioLogueado 
+let usuarioLogueadoJSON
 
 
 const ingreso = document.getElementById("ingresoBoton")
@@ -20,10 +25,14 @@ const ingreso = document.getElementById("ingresoBoton")
         let usuarioExistente = false
 
         for (const usuario of usuarios) {
+
             if(usuarioIngresado.value === usuario.nombreUsuario && contrasenaIngresada.value === usuario.contrasena){
-                
+
                 alert("bienvenido " + usuario.nombre)
                 usuarioExistente = true
+                usuarioLogueado = usuario
+                usuarioLogueadoJSON = JSON.stringify(usuarioLogueado)
+                localStorage.setItem("usuario ON", usuarioLogueadoJSON)
                 window.location.href = "../index.html"
                 break
             }
@@ -43,7 +52,7 @@ const ingreso = document.getElementById("ingresoBoton")
     const registro = document.getElementById("registro")
 
     registro.addEventListener("click", () => {
-        window.location.href = "../pages/crearUsuario.html"
+        window.location.href = "./registro.html"
     })
 
 
