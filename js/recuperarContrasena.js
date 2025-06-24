@@ -13,14 +13,27 @@ const RepetirNuevaContrasena = document.getElementById("repetirNuevaContrasena")
 BotonRecuperar.addEventListener("click", (event) =>{
     event.preventDefault();
 
-    let usuarioPassRecuperar = usuariosJSON.find(e => e.nombreUsuario === nombreUsuario.value)
+    let usuarioPassRecuperar = usuariosJSON.find(e => e.nombreUsuario === nombreUsuario.value);
+    console.log(usuarioPassRecuperar);
+
+    const index = usuariosJSON.findIndex(usuarioPassRecuperar => usuarioPassRecuperar.nombreUsuario === nombreUsuario.value);
+    console.log(index);
+
 
     if(palabraSecreta.value === usuarioPassRecuperar.palabraSecreta && NuevaContrasena.value === RepetirNuevaContrasena.value){
 
         usuarioPassRecuperar.contrasena = RepetirNuevaContrasena.value
 
+        usuariosJSON[index].contrasena = usuarioPassRecuperar.contrasena
+        
+        const Usuarios = JSON.stringify(usuariosJSON)
+        localStorage.setItem("arrayDeUsuarios", Usuarios)
+
+        console.log(usuarioPassRecuperar);
+        
         alert("Contraseña actualizada")
-        window.location.replace("./inicio.html")
+
+       window.location.replace("./inicio.html")
 
     }else{
 

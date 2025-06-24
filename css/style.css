@@ -57,7 +57,7 @@
 }
 .bodyIndex .form .formIngreso {
   width: 28rem;
-  height: 45rem;
+  height: auto;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   background-color: #ffffff;
 }

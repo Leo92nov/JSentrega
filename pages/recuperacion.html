@@ -3,25 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/recuperarContrasena.js" defer></script>
     <link rel="stylesheet" href="../css/style.css">
     <title>Recuperar</title>
 </head>
-<body>
-         <header class="header">
-        <div class="divHeader">
-            <section class="sectionHeader">
-                <a href="../index.html"><img src="../assets/images/inicio/Header.jpg" alt="logo" class="logoHeader"></a>
-            </section>
-            <div class="ulHeader">
-                <ul class="ulList">
-                    <li class="headerListItem"><a href="./compraventa.html" class="headerListItem">Compra/Venta Cedears</a></li>
-                    <li class="headerListItem"><a href="./prestamos.html" class="headerListItem">Préstamos</a></li>
-                    <li class="headerListItem"><a href="./compraventa.html" class="headerListItem">Contacto</a></li>
-                    <li class="headerListItem"><a href="./quienessomos.html" class="headerListItem">Quienes somos</a></li>
-                    <li class="headerListItem"><a href="./calculdora.html" class="headerListItem">Calculadora</a></li>
-                </ul>
-            </div>    
-        </div>
-    </header>
+<body class="bodyIndex">
+
+    <section class="form">
+        <form action="" class="formIngreso" >
+            <fieldset class="contenidoFormulario">
+                <section class="imagenTextoForm">
+                    <img src="../assets/images/inicio/Coder Inicio.jpg" alt="" class="formImagen">
+                    <p>Llena el formulario para recuperar tu<br> contraseña de Coder Market Brokers</p>
+                </section>
+                <section class="sectionform">
+                    <label for="nombre"></label>
+                    <input type="text" id="nombreRecuperacion" name="nombre" required placeholder="Ingresa tu nombre de usuario">
+                </section>
+                <section class="sectionform">
+                    <label for="palabra"></label>
+                    <input type="text" id="palabraSecreta" name="palabra" required placeholder="Ingresa tu palabra secreta">
+                </section>
+                <section class="sectionform">
+                    <label for="newContrasena" ></label>
+                    <input type="password" id="nuevaContrasena" name="NewContrasena" placeholder="Ingresa tu  nueva contraseña">
+                </section>
+                <section class="sectionform">
+                    <label for="repetirContrasena" ></label>
+                    <input type="password" id="repetirNuevaContrasena" name="repetirContrasena" placeholder="Repeti tu nueva contraseña">
+                </section>
+                <section class="sectionform">
+                <input type="submit" value="Recuperar Contraseña" class="boton" id="botonRecuperar">
+                </section>
+                <section class="sectionform">
+                </section>
+            </fieldset>
+        </form>
+    </section>
 </body>
 </html>

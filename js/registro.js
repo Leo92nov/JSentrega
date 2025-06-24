@@ -1,5 +1,5 @@
 let usuariosRecuperados = localStorage.getItem("arrayDeUsuarios")
-const Usuarios = JSON.parse(usuariosRecuperados)
+let Usuarios = JSON.parse(usuariosRecuperados)
 console.log(Usuarios);
 const UsuarioCreado =[]
 
@@ -11,15 +11,18 @@ const NuevoNombre = document.getElementById("registroNombre")
 const NuevoUsuario = document.getElementById("registroUsuario")
 const ContraseñaUsuarioNuevo = document.getElementById("registroContrasena")
 const RepetirContraseña = document.getElementById("repetirContrasena")
+const PalabraSecreta = document.getElementById("palabraSecreta")
 const Boton = document.getElementById("botonRegistro")
+
 let usuarioRegistrado
 
 
 class crearUsuario{
-    constructor(NuevoNombre, NuevoUsuario, ContraseñaUsuarioNuevo){
-        this.Nombre = NuevoNombre.value,
-        this.Usuario = NuevoUsuario.value,
-        this.Contraseña = ContraseñaUsuarioNuevo.value
+    constructor(NuevoNombre, NuevoUsuario, ContraseñaUsuarioNuevo, PalabraSecreta){
+        this.nombre = NuevoNombre.value,
+        this.nombreUsuario = NuevoUsuario.value,
+        this.contrasena = ContraseñaUsuarioNuevo.value,
+        this.palabraSecreta = PalabraSecreta.value
     }
 }
 
@@ -37,11 +40,11 @@ Boton.addEventListener("click", (event)=>{
         alert("Las contraseñas no coinciden!!")
     }else
     {
-    const usuarioRegistrado = new crearUsuario(NuevoNombre, NuevoUsuario, ContraseñaUsuarioNuevo);
+    const usuarioRegistrado = new crearUsuario(NuevoNombre, NuevoUsuario, ContraseñaUsuarioNuevo, PalabraSecreta);
 
-    UsuarioCreado.push(usuarioRegistrado)
-    usuarioRegistradoJSON = JSON.stringify(UsuarioCreado[0])
-    localStorage.setItem("usuario nuevo", usuarioRegistradoJSON)
+    Usuarios.push(usuarioRegistrado)
+    Usuarios = JSON.stringify(Usuarios)
+    localStorage.setItem("arrayDeUsuarios", Usuarios)
     console.log(UsuarioCreado);
     alert("Registro Exitoso! Redireccionando...")
     window.location.replace("./inicio.html")
