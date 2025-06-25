@@ -47,8 +47,7 @@ Boton.addEventListener("click", (event)=>{
     localStorage.setItem("arrayDeUsuarios", Usuarios)
     console.log(UsuarioCreado);
     alert("Registro Exitoso! Redireccionando...")
-    window.location.replace("./inicio.html")
-
+    window.location.replace("../index.html")
     }
 
 })

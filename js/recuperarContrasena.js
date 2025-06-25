@@ -33,7 +33,7 @@ BotonRecuperar.addEventListener("click", (event) =>{
         
         alert("Contraseña actualizada")
 
-       window.location.replace("./inicio.html")
+       window.location.replace("../index.html")
 
     }else{
 
