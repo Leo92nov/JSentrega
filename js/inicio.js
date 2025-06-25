@@ -1,3 +1,21 @@
+let usuariosRecuperados = localStorage.getItem("arrayDeUsuarios")
+let Usuarios = JSON.parse(usuariosRecuperados)
+let Usuarioc
+
+const carterasJSON = localStorage.getItem("arrayDeCarteras")
+const Carteras = JSON.parse(carterasJSON)
+
+const usuarioOn = localStorage.getItem("usuarioOn");
+const usuarioLoggeado = JSON.parse(usuarioOn)
+
+
+const indexUsuario = Usuarios.findIndex(usuario => usuario.nombreUsuario === usuarioLoggeado.nombreUsuario);
+console.log(indexUsuario);
+
+const CarteraOn = Carteras[indexUsuario]
+
+
+
 
 
 

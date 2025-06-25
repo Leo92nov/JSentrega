@@ -1,8 +1,10 @@
 let usuariosRecuperados = localStorage.getItem("arrayDeUsuarios")
 let Usuarios = JSON.parse(usuariosRecuperados)
+const carterasJSON = localStorage.getItem("arrayDeCarteras")
+const Carteras = JSON.parse(carterasJSON)
 console.log(Usuarios);
 const UsuarioCreado =[]
-
+const carteraNueva = []
 
 
 
@@ -26,6 +28,15 @@ class crearUsuario{
     }
 }
 
+class crearCartera{
+    constructor(Nombre, Ticker, Precio, Cantidad){
+        this.nombre = Nombre,
+        this.ticker = Ticker,
+        this.precio = Precio,
+        this.cantidad = Cantidad
+
+    }
+}
 
 Boton.addEventListener("click", (event)=>{
     event.preventDefault();
@@ -41,6 +52,11 @@ Boton.addEventListener("click", (event)=>{
     }else
     {
     const usuarioRegistrado = new crearUsuario(NuevoNombre, NuevoUsuario, ContraseñaUsuarioNuevo, PalabraSecreta);
+    const carteraNueva = new crearCartera(Nombre, Ticker, Precio, Cantidad)
+
+    Carteras.push(carteraNueva)
+    const Carteras = JSON.stringify(Carteras)
+    localStorage.setItem("arrayDeCarteras", CarterasJSON)
 
     Usuarios.push(usuarioRegistrado)
     Usuarios = JSON.stringify(Usuarios)
