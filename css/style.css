@@ -12,7 +12,7 @@
 .bodyIndex .header .divHeader {
   width: 100%;
   display: flex;
-  height: 4rem;
+  height: 5rem;
   justify-content: space-between;
 }
 .bodyIndex .header .divHeader .sectionHeader {
@@ -20,10 +20,11 @@
 }
 .bodyIndex .header .divHeader .sectionHeader .logoHeader {
   margin-left: 1rem;
-  height: 100%;
+  margin-top: 0.5rem;
+  height: 110%;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
 }
 .bodyIndex .header .divHeader .ulHeader {
   width: 70%;
@@ -130,17 +131,42 @@
   width: 100%;
 }
 .botonesIngresoInvEgreso .botonIngresoDinero {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
   margin-left: 2rem;
   height: 3rem;
   width: 25rem;
+  border: 2px;
   border-top: 4px solid rgb(10, 37, 64);
+  box-shadow: 0 1px 1px 1px rgb(175, 173, 173);
 }
 .botonesIngresoInvEgreso .botonInvertir {
-  width: 60rem;
+  height: 3rem;
+  width: 62rem;
+  font-size: 1.5rem;
+  background-color: rgb(0, 179, 6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px;
+  color: aliceblue;
+  box-shadow: 0 1px 1px 1px rgb(175, 173, 173);
 }
 .botonesIngresoInvEgreso .botonEgresoDinero {
+  background-color: white;
+  box-shadow: 0 1px 1px 1px rgb(175, 173, 173);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  height: 3rem;
   margin-right: 2rem;
   width: 25rem;
+  border: 2px;
+  border-top: 4px solid rgb(177, 0, 0);
 }
 
 .bodyIndex {
