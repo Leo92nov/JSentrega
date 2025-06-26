@@ -13,6 +13,12 @@ const indexUsuario = Usuarios.findIndex(usuario => usuario.nombreUsuario === usu
 console.log(indexUsuario);
 
 const CarteraOn = Carteras[indexUsuario]
+console.log(CarteraOn);
+console.log(usuarioLoggeado);
+
+if (CarteraOn) {
+    
+}
 
 
 

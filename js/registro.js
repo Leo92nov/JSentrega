@@ -1,7 +1,9 @@
 let usuariosRecuperados = localStorage.getItem("arrayDeUsuarios")
 let Usuarios = JSON.parse(usuariosRecuperados)
-const carterasJSON = localStorage.getItem("arrayDeCarteras")
-const Carteras = JSON.parse(carterasJSON)
+let carterasJSON = localStorage.getItem("arrayDeCarteras")
+let Carteras = JSON.parse(carterasJSON)
+console.log(Carteras);
+
 console.log(Usuarios);
 const UsuarioCreado =[]
 const carteraNueva = []
@@ -52,10 +54,14 @@ Boton.addEventListener("click", (event)=>{
     }else
     {
     const usuarioRegistrado = new crearUsuario(NuevoNombre, NuevoUsuario, ContraseñaUsuarioNuevo, PalabraSecreta);
-    const carteraNueva = new crearCartera(Nombre, Ticker, Precio, Cantidad)
+    const carteraNueva = new crearCartera(0, 0, 0, 0)
+    console.log(carteraNueva);
+    
 
     Carteras.push(carteraNueva)
-    const Carteras = JSON.stringify(Carteras)
+    let CarterasJSON = JSON.stringify(Carteras)
+    console.log(Carteras);
+    
     localStorage.setItem("arrayDeCarteras", CarterasJSON)
 
     Usuarios.push(usuarioRegistrado)

@@ -1,12 +1,15 @@
 let usuariosRecuperados = localStorage.getItem("arrayDeUsuarios")
 let Usuarios = JSON.parse(usuariosRecuperados)
 
+let CarterasJSON = localStorage.getItem("arrayDeCarteras")
+let Carteras = JSON.parse(CarterasJSON)
 
 
 if(Carteras){
     console.log("carteras ya cargadas");
     
 }else{
+    console.log("carteras recien cargadas");
     
     const Carteras = [
         [
@@ -91,11 +94,11 @@ if (Usuarios) {
         {nombre: "Gabriel", nombreUsuario: "gabi", contrasena: "sosa", ahorros: 635000, numeroCcomitente: 54687885, palabraSecreta: "Ascención", cartera: "CarteraSiete"}
     ]
 
-console.log("recien cargados");
+    console.log("recien cargados");
 
-let usuariosJSON = JSON.stringify(ArrUsuarios)
-localStorage.setItem("arrayDeUsuarios", usuariosJSON)
-Usuarios = ArrUsuarios
+    let usuariosJSON = JSON.stringify(ArrUsuarios)
+    localStorage.setItem("arrayDeUsuarios", usuariosJSON)
+    Usuarios = ArrUsuarios
 }
 
 
@@ -117,7 +120,11 @@ const ingreso = document.getElementById("ingresoBoton")
 
         for (const usuario of Usuarios) {
 
-            if(usuarioIngresado.value === usuario.nombreUsuario && contrasenaIngresada.value === usuario.contrasena){
+            if(usuarioIngresado.value === "" || contrasenaIngresada.value === ""){
+                alert("Campos vacios")
+                break
+
+            }else if(usuarioIngresado.value  === usuario.nombreUsuario && contrasenaIngresada.value === usuario.contrasena){
 
                 alert("bienvenido " + usuario.nombre);
                 usuarioExistente = true;
@@ -126,12 +133,14 @@ const ingreso = document.getElementById("ingresoBoton")
                 localStorage.setItem("usuarioOn", usuarioLogueadoJSON);
                 window.location.href = "./pages/inicio.html";
                 break
-            }
+            }else{
+                alert("Datos incorrectos, intenta nuevamente");
+                break
+            }   
+    
         }
         
-        if(!usuarioExistente){
-            alert("Datos incorrectos, intenta nuevamente");
-        }
+      
     })
             
     const registro = document.getElementById("registro")
