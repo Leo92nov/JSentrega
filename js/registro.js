@@ -22,11 +22,12 @@ let usuarioRegistrado
 
 
 class crearUsuario{
-    constructor(NuevoNombre, NuevoUsuario, ContraseñaUsuarioNuevo, PalabraSecreta){
+    constructor(NuevoNombre, NuevoUsuario, ContraseñaUsuarioNuevo, PalabraSecreta, liquidez){
         this.nombre = NuevoNombre.value,
         this.nombreUsuario = NuevoUsuario.value,
         this.contrasena = ContraseñaUsuarioNuevo.value,
         this.palabraSecreta = PalabraSecreta.value
+        this.liquidez = liquidez
     }
 }
 
@@ -53,7 +54,7 @@ Boton.addEventListener("click", (event)=>{
         alert("Las contraseñas no coinciden!!")
     }else
     {
-    const usuarioRegistrado = new crearUsuario(NuevoNombre, NuevoUsuario, ContraseñaUsuarioNuevo, PalabraSecreta);
+    const usuarioRegistrado = new crearUsuario(NuevoNombre, NuevoUsuario, ContraseñaUsuarioNuevo, PalabraSecreta, 0);
     const carteraNueva = new crearCartera(0, 0, 0, 0)
     console.log(carteraNueva);
     

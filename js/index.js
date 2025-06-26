@@ -85,13 +85,13 @@ if (Usuarios) {
 }else{
 
     const ArrUsuarios = [
-        {nombre: "Leonardo", nombreUsuario: "36765496", contrasena: "starplatinum", ahorros: 265000, nombreComitente: "aaaaaa", palabraSecreta: "Fantástico", cedears: "ko", cartera: "CarteraUno" },
-        {nombre: "Diego", nombreUsuario: "diego", contrasena: "brando", ahorros: 295000, numeroCcomitente: 54687880, palabraSecreta: "Financiera", cartera: "CarteraDos"},
-        {nombre: "Pablo", nombreUsuario: "pablin", contrasena: "guitarra", ahorros: 25000, numeroCcomitente: 54687881, palabraSecreta: "8Mile", cartera: "CarteraTres"},
-        {nombre: "Alejandro", nombreUsuario: "ale", contrasena: "discordia", ahorros: 465000, numeroCcomitente: 54687882, palabraSecreta: "Desodorante", cartera: "CarteraCuatro"},
-        {nombre: "Santiago", nombreUsuario: "santi", contrasena: "martin", ahorros: 65000, numeroCcomitente: 54687883, palabraSecreta: "Octógono", cartera: "CarteraCinco"},
-        {nombre: "Juan", nombreUsuario: "juan", contrasena: "pablo", ahorros: 5000, numeroCcomitente: 54687884, palabraSecreta: "Terraforma", cartera: "CarteraSeis"},
-        {nombre: "Gabriel", nombreUsuario: "gabi", contrasena: "sosa", ahorros: 635000, numeroCcomitente: 54687885, palabraSecreta: "Ascención", cartera: "CarteraSiete"}
+        {nombre: "Leonardo", nombreUsuario: "36765496", contrasena: "starplatinum", liquidez: 265000, palabraSecreta: "Fantástico"},
+        {nombre: "Diego", nombreUsuario: "diego", contrasena: "brando", liquidez: 295000, palabraSecreta: "Financiera"},
+        {nombre: "Pablo", nombreUsuario: "pablin", contrasena: "guitarra", liquidez: 25000, palabraSecreta: "8Mile"},
+        {nombre: "Alejandro", nombreUsuario: "ale", contrasena: "discordia", liquidez: 465000, palabraSecreta: "Desodorante"},
+        {nombre: "Santiago", nombreUsuario: "santi", contrasena: "martin", liquidez: 65000, palabraSecreta: "Octógono"},
+        {nombre: "Juan", nombreUsuario: "juan", contrasena: "pablo", liquidez: 5000, palabraSecreta: "Terraforma"},
+        {nombre: "Gabriel", nombreUsuario: "gabi", contrasena: "sosa", liquidez: 635000, palabraSecreta: "Ascención"}
     ]
 
     console.log("recien cargados");
@@ -133,15 +133,15 @@ const ingreso = document.getElementById("ingresoBoton")
                 localStorage.setItem("usuarioOn", usuarioLogueadoJSON);
                 window.location.href = "./pages/inicio.html";
                 break
-            }else{
-                alert("Datos incorrectos, intenta nuevamente");
-                break
-            }   
-    
+            }
         }
         
+        if (!usuarioExistente && usuarioIngresado.value !== "" && contrasenaIngresada.value !== "") {
+            alert("Datos incorrectos, intenta nuevamente");
+        }
       
-    })
+    }
+)
             
     const registro = document.getElementById("registro")
 

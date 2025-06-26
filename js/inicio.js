@@ -16,9 +16,7 @@ const CarteraOn = Carteras[indexUsuario]
 console.log(CarteraOn);
 console.log(usuarioLoggeado);
 
-if (CarteraOn) {
-    
-}
+
 
 
 

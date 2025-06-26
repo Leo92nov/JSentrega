@@ -1,7 +1,13 @@
-@use "./abstracts/variables.scss";
-@use "./layout/header.scss";
-@use "./components/forms.scss";
-@use "./components/buttons.scss";
+@use "./pages/calculadora.scss";
+@use "./pages/contacto.scss";
+@use "./pages/inicio.scss";
+@use "./pages/ordenes.scss";
+@use "./pages/prestamos.scss";
+@use "./pages/quienessomos.scss";
+@use "./pages/recuperacion.scss";
+@use "./pages/registro.scss";
+@use "./pages/index.scss";
+
 .bodyIndex{
     height: 100vh;
     max-width: 100%;

@@ -1,0 +1,16 @@
+@use"../layout/header.scss";
+@use"../layout/footer.scss";
+@use"../base/fonts.scss";
+@use"../abstracts/variables.scss";
+@use"../components/forms.scss";
+
+
+.bodyIndex{
+    height: 100vh;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    background-color: #e8eafc;
+
+}
