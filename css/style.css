@@ -7,7 +7,7 @@
   background-color: #f4f5ff;
 }
 .bodyIndex .header {
-  background-color: #0a2540;
+  background-color: rgb(10, 37, 64);
 }
 .bodyIndex .header .divHeader {
   width: 100%;
@@ -46,6 +46,15 @@
 .bodyIndex .header .divHeader .ulHeader .ulList .headerListItem {
   text-decoration: none;
   color: aliceblue;
+}
+
+.bodyIndex {
+  height: 100vh;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background-color: #f4f5ff;
 }
 .bodyIndex .form {
   height: 100%;
@@ -111,6 +120,36 @@
 .bodyIndex .form .formIngreso .contenidoFormulario .sectionform .boton {
   background-color: #0a2540;
   color: aliceblue;
+}
+
+.botonesIngresoInvEgreso {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+.botonesIngresoInvEgreso .botonIngresoDinero {
+  margin-left: 2rem;
+  height: 3rem;
+  width: 25rem;
+  border-top: 4px solid rgb(10, 37, 64);
+}
+.botonesIngresoInvEgreso .botonInvertir {
+  width: 60rem;
+}
+.botonesIngresoInvEgreso .botonEgresoDinero {
+  margin-right: 2rem;
+  width: 25rem;
+}
+
+.bodyIndex {
+  height: 100vh;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background-color: #e8eafc;
 }
 
 /*# sourceMappingURL=style.css.map */
