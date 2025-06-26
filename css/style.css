@@ -220,13 +220,28 @@
   color: aliceblue;
 }
 
-.bodyIndex {
-  height: 100vh;
-  max-width: 100%;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-  background-color: #e8eafc;
+.contenedorInversiones {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  width: 60%;
+}
+.contenedorInversiones .spanInversiones {
+  margin-top: 1.5rem;
+  width: 100%;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.contenedorInversiones .divInversiones {
+  width: 100%;
+}
+.contenedorInversiones .divInversiones .sectionInversion {
+  width: 100%; /* Ahora ocupa el 100% del padre */
+  background-color: bisque;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .bodyIndex {
@@ -251,6 +266,15 @@
   height: 100vh;
   max-width: 100%;
   overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background-color: #e8eafc;
+}
+
+.bodyIndex {
+  height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
   padding: 0;
   margin: 0;
   background-color: #e8eafc;

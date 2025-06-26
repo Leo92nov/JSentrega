@@ -4,3 +4,34 @@
 @use"../components/forms.scss";
 @use"../layout/footer.scss";
 @use"../layout/header.scss";
+
+
+
+    .contenedorInversiones{
+
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        width: 60%;
+
+        .spanInversiones{
+            margin-top: 1.5rem;
+            width: 100%;
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+        
+        }
+        .divInversiones{
+            width: 100%;
+
+            .sectionInversion{
+                
+                width: 100%; /* Ahora ocupa el 100% del padre */
+                background-color: bisque;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                box-sizing: border-box;
+            }
+        }
+    }

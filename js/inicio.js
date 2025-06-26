@@ -16,8 +16,27 @@ const CarteraOn = Carteras[indexUsuario]
 console.log(CarteraOn);
 console.log(usuarioLoggeado);
 
+function mostrarInversiones(CarteraOn){
+    const contenedor = document.getElementById("divInversiones"); // Asegurate que existe este div en el HTML
 
+    CarteraOn.forEach(e => {
+        const linea = document.createElement("section");
+        linea.innerHTML = `
+            <section class="sectionInversion">${e.Nombre}</section>
+            <section class="sectionInversion">${e.ticker}</section>
+            <section class="sectionInversion">${e.precio}</section>
+            <section class="sectionInversion">${e.cantidad}</section>
+        `;
+        contenedor.appendChild(linea);
+    });
+}
 
+// LLAMAR LA FUNCIÓN SOLO SI EXISTE LA CARTERA
+if(CarteraOn){
+    mostrarInversiones(CarteraOn);
+} else {
+    console.log("asd");
+}
 
 
 
