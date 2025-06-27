@@ -4,6 +4,30 @@ let Usuarios = JSON.parse(usuariosRecuperados)
 let CarterasJSON = localStorage.getItem("arrayDeCarteras")
 let Carteras = JSON.parse(CarterasJSON)
 
+let OrdenesJSON = localStorage.getItem("arrayDeOrdenes")
+let Ordenes = JSON.parse(OrdenesJSON)
+
+if (Usuarios) {
+    console.log("ya cargados");
+    
+}else{
+
+    const ArrUsuarios = [
+        {nombre: "Leonardo", nombreUsuario: "36765496", contrasena: "starplatinum", liquidez: 265000, palabraSecreta: "Fantástico"},
+        {nombre: "Diego", nombreUsuario: "diego", contrasena: "brando", liquidez: 295000, palabraSecreta: "Financiera"},
+        {nombre: "Pablo", nombreUsuario: "pablin", contrasena: "guitarra", liquidez: 25000, palabraSecreta: "8Mile"},
+        {nombre: "Alejandro", nombreUsuario: "ale", contrasena: "discordia", liquidez: 465000, palabraSecreta: "Desodorante"},
+        {nombre: "Santiago", nombreUsuario: "santi", contrasena: "martin", liquidez: 65000, palabraSecreta: "Octógono"},
+        {nombre: "Juan", nombreUsuario: "juan", contrasena: "pablo", liquidez: 5000, palabraSecreta: "Terraforma"},
+        {nombre: "Gabriel", nombreUsuario: "gabi", contrasena: "sosa", liquidez: 635000, palabraSecreta: "Ascención"}
+    ]
+
+    console.log("recien cargados");
+
+    let usuariosJSON = JSON.stringify(ArrUsuarios)
+    localStorage.setItem("arrayDeUsuarios", usuariosJSON)
+    Usuarios = ArrUsuarios
+}
 
 if(Carteras){
     console.log("carteras ya cargadas");
@@ -74,32 +98,51 @@ if(Carteras){
 }
 
 
-
-
-
-
-
-if (Usuarios) {
-    console.log("ya cargados");
+if (Ordenes){
+    console.log("ordenes ya cargadas");
     
 }else{
-
-    const ArrUsuarios = [
-        {nombre: "Leonardo", nombreUsuario: "36765496", contrasena: "starplatinum", liquidez: 265000, palabraSecreta: "Fantástico"},
-        {nombre: "Diego", nombreUsuario: "diego", contrasena: "brando", liquidez: 295000, palabraSecreta: "Financiera"},
-        {nombre: "Pablo", nombreUsuario: "pablin", contrasena: "guitarra", liquidez: 25000, palabraSecreta: "8Mile"},
-        {nombre: "Alejandro", nombreUsuario: "ale", contrasena: "discordia", liquidez: 465000, palabraSecreta: "Desodorante"},
-        {nombre: "Santiago", nombreUsuario: "santi", contrasena: "martin", liquidez: 65000, palabraSecreta: "Octógono"},
-        {nombre: "Juan", nombreUsuario: "juan", contrasena: "pablo", liquidez: 5000, palabraSecreta: "Terraforma"},
-        {nombre: "Gabriel", nombreUsuario: "gabi", contrasena: "sosa", liquidez: 635000, palabraSecreta: "Ascención"}
+    console.log("ordenes recien cargadas");
+    
+    const Ordenes = [
+        [
+            {Nombre: "Coca cola company.", ticker: "KO", precio: 1500, cantidad: 10, orden: "compra"},
+            {Nombre: "Realty Income Corporation", ticker: "O", precio: 650, cantidad: 48, orden: "compra"},
+            {Nombre: "Verizon Communications Inc", ticker: "VZ", precio: 1530, cantidad: 20, orden: "compra"},
+            {Nombre: "Amazon.com Inc", ticker: "AMZN", precio: 550, cantidad: 60, orden: "venta"}
+        ],
+        [
+            {Nombre: "Lockheed Martin.", ticker: "KO", precio: 1400, cantidad: 40, orden: "compra"},
+            {Nombre: "Realty Income Corporation", ticker: "O", precio: 650, cantidad: 48, orden: "venta"},
+            {Nombre: "Verizon Communications Inc", ticker: "VZ", precio: 1530, cantidad: 20, orden: "compra"},
+            {Nombre: "Intel Corporation", ticker: "INTC", precio: 1400, cantidad: 4, orden: "compra"},
+            {Nombre: "Berkshire Hathaway Inc", ticker: "BRK-B", precio: 3100, cantidad: 61, orden: "venta"},
+        ],
+        [
+            {Nombre: "Coca cola company.", ticker: "KO", precio: 1550, cantidad: 25, orden: "venta"},
+            {Nombre: "Berkshire Hathaway Inc", ticker: "BRK-B", precio: 3100, cantidad: 34, orden: "venta"},
+        ],
+        [
+            {Nombre: "Lockheed Martin.", ticker: "LMT", precio: 2600, cantidad: 70, orden: "compra"},
+        ],
+        [
+            {Nombre: "Apple Inc.", ticker: "AAPL", precio: 2500, cantidad: 60, orden: "venta"},
+            {Nombre: "Amazon.com Inc", ticker: "AMZN", precio: 550, cantidad: 60, orden: "venta"}
+        ],
+        [
+            {Nombre: "Intel Corporation", ticker: "INTC", precio: 1400, cantidad: 3, orden: "compra"},
+        ],
+        [
+            {Nombre: "Berkshire Hathaway Inc", ticker: "BRK-B", precio: 3100, cantidad: 40, orden: "compra"},
+        ]
     ]
+    const OrdenesJSON = JSON.stringify(Ordenes)
+    localStorage.setItem("arrayDeOrdenes", OrdenesJSON)
 
-    console.log("recien cargados");
-
-    let usuariosJSON = JSON.stringify(ArrUsuarios)
-    localStorage.setItem("arrayDeUsuarios", usuariosJSON)
-    Usuarios = ArrUsuarios
 }
+
+
+
 
 
 

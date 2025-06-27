@@ -14,13 +14,14 @@
         padding: 0 1.5rem 0 1.5rem;        
         background-color: aliceblue;
         padding-bottom: 1rem;
+        box-shadow: 1px 1px 5px black;
 
         .inversionesEncabezado{
             text-align: center;
             width: 100%;
             display: grid;
             height: 2rem;
-            border-top: 1px solid;
+            
             border-bottom: 1px solid;
             grid-template-columns: repeat(6, 1fr);
             align-items: center;
@@ -44,7 +45,7 @@
         .divInversiones{
             width: 100%;
             text-align: center;
-
+            box-shadow: 1 0 5px black;
            
             .sectionInversion{
                 
@@ -75,6 +76,7 @@
         }
         .divTotalInversion{
             background-color: rgb(227, 232, 255);
+            border: 1px solid black;
             height: 2rem;
             display: flex;
             justify-content: space-between;

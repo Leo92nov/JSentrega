@@ -59,16 +59,7 @@ const totalInversiones = document.getElementById("spanTotalInvertido")
 
 
 
-/* let apellido = "perez";
-let contrasena = prompt("Ingrese su contraseña");
-let login = false
-let intentos
-
-while (intentos < 3) {
-    
-
-
-}
+/* 
 const SueldosAhorrados = [25000, 24000, 26000, 23000, 27000, 25000, 20000, 30000, 40000, 10000 ];
 
 for (let i = 0; i < 3; i ++) {
