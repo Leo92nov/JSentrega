@@ -1,47 +1,56 @@
-.botonesIngresoInvEgreso {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+* .header {
+  background-color: rgb(10, 37, 64);
   width: 100%;
 }
-.botonesIngresoInvEgreso .botonIngresoDinero {
-  background-color: white;
+* .header .divHeader {
+  width: 100%;
   display: flex;
+  height: 5rem;
   justify-content: space-between;
-  align-items: center;
-  font-size: 1.5rem;
-  margin-left: 2rem;
-  height: 3rem;
-  width: 25rem;
-  border: 2px;
-  border-top: 4px solid rgb(10, 37, 64);
-  box-shadow: 0 1px 1px 1px rgb(175, 173, 173);
 }
-.botonesIngresoInvEgreso .botonInvertir {
-  height: 3rem;
-  width: 62rem;
-  font-size: 1.5rem;
-  background-color: rgb(0, 179, 6);
+* .header .divHeader .sectionHeader {
+  height: 4rem;
+}
+* .header .divHeader .sectionHeader .logoHeader {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  height: 110%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
-  border: 1px;
+}
+* .header .divHeader .ulHeader {
+  width: 70%;
+  display: flex;
+}
+* .header .divHeader .ulHeader .ulList {
+  font-size: 1.5rem;
   color: aliceblue;
-  box-shadow: 0 1px 1px 1px rgb(175, 173, 173);
-}
-.botonesIngresoInvEgreso .botonEgresoDinero {
-  background-color: white;
-  box-shadow: 0 1px 1px 1px rgb(175, 173, 173);
+  width: 100%;
+  list-style: none;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
-  font-size: 1.5rem;
-  height: 3rem;
-  margin-right: 2rem;
-  width: 25rem;
-  border: 2px;
-  border-top: 4px solid rgb(177, 0, 0);
+  justify-content: space-around;
+}
+* .header .divHeader .ulHeader .ulList :hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+* .header .divHeader .ulHeader .ulList .headerListItem {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.footerContainer {
+  background-color: rgb(10, 37, 64);
+  margin-top: 3rem;
+  height: 6rem;
 }
 
 .bodyIndex {
@@ -119,54 +128,56 @@
 }
 
 .bodyIndex {
-  height: 100vh;
   max-width: 100%;
-  overflow: hidden;
   padding: 0;
   margin: 0;
-  background-color: #f4f5ff;
+  background-color: #e8eafc;
 }
-.bodyIndex .header {
-  background-color: rgb(10, 37, 64);
-}
-.bodyIndex .header .divHeader {
-  width: 100%;
-  display: flex;
-  height: 5rem;
-  justify-content: space-between;
-}
-.bodyIndex .header .divHeader .sectionHeader {
-  height: 4rem;
-}
-.bodyIndex .header .divHeader .sectionHeader .logoHeader {
-  margin-left: 1rem;
-  margin-top: 0.5rem;
-  height: 110%;
+
+.botonesIngresoInvEgreso {
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
-  align-items: center;
-}
-.bodyIndex .header .divHeader .ulHeader {
-  width: 70%;
-  display: flex;
-}
-.bodyIndex .header .divHeader .ulHeader .ulList {
-  font-size: 1.5rem;
-  color: aliceblue;
-  width: 100%;
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-around;
+  width: 100%;
 }
-.bodyIndex .header .divHeader .ulHeader .ulList :hover {
-  transform: scale(1.1);
-  transition: 0.2s;
+.botonesIngresoInvEgreso .botonIngresoDinero {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  height: 3rem;
+  width: 25rem;
+  border: 2px;
+  border-top: 4px solid rgb(10, 37, 64);
+  box-shadow: 0 1px 1px 1px rgb(175, 173, 173);
 }
-.bodyIndex .header .divHeader .ulHeader .ulList .headerListItem {
-  text-decoration: none;
+.botonesIngresoInvEgreso .botonInvertir {
+  height: 3rem;
+  width: 62rem;
+  font-size: 1.5rem;
+  background-color: rgb(0, 179, 6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px;
   color: aliceblue;
+  box-shadow: 0 1px 1px 1px rgb(175, 173, 173);
+}
+.botonesIngresoInvEgreso .botonEgresoDinero {
+  background-color: white;
+  box-shadow: 0 1px 1px 1px rgb(175, 173, 173);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  height: 3rem;
+  margin-right: 2rem;
+  width: 25rem;
+  border: 2px;
+  border-top: 4px solid rgb(177, 0, 0);
 }
 
 .bodyIndex {
@@ -220,7 +231,7 @@
   color: aliceblue;
 }
 
-.contenedorInversiones {
+.bodyInicio .contenedorInversiones {
   margin-left: 2.6rem;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   width: 60%;
@@ -229,20 +240,20 @@
   padding-bottom: 1rem;
   box-shadow: 1px 1px 5px black;
 }
-.contenedorInversiones .inversionesEncabezado {
+.bodyInicio .contenedorInversiones .inversionesEncabezado {
   text-align: center;
   width: 100%;
   display: grid;
-  height: 2rem;
+  min-height: 2rem;
   border-bottom: 1px solid;
   grid-template-columns: repeat(6, 1fr);
   align-items: center;
   background-color: rgb(227, 232, 255);
 }
-.contenedorInversiones .inversionesEncabezado .misInversionesOperar {
+.bodyInicio .contenedorInversiones .inversionesEncabezado .misInversionesOperar {
   width: auto;
 }
-.contenedorInversiones .spanInversiones {
+.bodyInicio .contenedorInversiones .spanInversiones {
   margin-top: 1.5rem;
   padding: 1rem 0 1rem 0;
   width: 100%;
@@ -251,12 +262,12 @@
   justify-content: center;
   align-items: center;
 }
-.contenedorInversiones .divInversiones {
+.bodyInicio .contenedorInversiones .divInversiones {
   width: 100%;
   text-align: center;
   box-shadow: 1 0 5px black;
 }
-.contenedorInversiones .divInversiones .sectionInversion {
+.bodyInicio .contenedorInversiones .divInversiones .sectionInversion {
   width: 100%;
   background-color: white;
   display: grid;
@@ -265,36 +276,67 @@
   align-items: center;
   padding: 4px 0;
 }
-.contenedorInversiones .divInversiones .sectionInversion .inversionesVenderComprar {
+.bodyInicio .contenedorInversiones .divInversiones .sectionInversion .inversionesVenderComprar {
   padding-right: 4px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.contenedorInversiones .divInversiones .sectionInversion .inversionesVenderComprar .inversionesComprar {
+.bodyInicio .contenedorInversiones .divInversiones .sectionInversion .inversionesVenderComprar .inversionesComprar {
   text-decoration: none;
   color: rgb(0, 179, 6);
 }
-.contenedorInversiones .divInversiones .sectionInversion .inversionesVenderComprar .inversionesVender {
+.bodyInicio .contenedorInversiones .divInversiones .sectionInversion .inversionesVenderComprar .inversionesVender {
   text-decoration: none;
   color: rgb(177, 0, 0);
 }
-.contenedorInversiones .divTotalInversion {
+.bodyInicio .contenedorInversiones .divTotalInversion {
   background-color: rgb(227, 232, 255);
   border: 1px solid black;
-  height: 2rem;
+  min-height: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-.bodyIndex {
-  height: 100vh;
-  max-width: 100%;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-  background-color: #e8eafc;
+.bodyInicio .contenedorMisOrdenes {
+  height: auto;
+  margin-top: 2rem;
+  margin-left: 2.6rem;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  width: 92%;
+  padding: 0 1.5rem 0 1.5rem;
+  background-color: aliceblue;
+  padding-bottom: 1rem;
+  box-shadow: 1px 1px 5px black;
+}
+.bodyInicio .contenedorMisOrdenes .spanOrdenes {
+  margin-top: 1.5rem;
+  padding: 1rem 0 1rem 0;
+  width: 100%;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bodyInicio .contenedorMisOrdenes .ordenesEncabezado {
+  text-align: center;
+  width: 100%;
+  display: grid;
+  min-height: 2rem;
+  border-bottom: 1px solid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  background-color: rgb(227, 232, 255);
+}
+.bodyInicio .contenedorMisOrdenes .sectionMisOrdenes {
+  width: 100%;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  align-items: center;
+  padding: 4px 0;
+  text-align: center;
 }
 
 .bodyIndex {
@@ -310,15 +352,6 @@
   height: 100vh;
   max-width: 100%;
   overflow: hidden;
-  padding: 0;
-  margin: 0;
-  background-color: #e8eafc;
-}
-
-.bodyIndex {
-  height: 100vh;
-  max-width: 100%;
-  overflow-x: hidden;
   padding: 0;
   margin: 0;
   background-color: #e8eafc;

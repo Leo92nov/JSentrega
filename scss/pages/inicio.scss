@@ -6,6 +6,7 @@
 @use"../layout/header.scss";
 
 
+.bodyInicio{
 
     .contenedorInversiones{
         margin-left: 2.6rem;
@@ -20,7 +21,7 @@
             text-align: center;
             width: 100%;
             display: grid;
-            height: 2rem;
+            min-height: 2rem;
             
             border-bottom: 1px solid;
             grid-template-columns: repeat(6, 1fr);
@@ -77,9 +78,56 @@
         .divTotalInversion{
             background-color: rgb(227, 232, 255);
             border: 1px solid black;
-            height: 2rem;
+            min-height: 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
     }
+
+
+    .contenedorMisOrdenes{
+        height: auto;
+        margin-top: 2rem;
+        margin-left: 2.6rem;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        width: 92%;
+        padding: 0 1.5rem 0 1.5rem;        
+        background-color: aliceblue;
+        padding-bottom: 1rem;
+        box-shadow: 1px 1px 5px black;
+
+        .spanOrdenes{
+            margin-top: 1.5rem;
+            padding: 1rem 0 1rem 0;
+            width: 100%;
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ordenesEncabezado{
+            text-align: center;
+            width: 100%;
+            display: grid;
+            min-height: 2rem;
+            border-bottom: 1px solid;
+            grid-template-columns: repeat(5, 1fr);
+            align-items: center;
+            background-color: rgb(227, 232, 255);
+
+        }
+
+        .sectionMisOrdenes{
+            width: 100%;
+            background-color: white;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            justify-content: center;
+            align-items: center;
+            padding: 4px 0;
+            text-align: center;
+        }
+    }
+}

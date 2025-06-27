@@ -1,16 +1,15 @@
 @use"../abstracts/variables.scss";
 
 
-.bodyIndex{
-    height: 100vh;
-    max-width: 100%;
-    overflow: hidden;
+*{
     padding: 0;
     margin: 0;
-    background-color: #f4f5ff;
-
+    box-sizing: border-box;
+    
     .header{
         background-color: variables.$color-principal;
+        width: 100%;
+
         .divHeader{
             width: 100%;
             display: flex;

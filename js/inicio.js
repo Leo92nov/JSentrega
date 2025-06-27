@@ -1,21 +1,56 @@
 let usuariosRecuperados = localStorage.getItem("arrayDeUsuarios")
 let Usuarios = JSON.parse(usuariosRecuperados)
 let Usuarioc
-
-const carterasJSON = localStorage.getItem("arrayDeCarteras")
-const Carteras = JSON.parse(carterasJSON)
+let totalinversion
 
 const usuarioOn = localStorage.getItem("usuarioOn");
-const usuarioLoggeado = JSON.parse(usuarioOn)
+const usuarioLoggeado = JSON.parse(usuarioOn);
 
+const carterasJSON = localStorage.getItem("arrayDeCarteras");
+const Carteras = JSON.parse(carterasJSON);
+
+let OrdenesJSON = localStorage.getItem("arrayDeOrdenes");
+let Ordenes = JSON.parse(OrdenesJSON);
+console.log(Ordenes);
 
 const indexUsuario = Usuarios.findIndex(usuario => usuario.nombreUsuario === usuarioLoggeado.nombreUsuario);
 console.log(indexUsuario);
 
+const OrdenesOn = Ordenes[indexUsuario]
+console.log(OrdenesOn);
+
+function mostrarOrdenes(OrdenesOn){
+    
+    const contenedorOrdenes = document.getElementById("divMisOrdenes")
+
+    OrdenesOn.forEach(e =>{
+        const ordenes = document.createElement("section")
+        ordenes.classList.add("sectionMisOrdenes")
+        ordenes.style.borderBottom = "1px solid grey";
+
+        ordenes.innerHTML = `
+            <section>${e.Nombre}</section>
+            <section>${e.ticker}</section>
+            <section>$${e.precio}</section>
+            <section>${e.cantidad}</section>
+            <section>${e.orden}</section>
+           
+        `
+        contenedorOrdenes.appendChild(ordenes);
+    })
+
+}
+
+if(OrdenesOn){
+    mostrarOrdenes(OrdenesOn)
+}else{
+    console.log("No existen ordenes acticvas");
+    
+}
+
 const CarteraOn = Carteras[indexUsuario]
 console.log(CarteraOn);
 console.log(usuarioLoggeado);
-let totalinversion
 
 function mostrarInversiones(CarteraOn){
 
@@ -43,7 +78,7 @@ function mostrarInversiones(CarteraOn){
 if(CarteraOn){
     mostrarInversiones(CarteraOn);
 } else {
-    console.log("");
+    console.log("no se encotro una cartera que cargar");
 }
 
 const totalInversion = CarteraOn.reduce((acumulador, e) => {

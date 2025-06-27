@@ -1,3 +1,4 @@
+@use "./pages/index.scss";
 @use "./pages/calculadora.scss";
 @use "./pages/contacto.scss";
 @use "./pages/inicio.scss";
@@ -6,14 +7,4 @@
 @use "./pages/quienessomos.scss";
 @use "./pages/recuperacion.scss";
 @use "./pages/registro.scss";
-@use "./pages/index.scss";
 
-.bodyIndex{
-    height: 100vh;
-    max-width: 100%;
-    overflow-x: hidden;
-    padding: 0;
-    margin: 0;
-    background-color: #e8eafc;
-
-}
