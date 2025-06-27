@@ -15,28 +15,45 @@ console.log(indexUsuario);
 const CarteraOn = Carteras[indexUsuario]
 console.log(CarteraOn);
 console.log(usuarioLoggeado);
+let totalinversion
 
 function mostrarInversiones(CarteraOn){
-    const contenedor = document.getElementById("divInversiones"); // Asegurate que existe este div en el HTML
 
-    CarteraOn.forEach(e => {
-        const linea = document.createElement("section");
-        linea.innerHTML = `
-            <section class="sectionInversion">${e.Nombre}</section>
-            <section class="sectionInversion">${e.ticker}</section>
-            <section class="sectionInversion">${e.precio}</section>
-            <section class="sectionInversion">${e.cantidad}</section>
+    const contenedorInversiones = document.getElementById("divInversiones");
+
+    CarteraOn.forEach((e) => {
+        const lineas = document.createElement("section");
+        lineas.classList.add("sectionInversion")
+        lineas.style.borderBottom = "1px solid grey";
+
+        lineas.innerHTML = `
+            <section>${e.Nombre}</section>
+            <section>${e.ticker}</section>
+            <section>$${e.precio}</section>
+            <section>${e.cantidad}</section>
+            <section>$${e.cantidad * e.precio}</section>
+            <section class="inversionesVenderComprar"><a href="./ordenes.html" class="inversionesComprar">Comprar</a><a href="./ordenes.html" class="inversionesVender">Vender</a></section>
         `;
-        contenedor.appendChild(linea);
+
+        contenedorInversiones.appendChild(lineas);
     });
 }
 
-// LLAMAR LA FUNCIÓN SOLO SI EXISTE LA CARTERA
+
 if(CarteraOn){
     mostrarInversiones(CarteraOn);
 } else {
-    console.log("asd");
+    console.log("");
 }
+
+const totalInversion = CarteraOn.reduce((acumulador, e) => {
+    return acumulador + (e.cantidad * e.precio);
+}, 0);
+
+const totalInversiones = document.getElementById("spanTotalInvertido")
+ totalInversiones.innerText = "$" + totalInversion
+ 
+
 
 
 
