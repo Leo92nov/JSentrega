@@ -338,6 +338,10 @@
   padding: 4px 0;
   text-align: center;
 }
+.bodyInicio .noHayOrdenes {
+  font-size: 2rem;
+  text-align: center;
+}
 
 .bodyIndex {
   height: 100vh;

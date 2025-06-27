@@ -41,12 +41,18 @@ function mostrarOrdenes(OrdenesOn){
 
 }
 
-if(OrdenesOn){
-    mostrarOrdenes(OrdenesOn)
-}else{
-    console.log("No existen ordenes acticvas");
-    
+const contenedorOrdenes = document.getElementById("divMisOrdenes");
+
+if (OrdenesOn && OrdenesOn.length > 0) {
+    mostrarOrdenes(OrdenesOn);
+} else {
+    const ordenesVacia = document.createElement("section");
+    ordenesVacia.classList.add("noHayOrdenes");
+    ordenesVacia.innerHTML = `<span>No existen órdenes que mostrar</span>`;
+    contenedorOrdenes.appendChild(ordenesVacia);
 }
+
+
 
 const CarteraOn = Carteras[indexUsuario]
 console.log(CarteraOn);
@@ -74,12 +80,6 @@ function mostrarInversiones(CarteraOn){
     });
 }
 
-
-if(CarteraOn){
-    mostrarInversiones(CarteraOn);
-} else {
-    console.log("no se encotro una cartera que cargar");
-}
 
 const totalInversion = CarteraOn.reduce((acumulador, e) => {
     return acumulador + (e.cantidad * e.precio);
