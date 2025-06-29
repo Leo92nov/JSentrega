@@ -4,3 +4,47 @@
 @use"../components/forms.scss";
 @use"../layout/footer.scss";
 @use"../layout/header.scss";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.bodyOrdenes{
+
+    .tituloCajaDePuntas{
+        display: flex;
+        justify-content: center;
+        margin: 2rem 0 2rem 0;
+    }
+    .contenedorCajaDePuntas{
+        display: flex;
+        justify-content: center;
+   
+        .cajaDePuntas{
+
+            width: 50%;
+            display: grid;
+            justify-content: center;
+            border: 1px solid black;
+            grid-template-columns: 4, 1fr;
+            grid-template-rows: 3;
+
+            .cedearCajaDePuntas{
+                grid-column: 0/4;
+                grid-row: 1;
+                border-bottom: 1px solid black;
+            }
+            .sectionCompra{
+                grid-column: 0/2;
+                grid-row: 2;
+                border-right: 1px solid black;
+                
+            }
+            .sectionVenta{
+                grid-column: 2/4;
+                grid-row: 2;
+            }
+        }
+     }
+}
