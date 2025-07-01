@@ -13,13 +13,13 @@ if (Usuarios) {
 }else{
 
     const ArrUsuarios = [
-        {nombre: "Leonardo", nombreUsuario: "36765496", contrasena: "starplatinum", liquidez: 265000, palabraSecreta: "Fantástico"},
-        {nombre: "Diego", nombreUsuario: "diego", contrasena: "brando", liquidez: 295000, palabraSecreta: "Financiera"},
-        {nombre: "Pablo", nombreUsuario: "pablin", contrasena: "guitarra", liquidez: 25000, palabraSecreta: "8Mile"},
-        {nombre: "Alejandro", nombreUsuario: "ale", contrasena: "discordia", liquidez: 465000, palabraSecreta: "Desodorante"},
-        {nombre: "Santiago", nombreUsuario: "santi", contrasena: "martin", liquidez: 65000, palabraSecreta: "Octógono"},
-        {nombre: "Juan", nombreUsuario: "juan", contrasena: "pablo", liquidez: 5000, palabraSecreta: "Terraforma"},
-        {nombre: "Gabriel", nombreUsuario: "gabi", contrasena: "sosa", liquidez: 635000, palabraSecreta: "Ascención"}
+        {nombre: "Leonardo", nombreUsuario: "36765496", contrasena: "starplatinum", liquidez: 2650000, palabraSecreta: "Fantástico"},
+        {nombre: "Diego", nombreUsuario: "diego", contrasena: "brando", liquidez: 2950000, palabraSecreta: "Financiera"},
+        {nombre: "Pablo", nombreUsuario: "pablin", contrasena: "guitarra", liquidez: 250000, palabraSecreta: "8Mile"},
+        {nombre: "Alejandro", nombreUsuario: "ale", contrasena: "discordia", liquidez: 4650000, palabraSecreta: "Desodorante"},
+        {nombre: "Santiago", nombreUsuario: "santi", contrasena: "martin", liquidez: 650000, palabraSecreta: "Octógono"},
+        {nombre: "Juan", nombreUsuario: "juan", contrasena: "pablo", liquidez: 500000, palabraSecreta: "Terraforma"},
+        {nombre: "Gabriel", nombreUsuario: "gabi", contrasena: "sosa", liquidez: 6350000, palabraSecreta: "Ascención"}
     ]
 
     console.log("recien cargados");

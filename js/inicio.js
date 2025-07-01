@@ -1,6 +1,5 @@
 let usuariosRecuperados = localStorage.getItem("arrayDeUsuarios")
 let Usuarios = JSON.parse(usuariosRecuperados)
-let Usuarioc
 let totalinversion
 
 const usuarioOn = localStorage.getItem("usuarioOn");
