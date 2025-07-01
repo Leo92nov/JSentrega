@@ -252,7 +252,7 @@ confirmarOperacion.addEventListener("click", (event) => {
     
     if(parseInt(cantidadCedearOperar.value) > cedearApuntadoCartera.cantidad){
         
-        mensajedeError("no posees la cantidad de activos suficientes para realizar la operación");
+        mostrarMensaje("no posees la cantidad de activos suficientes para realizar la operación");
         return;
         
     }else if(cedearApuntadoCartera && tipoOperacion.value === "compra"){

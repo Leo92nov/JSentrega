@@ -1,6 +1,5 @@
 let usuariosRecuperados = localStorage.getItem("arrayDeUsuarios")
 const usuariosJSON = JSON.parse(usuariosRecuperados)
-console.log(usuariosJSON);
 
 const BotonRecuperar = document.getElementById("botonRecuperar")
 const nombreUsuario = document.getElementById("nombreRecuperacion")
@@ -8,16 +7,23 @@ const palabraSecreta = document.getElementById("palabraSecreta")
 const NuevaContrasena = document.getElementById("nuevaContrasena")
 const RepetirNuevaContrasena = document.getElementById("repetirNuevaContrasena")
 
+function mostrarMensaje(mensaje, tipo = "error") {
+    const contenedor = document.getElementById("mensajeError");
+    contenedor.textContent = mensaje;
 
+    if (tipo === "ok") {
+        contenedor.classList.add("mensaje-ok");
+    } else {
+        contenedor.classList.add("mensaje-error");
+    }
+}
 
 BotonRecuperar.addEventListener("click", (event) =>{
     event.preventDefault();
 
     let usuarioPassRecuperar = usuariosJSON.find(e => e.nombreUsuario === nombreUsuario.value);
-    console.log(usuarioPassRecuperar);
 
     const index = usuariosJSON.findIndex(usuarioPassRecuperar => usuarioPassRecuperar.nombreUsuario === nombreUsuario.value);
-    console.log(index);
 
 
     if(palabraSecreta.value === usuarioPassRecuperar.palabraSecreta && NuevaContrasena.value === RepetirNuevaContrasena.value){
@@ -29,15 +35,14 @@ BotonRecuperar.addEventListener("click", (event) =>{
         const Usuarios = JSON.stringify(usuariosJSON)
         localStorage.setItem("arrayDeUsuarios", Usuarios)
 
-        console.log(usuarioPassRecuperar);
         
-        alert("Contraseña actualizada")
+        mostrarMensaje("Contraseña actualizada")
 
        window.location.replace("../index.html")
 
     }else{
 
-        alert("Error, verifique los datos ingresados")
+        mostrarMensaje("Error, verifique los datos ingresados")
     }
 
 })

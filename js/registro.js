@@ -2,9 +2,7 @@ let usuariosRecuperados = localStorage.getItem("arrayDeUsuarios")
 let Usuarios = JSON.parse(usuariosRecuperados)
 let carterasJSON = localStorage.getItem("arrayDeCarteras")
 let Carteras = JSON.parse(carterasJSON)
-console.log(Carteras);
 
-console.log(Usuarios);
 const UsuarioCreado =[]
 const carteraNueva = []
 const Ordenes = []
@@ -20,6 +18,16 @@ const Boton = document.getElementById("botonRegistro")
 
 let usuarioRegistrado
 
+function mostrarMensaje(mensaje, tipo = "error") {
+    const contenedor = document.getElementById("mensajerError");
+    contenedor.textContent = mensaje;
+
+    if (tipo === "ok") {
+        contenedor.classList.add("mensaje-ok");
+    } else {
+        contenedor.classList.add("mensaje-error");
+    }
+}
 
 class crearUsuario{
     constructor(NuevoNombre, NuevoUsuario, ContraseñaUsuarioNuevo, PalabraSecreta, liquidez){
@@ -42,7 +50,12 @@ class crearCartera{
 }
 
 class crearOrdenes{
-    constructor(Nombre, Ticker, Precio, Cantidad)
+    constructor(Nombre, Ticker, Precio, Cantidad){
+        this.Nombre = Nombre,
+        this.Ticker = Ticker,
+        this.Precio = Precio,
+        this.Cantidad = Cantidad
+    }
 }
 Boton.addEventListener("click", (event)=>{
     event.preventDefault();
@@ -51,28 +64,27 @@ Boton.addEventListener("click", (event)=>{
 
     
     if(usuarioExistente){
-        alert("Nombre de usuario ya utilizado!! Por favor elija otro.")
+        mostrarMensaje("Nombre de usuario ya utilizado!! Por favor elija otro.")
     }
     else if(ContraseñaUsuarioNuevo.value !== RepetirContraseña.value){
-        alert("Las contraseñas no coinciden!!")
+        mostrarMensaje("Las contraseñas no coinciden!!")
     }else
     {
+        
     const usuarioRegistrado = new crearUsuario(NuevoNombre, NuevoUsuario, ContraseñaUsuarioNuevo, PalabraSecreta, 0);
     const carteraNueva = new crearCartera(0, 0, 0, 0)
-    console.log(carteraNueva);
     
 
     Carteras.push(carteraNueva)
     let CarterasJSON = JSON.stringify(Carteras)
-    console.log(Carteras);
-    
+
     localStorage.setItem("arrayDeCarteras", CarterasJSON)
 
     Usuarios.push(usuarioRegistrado)
     Usuarios = JSON.stringify(Usuarios)
     localStorage.setItem("arrayDeUsuarios", Usuarios)
-    console.log(UsuarioCreado);
-    alert("Registro Exitoso! Redireccionando...")
+
+    mostrarMensaje("Registro Exitoso! Redireccionando...")
     window.location.replace("../index.html")
     }
 

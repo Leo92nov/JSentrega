@@ -117,8 +117,12 @@
             }
         }
     }
-
-    .formularioOperacion{
+.divFormulariooperacion{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        
+       .formularioOperacion{
         height: 15rem;
         padding: 1rem 0 0 1rem;
         width: 28rem;
@@ -132,10 +136,11 @@
 
 
         .sectionFormOperacion{
+            width: 100%;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            background-color: aqua;
+            font-size: 1.2rem;
         }
 
         .mensajedeError{
@@ -143,4 +148,5 @@
             display: block;
         }
     }
+}
 }
