@@ -178,7 +178,7 @@ confirmarOperacion.addEventListener("click", (event) => {
         
         
       mostrarMensaje("operación realizada con exito!!!");
-        window.location.replace("../pages/ordenes.html");
+        window.location.replace("../pages/inicio.html");
         
     }else if(!cedearApuntadoCartera && tipoOperacion.value === "venta"){
         
