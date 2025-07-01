@@ -90,165 +90,181 @@ cedearABuscar.addEventListener("input", () => {
 });
 
 
+function actualizarYEliminarOrden(ordenes, id, cantidadARestar) {
+    const index = ordenes.findIndex(orden => orden.id === id);
+    if (index === -1) return;
+    
+    ordenes[index].cantidad -= parseInt(cantidadARestar);
+    
+    if (ordenes[index].cantidad <= 0) {
+        ordenes.splice(index, 1);
+    }
+}
 
-    confirmarOperacion.addEventListener("click", (event) => {
+ function eliminarActivosDeCarteraEnCero(carteraON, ticker, cantidadARestar) {
+    const index = carteraON.findIndex(activo => activo.ticker === ticker);
+    if (index === -1) return;
 
+    carteraON[index].cantidad -= parseInt(cantidadARestar);
+
+    if (carteraON[index].cantidad <= 0) {
+        carteraON.splice(index, 1);
+    }
+}
+
+confirmarOperacion.addEventListener("click", (event) => {
+    
+    
+    event.preventDefault();
+    cedearApuntadoCartera = carteraON.find(cedear => cedear.ticker === cedearAOperar.value)
+    console.log(carteraON);
+    
+    if (parseInt(precioTotalOperar.value) > usuarioLoggeado.liquidez) {
+        alert("No se puede realizar la operación");
+        return;
+    }
+    
+    if (cedearApuntadoCartera && tipoOperacion.value === "venta"){
         
-        event.preventDefault();
-        cedearApuntadoCartera = carteraON.find(cedear => cedear.ticker === cedearAOperar.value)
-        console.log(carteraON);
+        //Actualiza la informacion de comprador
+        usuarioLoggeado.liquidez -= parseInt(precioTotalOperar.value)
+        cedearApuntadoCartera.cantidad += parseInt(cantidadCedearOperar.value)
+        carteras[indexUsuario] = carteraON
         
-        if (parseInt(precioTotalOperar.value) > usuarioLoggeado.liquidez) {
-            alert("No se puede realizar la operación");
-            return;
-        }
-    
-        if (cedearApuntadoCartera && tipoOperacion.value === "venta"){
-    
-                            //Actualiza la informacion de comprador
-            usuarioLoggeado.liquidez -= parseInt(precioTotalOperar.value)
-            cedearApuntadoCartera.cantidad += parseInt(cantidadCedearOperar.value)
-            carteras[indexUsuario] = carteraON
-    
-                            //actualiza la Liquidez del emisor
-            const ordenCompletada = OrdenesTotales.find(orden => orden.id === idOperacion.value);
-            const usuarioEmisor = usuarios.find(usuario => usuario.nombreUsuario === ordenCompletada.usuario);
-            usuarioEmisor.liquidez += parseInt(precioTotalOperar.value);
-    
-                            //lleva los datos nuevos del usuario loggeado al localstorage
-    
-            usuarios[indexUsuario] = usuarioLoggeado;
-            let usuariosJSON = JSON.stringify(usuarios)
-            localStorage.setItem("arrayDeUsuarios", usuariosJSON)
-            let usuarioON = JSON.stringify(usuarioLoggeado)
-            localStorage.setItem("usuarioOn", usuarioON)
-    
-                        //lleva los datos actualizados de las carteras al localstorage
-            const CarterasJSON = JSON.stringify(carteras)
-            localStorage.setItem("arrayDeCarteras", CarterasJSON)
-    
-                        //Actualiza las ordenes globales eliminando la orden recien ejecutada
-    
-            function agruparOrdenesPorUsuario(ordenes) {
-                const agrupadas = {};
-    
-                ordenes.forEach(orden => {
-                    if (!agrupadas[orden.usuario]) {
+        //actualiza la Liquidez del emisor
+        const ordenCompletada = OrdenesTotales.find(orden => orden.id === idOperacion.value);
+        const usuarioEmisor = usuarios.find(usuario => usuario.nombreUsuario === ordenCompletada.usuario);
+        usuarioEmisor.liquidez += parseInt(precioTotalOperar.value);
+        
+        //lleva los datos nuevos del usuario loggeado al localstorage
+        
+        usuarios[indexUsuario] = usuarioLoggeado;
+        let usuariosJSON = JSON.stringify(usuarios)
+        localStorage.setItem("arrayDeUsuarios", usuariosJSON)
+        let usuarioON = JSON.stringify(usuarioLoggeado)
+        localStorage.setItem("usuarioOn", usuarioON)
+        
+        //lleva los datos actualizados de las carteras al localstorage
+        const CarterasJSON = JSON.stringify(carteras)
+        localStorage.setItem("arrayDeCarteras", CarterasJSON)
+        
+        //Actualiza las ordenes globales eliminando la orden recien ejecutada
+        
+        function agruparOrdenesPorUsuario(ordenes) {
+            const agrupadas = {};
+            
+            ordenes.forEach(orden => {
+                if (!agrupadas[orden.usuario]) {
                     agrupadas[orden.usuario] = [];
                 }
                 agrupadas[orden.usuario].push(orden);
-                });
-    
-                return Object.values(agrupadas); // Devuelve array de arrays
-            }
-    
-    
-            const indexOrdenTerminada = OrdenesTotales.findIndex(orden => orden.id === idOperacion.value);
-            ordenCompletada.cantidad -= parseInt(cantidadCedearOperar.value);
-            if (ordenCompletada.cantidad === 0) {
-            OrdenesTotales.splice(indexOrdenTerminada, 1);
-            }
-                
-            const OrdenesAgrupadas = agruparOrdenesPorUsuario(OrdenesTotales);
-            const OrdenesJSON = JSON.stringify(OrdenesAgrupadas);
-            localStorage.setItem("arrayDeOrdenes", OrdenesJSON);
-    
-    
-            alert("operacion realizada con exito")
-           /*  window.location.replace("../pages/ordenes.html") */
-    
-        }else if(!cedearApuntadoCartera && tipoOperacion.value === "venta"){
-    
-            usuarioLoggeado.liquidez -= parseInt(precioTotalOperar.value);
-            class NuevoCedear{
-                constructor(nombre, ticker, precio, cantidad, usuario){
-                    this.nombre = nombre,
-                    this.ticker = ticker,
-                    this.precio = precio,
-                    this.cantidad = cantidad,
-                    this.usuario = usuario
-                    
-                }
-            }
-            const NuevoCedearCartera = new NuevoCedear( cedearAOperarNombre.value, cedearAOperar.value, parseInt(precioCedearOperar.value), parseInt(cantidadCedearOperar.value), usuarioLoggeado.nombreUsuario)
-    
-    
-                                //actualiza informacion de comprador
-            usuarioLoggeado.liquidez -= parseInt(precioTotalOperar.value)
-            cedearApuntadoCartera.cantidad += parseInt(cantidadCedearOperar.value)
-            carteras[indexUsuario] = carteraON
-    
-    
-                                //Actualiza info de emisor de Orden
-            const ordenCompletada = OrdenesTotales.find(orden => orden.id === idOperacion.value);
-            const usuarioEmisor = usuarios.find(usuario => usuario.nombreUsuario === ordenCompletada.usuario);
-            usuarioEmisor.liquidez += parseInt(precioTotalOperar.value);
-    
-    
-                                //Actualiza indformacion de usuarios en localStorage
-            usuarios[indexUsuario] = usuarioLoggeado;
-            let usuariosJSON = JSON.stringify(usuarios)
-            localStorage.setItem("arrayDeUsuarios", usuariosJSON)
-            let usuarioON = JSON.stringify(usuarioLoggeado)
-            localStorage.setItem("usuarioOn", usuarioON)
-    
-    
-    
-                                //Actualizando cartera comprador
-    
-            carteraON.push(NuevoCedearCartera)
-            carteras[indexUsuario] = carteraON
-            const CarterasJSON = JSON.stringify(carteras)
-            localStorage.setItem("arrayDeCarteras", CarterasJSON)
-    
-                            //Actualiza las ordenes eliminando la orden ejecutada
-            function agruparOrdenesPorUsuario(ordenes) {
-            const agrupadas = {};
-    
-                ordenes.forEach(orden => {
-                    if (!agrupadas[orden.usuario]) {
-                        agrupadas[orden.usuario] = [];
-                    }
-                    agrupadas[orden.usuario].push(orden);
-                });
-    
-                return Object.values(agrupadas); // Devuelve array de arrays
-            }
-    
-    
-
-            const indexOrdenTerminada = OrdenesTotales.findIndex(orden => orden.id === idOperacion.value);
-            ordenCompletada.cantidad -= parseInt(cantidadCedearOperar.value);
-            if (ordenCompletada.cantidad === 0) {
-            OrdenesTotales.splice(indexOrdenTerminada, 1);
-            }
-                
-            const OrdenesAgrupadas = agruparOrdenesPorUsuario(OrdenesTotales);
-            const OrdenesJSON = JSON.stringify(OrdenesAgrupadas);
-            localStorage.setItem("arrayDeOrdenes", OrdenesJSON);
-    
-            alert("operacion realizada con exito")
-    
-    
-            window.location.replace("../pages/ordenes.html")
-        }
-
-        if(!cedearApuntadoCartera && tipoOperacion.value === "compra"){
-            alert("No puedes vender un activo que no posees")
-            return
+            });
+            
+            return Object.values(agrupadas); // Devuelve array de arrays
         }
         
-        if(parseInt(cantidadCedearOperar.value) > cedearApuntadoCartera.cantidad){
-
-            alert("no tienes tants")
-
-        }else if(cedearApuntadoCartera && tipoOperacion.value === "compra"){
-               
-                        //Actualiza la informacion de comprador
-            usuarioLoggeado.liquidez += parseInt(precioTotalOperar.value)
-            cedearApuntadoCartera.cantidad -= parseInt(cantidadCedearOperar.value)
-            carteras[indexUsuario] = carteraON
+        
+        actualizarYEliminarOrden(OrdenesTotales, idOperacion.value, cantidadCedearOperar.value);
+        
+        const OrdenesAgrupadas = agruparOrdenesPorUsuario(OrdenesTotales);
+        const OrdenesJSON = JSON.stringify(OrdenesAgrupadas);
+        localStorage.setItem("arrayDeOrdenes", OrdenesJSON);
+        
+        
+        alert("operacion realizada con exito")
+        /*  window.location.replace("../pages/ordenes.html") */
+        
+    }else if(!cedearApuntadoCartera && tipoOperacion.value === "venta"){
+        
+        usuarioLoggeado.liquidez -= parseInt(precioTotalOperar.value);
+        class NuevoCedear{
+            constructor(nombre, ticker, precio, cantidad, usuario){
+                this.nombre = nombre,
+                this.ticker = ticker,
+                this.precio = precio,
+                this.cantidad = cantidad,
+                this.usuario = usuario
+                
+            }
+        }
+        const NuevoCedearCartera = new NuevoCedear( cedearAOperarNombre.value, cedearAOperar.value, parseInt(precioCedearOperar.value), parseInt(cantidadCedearOperar.value), usuarioLoggeado.nombreUsuario)
+        
+        
+        //actualiza informacion de comprador
+        usuarioLoggeado.liquidez -= parseInt(precioTotalOperar.value)
+        cedearApuntadoCartera.cantidad += parseInt(cantidadCedearOperar.value)
+        carteras[indexUsuario] = carteraON
+        
+        
+        //Actualiza info de emisor de Orden
+        const ordenCompletada = OrdenesTotales.find(orden => orden.id === idOperacion.value);
+        const usuarioEmisor = usuarios.find(usuario => usuario.nombreUsuario === ordenCompletada.usuario);
+        usuarioEmisor.liquidez += parseInt(precioTotalOperar.value);
+        
+        
+        //Actualiza indformacion de usuarios en localStorage
+        usuarios[indexUsuario] = usuarioLoggeado;
+        let usuariosJSON = JSON.stringify(usuarios)
+        localStorage.setItem("arrayDeUsuarios", usuariosJSON)
+        let usuarioON = JSON.stringify(usuarioLoggeado)
+        localStorage.setItem("usuarioOn", usuarioON)
+        
+        
+        
+        //Actualizando cartera comprador
+        
+        carteraON.push(NuevoCedearCartera)
+        carteras[indexUsuario] = carteraON
+        const CarterasJSON = JSON.stringify(carteras)
+        localStorage.setItem("arrayDeCarteras", CarterasJSON)
+        
+        //Actualiza las ordenes eliminando la orden ejecutada
+        function agruparOrdenesPorUsuario(ordenes) {
+            const agrupadas = {};
+            
+            ordenes.forEach(orden => {
+                if (!agrupadas[orden.usuario]) {
+                    agrupadas[orden.usuario] = [];
+                }
+                agrupadas[orden.usuario].push(orden);
+            });
+            
+            return Object.values(agrupadas); // Devuelve array de arrays
+        }
+        
+        
+        
+        actualizarYEliminarOrden(OrdenesTotales, idOperacion.value, cantidadCedearOperar.value);
+        
+        const OrdenesAgrupadas = agruparOrdenesPorUsuario(OrdenesTotales);
+        const OrdenesJSON = JSON.stringify(OrdenesAgrupadas);
+        localStorage.setItem("arrayDeOrdenes", OrdenesJSON);
+        
+        alert("operacion realizada con exito")
+        
+        
+        window.location.replace("../pages/ordenes.html")
+    }
     
+    if(!cedearApuntadoCartera && tipoOperacion.value === "compra"){
+        alert("No puedes vender un activo que no posees")
+        return
+    }
+    
+    if(parseInt(cantidadCedearOperar.value) > cedearApuntadoCartera.cantidad){
+        
+        alert("no tienes tants")
+        return
+        
+    }else if(cedearApuntadoCartera && tipoOperacion.value === "compra"){
+        
+        //Actualiza la informacion de comprador
+        usuarioLoggeado.liquidez += parseInt(precioTotalOperar.value)
+        cedearApuntadoCartera.cantidad -= parseInt(cantidadCedearOperar.value)
+        carteras[indexUsuario] = carteraON
+    
+            eliminarActivosDeCarteraEnCero(carteraON, cedearAOperar.value, cantidadCedearOperar.value)
+        
                             //actualiza la Liquidez del emisor
             const ordenCompletada = OrdenesTotales.find(orden => orden.id === idOperacion.value);
             const usuarioEmisor = usuarios.find(usuario => usuario.nombreUsuario === ordenCompletada.usuario);
@@ -282,14 +298,12 @@ cedearABuscar.addEventListener("input", () => {
 
             }
     
-    
+
   
-            const indexOrdenTerminada = OrdenesTotales.findIndex(orden => orden.id === idOperacion.value);
-            ordenCompletada.cantidad -= parseInt(cantidadCedearOperar.value);
-            if (ordenCompletada.cantidad === 0) {
-            OrdenesTotales.splice(indexOrdenTerminada, 1);
-            }
-                
+            actualizarYEliminarOrden(OrdenesTotales, idOperacion.value, cantidadCedearOperar.value);
+            
+
+
             const OrdenesAgrupadas = agruparOrdenesPorUsuario(OrdenesTotales);
             const OrdenesJSON = JSON.stringify(OrdenesAgrupadas);
             localStorage.setItem("arrayDeOrdenes", OrdenesJSON);
