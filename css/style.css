@@ -133,6 +133,10 @@
   margin: 0;
   background-color: #e8eafc;
 }
+.bodyIndex .form .formIngreso .IngresoError {
+  color: red;
+  font-size: 2rem;
+}
 
 .botonesIngresoInvEgreso {
   margin-top: 1rem;
@@ -458,6 +462,10 @@
   flex-direction: row;
   justify-content: space-between;
   background-color: aqua;
+}
+.bodyOrdenes .formularioOperacion .mensajedeError {
+  color: red;
+  display: block;
 }
 
 .bodyIndex {

@@ -8,32 +8,28 @@ let OrdenesJSON = localStorage.getItem("arrayDeOrdenes")
 let Ordenes = JSON.parse(OrdenesJSON)
 
 if (Usuarios) {
-    console.log("ya cargados");
     
 }else{
 
     const ArrUsuarios = [
-        {nombre: "Leonardo", nombreUsuario: "36765496", contrasena: "starplatinum", liquidez: 2650000, palabraSecreta: "Fantástico"},
-        {nombre: "Diego", nombreUsuario: "diego", contrasena: "brando", liquidez: 2950000, palabraSecreta: "Financiera"},
-        {nombre: "Pablo", nombreUsuario: "pablin", contrasena: "guitarra", liquidez: 250000, palabraSecreta: "8Mile"},
-        {nombre: "Alejandro", nombreUsuario: "ale", contrasena: "discordia", liquidez: 4650000, palabraSecreta: "Desodorante"},
-        {nombre: "Santiago", nombreUsuario: "santi", contrasena: "martin", liquidez: 650000, palabraSecreta: "Octógono"},
-        {nombre: "Juan", nombreUsuario: "juan", contrasena: "pablo", liquidez: 500000, palabraSecreta: "Terraforma"},
-        {nombre: "Gabriel", nombreUsuario: "gabi", contrasena: "sosa", liquidez: 6350000, palabraSecreta: "Ascención"}
+        {nombre: "Leonardo", nombreUsuario: "36765496", contrasena: "starplatinum", liquidez: 265000, palabraSecreta: "Fantástico"},
+        {nombre: "Diego", nombreUsuario: "diego", contrasena: "brando", liquidez: 295000, palabraSecreta: "Financiera"},
+        {nombre: "Pablo", nombreUsuario: "pablin", contrasena: "guitarra", liquidez: 25000, palabraSecreta: "8Mile"},
+        {nombre: "Alejandro", nombreUsuario: "ale", contrasena: "discordia", liquidez: 465000, palabraSecreta: "Desodorante"},
+        {nombre: "Santiago", nombreUsuario: "santi", contrasena: "martin", liquidez: 65000, palabraSecreta: "Octógono"},
+        {nombre: "Juan", nombreUsuario: "juan", contrasena: "pablo", liquidez: 5000, palabraSecreta: "Terraforma"},
+        {nombre: "Gabriel", nombreUsuario: "gabi", contrasena: "sosa", liquidez: 635000, palabraSecreta: "Ascención"}
     ]
 
-    console.log("recien cargados");
-
+   
     let usuariosJSON = JSON.stringify(ArrUsuarios)
     localStorage.setItem("arrayDeUsuarios", usuariosJSON)
     Usuarios = ArrUsuarios
 }
 
 if(Carteras){
-    console.log("carteras ya cargadas");
     
 }else{
-    console.log("carteras recien cargadas");
     
     const Carteras = [
         [
@@ -98,11 +94,9 @@ if(Carteras){
 }
 
 
-if (Ordenes){
-    console.log("ordenes ya cargadas");
+if (Ordenes){;
     
 }else{
-    console.log("ordenes recien cargadas");
     
     const Ordenes = [
         [
@@ -142,18 +136,22 @@ if (Ordenes){
 }
 
 
-
-
-
-
-
-
 let usuarioIngresado = document.querySelector("#usuario");
 let contrasenaIngresada = document.querySelector("#contrasena")
 let intentos = 0
 let usuarioLogueado 
 let usuarioLogueadoJSON
 
+function mostrarMensaje(mensaje, tipo = "error") {
+    const contenedor = document.getElementById("IngresoError");
+    contenedor.textContent = mensaje;
+
+    if (tipo === "ok") {
+        contenedor.classList.add("mensaje-ok");
+    } else {
+        contenedor.classList.add("mensaje-error");
+    }
+}
 
 const ingreso = document.getElementById("ingresoBoton")
  
@@ -164,12 +162,12 @@ const ingreso = document.getElementById("ingresoBoton")
         for (const usuario of Usuarios) {
 
             if(usuarioIngresado.value === "" || contrasenaIngresada.value === ""){
-                alert("Campos vacios")
+                mostrarMensaje("Campos vacios!!")
                 break
 
             }else if(usuarioIngresado.value  === usuario.nombreUsuario && contrasenaIngresada.value === usuario.contrasena){
 
-                alert("bienvenido " + usuario.nombre);
+                mostrarMensaje("bienvenido " + usuario.nombre);
                 usuarioExistente = true;
                 usuarioLogueado = usuario;
                 usuarioLogueadoJSON = JSON.stringify(usuarioLogueado);
@@ -180,7 +178,7 @@ const ingreso = document.getElementById("ingresoBoton")
         }
         
         if (!usuarioExistente && usuarioIngresado.value !== "" && contrasenaIngresada.value !== "") {
-            alert("Datos incorrectos, intenta nuevamente");
+            mostrarMensaje("Datos incorrectos, intenta nuevamente");
         }
       
     }
