@@ -374,34 +374,90 @@
   display: grid;
   grid-column: 1/5;
   grid-row: 1;
+  display: flex;
   border-bottom: 1px solid black;
   align-items: center;
   justify-content: center;
   background-color: rgb(204, 230, 252);
 }
-.bodyOrdenes .contenedorCajaDePuntas .cajaDePuntas .sectionCompra {
+.bodyOrdenes .contenedorCajaDePuntas .cajaDePuntas .cedearCajaDePuntas .inputCEDEAR {
+  height: 2rem;
+  font-size: 1.5rem;
+}
+.bodyOrdenes .contenedorCajaDePuntas .cajaDePuntas .ordenesDeCompra {
   width: 100%;
   height: 3rem;
-  font-size: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 1.5rem;
+  border-left: 2px solid black;
   grid-column: 1/3;
   grid-row: 2;
-  border-right: 1px solid black;
-  background-color: rgb(64, 252, 57);
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(167, 255, 164);
 }
-.bodyOrdenes .contenedorCajaDePuntas .cajaDePuntas .sectionVenta {
+.bodyOrdenes .contenedorCajaDePuntas .cajaDePuntas .ordenesCompraCargar {
+  width: 100%;
+  font-size: 1.5rem;
+  border-right: 1px solid black;
+  grid-column: 1/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.bodyOrdenes .contenedorCajaDePuntas .cajaDePuntas .ordenesCompraCargar .ordenEnCaja {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: 4px 0;
+}
+.bodyOrdenes .contenedorCajaDePuntas .cajaDePuntas .ordenesDeVenta {
   width: 100%;
   height: 3rem;
-  font-size: 2rem;
-  border-left: 2px solid black;
+  font-size: 1.5rem;
+  border-left: 1px solid black;
   grid-column: 3/5;
   grid-row: 2;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  background-color: rgb(253, 140, 140);
+}
+.bodyOrdenes .contenedorCajaDePuntas .cajaDePuntas .ordenesVentaCargar {
+  width: 100%;
+  font-size: 1.5rem;
+  border-left: 2px solid black;
+  grid-column: 3/5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.bodyOrdenes .contenedorCajaDePuntas .cajaDePuntas .ordenesVentaCargar .ordenEnCaja {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: 4px 0;
+}
+.bodyOrdenes .formularioOperacion {
+  height: 15rem;
+  padding: 1rem 0 0 1rem;
+  width: 28rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  background-color: rgb(255, 63, 63);
+  object-fit: contain;
+  border: 1px solid rgb(0, 0, 0);
+}
+.bodyOrdenes .formularioOperacion .sectionFormOperacion {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: aqua;
 }
 
 .bodyIndex {

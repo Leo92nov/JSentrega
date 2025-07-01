@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <script src="./js/script.js" defer></script>
+    <script src="../js/ordenes.js" defer></script>
     <title>Cedears</title>
 </head>
 
@@ -33,18 +33,64 @@
     </head>
     <div class="contenedorCajaDePuntas">
         <div class="cajaDePuntas">
-            <section class="cedearCajaDePuntas">CEDEAR:</section>
-            <section class="sectionCompra">Compra
+            <section class="cedearCajaDePuntas">CEDEAR:
+                <input type="text" class="inputCEDEAR" id="inputCEDEAR">
+                <button id="botonBusquedaCajaDeCPuntas">Buscar</button>
+            </section>
                 <section class="ordenesDeCompra">
-                    <span>C. Compra</span>
-                    <span>P. Compra</span>
+                        <span>C. Compra  </span>
+                        <span>P. Compra</span>
+                    </section>
+                <section class="ordenesCompraCargar" id="ordenesCompraCargar">
                 </section>
-            </section>
-            <section class="sectionVenta">Venta
-                <section class="ordenesDeVenta"></section>
-            </section>
+                <section class="ordenesDeVenta">
+                    <section>C. Venta</section>
+                    <section>P. Venta</section>
+                </section>
+                <section class="ordenesVentaCargar" id="ordenesVentaCargar">
+                </section>
         </div>
     </div>
 
+    <form id="formularioOperacion" class="formularioOperacion">
+
+        <section class="sectionFormOperacion">
+            <label for="cedear">CEDEAR:</label>
+            <input type="text" id="cedearAOperar" name="cedear" required />
+        </section>
+
+        <section class="sectionFormOperacion">
+            <label for="cedearNombre">Nombre</label>
+            <input type="text" id="cedearAOperarNombre" name="cedearNombre" />
+        </section>
+        <section class="sectionFormOperacion">
+            <label for="idOperacion">ID de Operacion:</label>
+            <input type="text" id="idOperacion" name="idOperacion" />
+        </section>
+        
+        <section class="sectionFormOperacion">
+            <label for="tipoOperacion">Tipo de operación:</label>
+            <select id="tipoOperacion" name="tipoOperacion" required>
+                <option value="">Seleccionar</option>
+                <option value="compra">Compra</option>
+                <option value="venta">Venta</option>
+            </select>
+        </section>
+
+        <section class="sectionFormOperacion">
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidadCedearOperar" name="cantidad" required />
+        </section>
+    
+        <section class="sectionFormOperacion">
+            <label for="precio">Precio:</label>
+            <input type="number" id="precioCedearOperar" name="precio"required />
+        </section>
+        <section class="sectionFormOperacion">
+            <label for="precioTotal">Precio Total:</label>
+            <input type="number" id="precioTotalOperar" name="precioTotal"required />
+        </section>
+        <button type="submit" id="confirmarOperacion">Confirmar operación</button>
+    </form>
 </body>
 </html>

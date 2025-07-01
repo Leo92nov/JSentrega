@@ -7,7 +7,7 @@ console.log(Carteras);
 console.log(Usuarios);
 const UsuarioCreado =[]
 const carteraNueva = []
-
+const Ordenes = []
 
 
 let usuarioRegistradoJSON
@@ -41,6 +41,9 @@ class crearCartera{
     }
 }
 
+class crearOrdenes{
+    constructor(Nombre, Ticker, Precio, Cantidad)
+}
 Boton.addEventListener("click", (event)=>{
     event.preventDefault();
    

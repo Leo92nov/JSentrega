@@ -33,17 +33,6 @@ function mostrarOrdenes(OrdenesOn){
             <section>${e.ticker}</section>
             <section>$${e.precio}</section>
             <section>${e.cantidad}</section>
-<<<<<<< HEAD
-            <section>${e.orden}</section>
-           
-        `
-        contenedorOrdenes.appendChild(ordenes);
-    })
-
-}
-
-const contenedorOrdenes = document.getElementById("divMisOrdenes");
-=======
             <section class="ordenesUsuario">${e.orden}</section>
            
         `
@@ -63,7 +52,6 @@ const contenedorOrdenes = document.getElementById("divMisOrdenes");
 
 const colorOrdenes = document.getElementsByClassName("ordenesUsuario")
 
->>>>>>> 604f288fe8921972433a40a98d29b0f4e9428e66
 
 if (OrdenesOn && OrdenesOn.length > 0) {
     mostrarOrdenes(OrdenesOn);
@@ -102,11 +90,7 @@ function mostrarInversiones(CarteraOn){
     });
 }
 
-<<<<<<< HEAD
-
-=======
 const MiCartera = mostrarInversiones(CarteraOn);
->>>>>>> 604f288fe8921972433a40a98d29b0f4e9428e66
 const totalInversion = CarteraOn.reduce((acumulador, e) => {
     return acumulador + (e.cantidad * e.precio);
 }, 0);
