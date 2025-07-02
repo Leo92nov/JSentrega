@@ -2,7 +2,7 @@ let usuariosJSON = localStorage.getItem("arrayDeUsuarios");
 let usuarios = JSON.parse(usuariosJSON);
 
 let carterasJSON = localStorage.getItem("arrayDeCarteras");
-carteras = JSON.parse(carterasJSON);
+let carteras = JSON.parse(carterasJSON);
 
 let usuarioJSON = localStorage.getItem("usuarioOn");
 let usuarioLoggeado = JSON.parse(usuarioJSON);
