@@ -25,6 +25,17 @@ const precioTotalOperar = document.getElementById("precioTotalOperar");
 const confirmarOperacion = document.getElementById("confirmarOperacion");
 const idOperacion = document.getElementById("idOperacion");
 
+function mostrarMensaje(mensaje, tipo = "error") {
+    const contenedor = document.getElementById("IngresoError");
+    contenedor.textContent = mensaje;
+
+    if (tipo === "ok") {
+        contenedor.classList.add("mensaje-ok");
+    } else {
+        contenedor.classList.add("mensaje-error");
+    }
+}
+
 function actualizarPrecioTotal(){
     let cantidad = parseInt(cantidadCedearOperar.value);
     let precio = parseInt(precioCedearOperar.value);
@@ -239,14 +250,14 @@ confirmarOperacion.addEventListener("click", (event) => {
         const OrdenesJSON = JSON.stringify(OrdenesAgrupadas);
         localStorage.setItem("arrayDeOrdenes", OrdenesJSON);
         
-        mensajedeError("Operacion realizada con exito!!");
+        mostrarMensaje("Operacion realizada con exito!!");
         
         
         window.location.replace("../pages/ordenes.html");
     }
     
     if(!cedearApuntadoCartera && tipoOperacion.value === "compra"){
-        mensajedeError("No puedes vender un activo que no posees");
+        mostrarMensaje("No puedes vender un activo que no posees");
         return;
     }
     
@@ -300,7 +311,7 @@ confirmarOperacion.addEventListener("click", (event) => {
             const OrdenesJSON = JSON.stringify(OrdenesAgrupadas);
             localStorage.setItem("arrayDeOrdenes", OrdenesJSON);
     
-            mensajedeError("operacion realizada con exito!!");
+            mostrarMensaje("operacion realizada con exito!!");
             window.location.replace("../pages/ordenes.html");
         }
     })
