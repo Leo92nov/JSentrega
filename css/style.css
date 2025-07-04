@@ -451,7 +451,7 @@
   justify-content: center;
 }
 .bodyOrdenes .divFormulariooperacion .formularioOperacion {
-  height: 15rem;
+  height: 16rem;
   padding: 1rem 0 0 1rem;
   width: 28rem;
   margin-top: 3rem;
@@ -472,6 +472,115 @@
 .bodyOrdenes .divFormulariooperacion .formularioOperacion .mensajedeError {
   color: red;
   display: block;
+}
+.bodyOrdenes .crearOrden {
+  width: 35rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid gray;
+}
+.bodyOrdenes .crearOrden .emitirNuevaOrden {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  align-items: center;
+  font-size: 2rem;
+  border-bottom: 2px solid rgb(10, 37, 64);
+}
+.bodyOrdenes .crearOrden .crearOrdenTipoDeOperacion {
+  display: flex;
+  justify-content: space-around;
+  height: 4rem;
+}
+.bodyOrdenes .crearOrden .crearOrdenTipoDeOperacion .operacionCompra {
+  width: 40%;
+  margin: 6px;
+  height: 3rem;
+  display: flex;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(219, 253, 219);
+}
+.bodyOrdenes .crearOrden .crearOrdenTipoDeOperacion .operacionCompra:hover {
+  cursor: pointer;
+  background-color: rgb(150, 250, 150);
+}
+.bodyOrdenes .crearOrden .crearOrdenTipoDeOperacion .operacionCompraActiva {
+  width: 40%;
+  margin: 6px;
+  height: 3rem;
+  display: flex;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 179, 6);
+  color: aliceblue;
+}
+.bodyOrdenes .crearOrden .crearOrdenTipoDeOperacion .operacionVenta {
+  width: 40%;
+  margin: 6px;
+  height: 3rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(253, 219, 219);
+}
+.bodyOrdenes .crearOrden .crearOrdenTipoDeOperacion .operacionVenta:hover {
+  background-color: rgb(255, 134, 134);
+  color: aliceblue;
+  cursor: pointer;
+}
+.bodyOrdenes .crearOrden .crearOrdenTipoDeOperacion .operacionVentaActiva {
+  width: 40%;
+  margin: 6px;
+  height: 3rem;
+  display: flex;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(177, 0, 0);
+  color: aliceblue;
+}
+.bodyOrdenes .crearOrden .contenedorRresultadosNuevaOrden {
+  width: 100%;
+  display: flex;
+  padding-left: 65%;
+}
+.bodyOrdenes .crearOrden .contenedorRresultadosNuevaOrden .RresultadosNuevaOrden {
+  padding: 0 8px 0 0;
+  list-style: none;
+  cursor: pointer;
+  color: rgb(10, 37, 64);
+}
+.bodyOrdenes .crearOrden .contenedorRresultadosNuevaOrden .RresultadosNuevaOrden li {
+  padding-top: 4px;
+}
+.bodyOrdenes .crearOrden .contenedorRresultadosNuevaOrden .RresultadosNuevaOrden li:hover {
+  background-color: rgb(204, 230, 252);
+  color: black;
+  font-weight: bolder;
+}
+.bodyOrdenes .crearOrden .crearOrdenInformacion {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem 0 1.5rem;
+}
+.bodyOrdenes .crearOrden .sectionBotonRealizarOperacion {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.bodyOrdenes .crearOrden .sectionBotonRealizarOperacion .botonRealizarOperacion {
+  width: 6rem;
+  height: 2rem;
+  margin: 1rem 1.5rem 1rem 0;
+  background-color: rgb(10, 37, 64);
+  color: aliceblue;
+  font-size: 1rem;
 }
 
 .bodyIndex {

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/ordenes.js" defer></script>
+    
     <title>Cedears</title>
 </head>
 
@@ -51,6 +52,39 @@
                 </section>
         </div>
     </div>
+/////////////////////////////////////////////////////////////////////////////////////////////
+    <div class="crearOrden" id="crearOrden">
+            <section class="emitirNuevaOrden">Emitir nueva orden</section>
+            <section class="crearOrdenTipoDeOperacion">
+                <div class="operacionCompra" id="operacionCompra">Compra</div>
+                <div class="operacionVenta" id="operacionVenta">Venta</div>
+            </section>
+
+            <section class="crearOrdenInformacion">
+                <label for="nombreEmpresa" >Nombre de empresa</label>
+                <input type="text" name="nombreEmpresa" id="nombreEmpresaNuevaOrden">
+            </section>
+            <div class="contenedorRresultadosNuevaOrden">
+                <div id="RresultadosNuevaOrden" class="RresultadosNuevaOrden"></div>
+            </div>
+            <section class="crearOrdenInformacion">
+                <label for="tickerCedearCrearOrden">Ticker de CEDEAR</label>
+                <input type="text" name="tickerCedearCrearOrden" id="tickerNuevaOrden">
+            </section>
+            <section class="crearOrdenInformacion">
+                <label for="cantidad" >Cantidad</label>
+                <input type="number" name="cantidad" id="cantidadNuevaOrden">
+            </section>
+            <section class="crearOrdenInformacion">
+                <label for="precioCedearOrden" >Precio de CEDEAR</label>
+                <input type="number" name="precioCedearOrden" id="precioCedearNuevaOrden">
+            </section>
+            <section class="sectionBotonRealizarOperacion">
+                <button class="botonRealizarOperacion" id="botonRealizarOperacion">Enviar</button>
+            </section>  
+    </div>
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
     <div class="divFormulariooperacion">
         <form id="formularioOperacion" class="formularioOperacion">
 

@@ -7,6 +7,17 @@ let carteras = JSON.parse(carterasJSON);
 let usuarioJSON = localStorage.getItem("usuarioOn");
 let usuarioLoggeado = JSON.parse(usuarioJSON);
 
+let CedearsTotales =[
+    {nombre: "Apple Inc", ticker: "AAPL"},
+    {nombre: "Coca cola company", ticker: "KO"},
+    {nombre: "Berkshire Hathaway Inc", ticker: "BRK-B"},
+    {nombre: "Realty Income Corporation", ticker: "O"},
+    {nombre: "Verizon Communications Inc", ticker: "VZ"},
+    {nombre: "Lockheed Martin", ticker: "LMT"},
+    {nombre: "Advanced Micro Devices Inc", ticker: "AMD"},
+    {nombre: "Intel Corporation", ticker: "INTC"},
+    {nombre: "Amazon.com Inc", ticker: "AMZN"}
+]
 
 const indexUsuario = usuarios.findIndex(usuario => usuario.nombreUsuario === usuarioLoggeado.nombreUsuario);
 const carteraON = carteras[indexUsuario];
@@ -328,4 +339,75 @@ confirmarOperacion.addEventListener("click", (event) => {
 
 
 
-    
+    const crearOrden = document.getElementById("crearOrden");
+    const operacionVenta = document.getElementById("operacionVenta");
+    const operacionCompra = document.getElementById("operacionCompra");
+    const nombreEmpresaNuevaOrden = document.getElementById("nombreEmpresaNuevaOrden");
+    const tickerNuevaOrden = document.getElementById("tickerNuevaOrden");
+    const cantidadNuevaOrden = document.getElementById("cantidadNuevaOrden");
+    const precioCedearNuevaOrden = document.getElementById("precioCedearNuevaOrden");
+    const botonRealizarOperacion = document.getElementById("botonRealizarOperacion");
+    const RresultadosNuevaOrden = document.getElementById("RresultadosNuevaOrden");
+    let tipoDeOperacion 
+
+
+    operacionCompra.addEventListener("click", ()=>{
+        operacionCompra.classList.add("operacionCompraActiva")
+        operacionVenta.classList.remove ("operacionVentaActiva")
+    })
+
+    operacionVenta.addEventListener("click", () =>{
+        operacionVenta.classList.add("operacionVentaActiva")
+        operacionCompra.classList.remove("operacionCompraActiva")
+
+    })
+
+    nombreEmpresaNuevaOrden.addEventListener("input", () =>{
+
+        const texto = nombreEmpresaNuevaOrden.value.toLowerCase();
+        RresultadosNuevaOrden.innerHTML = "";
+
+        if(texto === ""){
+            return
+        }
+
+        const sugeridos = CedearsTotales.filter(cedear =>
+            cedear.nombre.toLowerCase().includes(texto)
+        )
+
+        sugeridos.forEach(cedear =>{
+            const lista = document.createElement("li")
+            lista.textContent = cedear.nombre
+            lista.addEventListener("click", () =>{
+                nombreEmpresaNuevaOrden.value = cedear.nombre
+                tickerNuevaOrden.value = cedear.ticker
+                RresultadosNuevaOrden.innerHTML = ""
+            })
+            RresultadosNuevaOrden.appendChild(lista);
+        })
+    })
+
+
+
+   /*  nombreEmpresaNuevaOrden.addEventListener("input", () => {
+  const texto = nombreEmpresaNuevaOrden.value.toLowerCase();
+  RresultadosNuevaOrden.innerHTML = "";
+
+  if (texto === "") return;
+
+  const sugeridos = CedearsTotales.filter(cedear =>
+    cedear.nombre.toLowerCase().includes(texto)
+  );
+
+  sugeridos.forEach(cedear => {
+    const lista = document.createElement("li");
+    lista.textContent = cedear.nombre;
+    lista.addEventListener("click", () => {
+      nombreEmpresaNuevaOrden.value = cedear.nombre;
+      tickerNuevaOrden.value = cedear.ticker;
+      RresultadosNuevaOrden.innerHTML = ""; // Ocultar sugerencias
+    });
+    RresultadosNuevaOrden.appendChild(lista);
+  });
+  
+}); */

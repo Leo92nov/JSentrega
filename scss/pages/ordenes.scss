@@ -117,36 +117,158 @@
             }
         }
     }
-.divFormulariooperacion{
+
+
+    .divFormulariooperacion{
         width: 100%;
         display: flex;
         justify-content: center;
         
        .formularioOperacion{
-        height: 15rem;
-        padding: 1rem 0 0 1rem;
-        width: 28rem;
-        margin-top: 3rem;
+            height: 16rem;
+            padding: 1rem 0 0 1rem;
+            width: 28rem;
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            object-fit: contain;
+            border: 1px solid rgb(0, 0, 0);
+
+
+            .sectionFormOperacion{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                font-size: 1.2rem;
+            }
+
+            .mensajedeError{
+                color: red;
+                display: block;
+            }
+        }
+    }
+
+    .crearOrden{
+        width: 35rem;
+        height: auto;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        align-items: center;
-        object-fit: contain;
-        border: 1px solid rgb(0, 0, 0);
+        border: 1px solid gray;
 
+        .emitirNuevaOrden{
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            align-items: center;
+            font-size: 2rem;
+            border-bottom: 2px solid variables.$color-principal;
+        }
 
-        .sectionFormOperacion{
+        .crearOrdenTipoDeOperacion{
+            display: flex;
+            justify-content: space-around;
+            height: 4rem;
+            
+
+            .operacionCompra{
+                width: 40%;
+                margin: 6px;
+                height: 3rem;
+                display: flex;
+                font-size: 2rem;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(219, 253, 219);
+                &:hover{
+                    cursor: pointer;
+                    background-color: rgb(150, 250, 150);
+                    
+                }
+            }
+            .operacionCompraActiva{
+                width: 40%;
+                margin: 6px;
+                height: 3rem;
+                display: flex;
+                font-size: 2rem;
+                justify-content: center;
+                align-items: center;
+                background-color: variables.$color-ganancia;
+                color: aliceblue;
+            }
+
+            .operacionVenta{
+                width: 40%;
+                margin: 6px;
+                height: 3rem;
+                font-size: 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(253, 219, 219);
+                &:hover{
+                    background-color: rgb(255, 134, 134);
+                    color: aliceblue;
+                    cursor: pointer;
+                }
+            }
+            .operacionVentaActiva{
+                width: 40%;
+                margin: 6px;
+                height: 3rem;
+                display: flex;
+                font-size: 2rem;
+                justify-content: center;
+                align-items: center;
+                background-color: variables.$color-perdida;
+                color: aliceblue;
+            }
+        }
+
+        .contenedorRresultadosNuevaOrden{
             width: 100%;
             display: flex;
-            flex-direction: row;
+            padding-left: 65%;
+            .RresultadosNuevaOrden{
+                padding: 0 8px 0 0;
+                list-style: none;
+                cursor: pointer;
+                color: variables.$color-principal;
+                li{
+                    padding-top: 4px;
+                    &:hover{
+                        background-color: rgb(204, 230, 252);
+                        color: black;
+                        font-weight: bolder;
+                    }
+                }
+            }
+        }
+        .crearOrdenInformacion{
+            display: flex;
             justify-content: space-between;
-            font-size: 1.2rem;
+            padding: 1rem 1.5rem 0 1.5rem;
         }
 
-        .mensajedeError{
-            color: red;
-            display: block;
+        .sectionBotonRealizarOperacion{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+
+            .botonRealizarOperacion{
+                width: 6rem;
+                height: 2rem;
+                margin: 1rem 1.5rem 1rem 0;
+                background-color: variables.$color-principal;
+                color: aliceblue;
+                font-size: 1rem;
+            }
         }
+
     }
-}
 }
