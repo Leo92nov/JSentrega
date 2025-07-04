@@ -51,7 +51,6 @@ precioCedearOperar.addEventListener("input", actualizarPrecioTotal);
 let cedearABuscar = document.getElementById("inputCEDEAR");
 let busqueda = document.getElementById("botonBusquedaCajaDeCPuntas");
 
-
 function mostrarMensaje(mensaje, tipo = "error") {
     const contenedor = document.getElementById("mensajedeError");
     contenedor.textContent = mensaje;
@@ -315,3 +314,18 @@ confirmarOperacion.addEventListener("click", (event) => {
             window.location.replace("../pages/ordenes.html");
         }
     })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
