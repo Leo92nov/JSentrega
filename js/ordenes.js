@@ -7,6 +7,8 @@ let carteras = JSON.parse(carterasJSON);
 let usuarioJSON = localStorage.getItem("usuarioOn");
 let usuarioLoggeado = JSON.parse(usuarioJSON);
 
+console.log(usuarioLoggeado);
+
 let CedearsTotales =[
     {nombre: "Apple Inc", ticker: "AAPL"},
     {nombre: "Coca cola company", ticker: "KO"},
@@ -337,6 +339,9 @@ confirmarOperacion.addEventListener("click", (event) => {
 
 
 
+let ultimoId = OrdenesTotales[OrdenesTotales.length - 1].id
+let usuarioParaNuevaOrden = usuarioLoggeado.nombreUsuario
+
 
 
     const crearOrden = document.getElementById("crearOrden");
@@ -348,19 +353,33 @@ confirmarOperacion.addEventListener("click", (event) => {
     const precioCedearNuevaOrden = document.getElementById("precioCedearNuevaOrden");
     const botonRealizarOperacion = document.getElementById("botonRealizarOperacion");
     const RresultadosNuevaOrden = document.getElementById("RresultadosNuevaOrden");
-    let tipoDeOperacion 
+    const precioTotalCedearOrden = document.getElementById("precioTotalCedearOrden");
+    
+       let tipoDeOperacion; 
 
-
-    operacionCompra.addEventListener("click", ()=>{
+        operacionCompra.addEventListener("click", ()=>{
         operacionCompra.classList.add("operacionCompraActiva")
         operacionVenta.classList.remove ("operacionVentaActiva")
-    })
 
+        if (operacionCompra.classList.contains("operacionCompraActiva")){
+        tipoDeOperacion = "compra"
+        console.log(tipoDeOperacion);
+        }
+        return tipoDeOperacion
+    })
+    
     operacionVenta.addEventListener("click", () =>{
         operacionVenta.classList.add("operacionVentaActiva")
         operacionCompra.classList.remove("operacionCompraActiva")
 
+        if (operacionVenta.classList.contains("operacionVentaActiva")){
+        tipoDeOperacion = "venta"
+        console.log(tipoDeOperacion);
+        }
+        return tipoDeOperacion
     })
+    console.log(tipoDeOperacion);
+    
 
     nombreEmpresaNuevaOrden.addEventListener("input", () =>{
 
@@ -387,27 +406,52 @@ confirmarOperacion.addEventListener("click", (event) => {
         })
     })
 
+function precioTotalOrden() {
+    let ammount = parseInt(cantidadNuevaOrden.value) || 0;
+    let price = parseInt(precioCedearNuevaOrden.value) || 0;
+    let totalPrice = ammount * price;
+
+    precioTotalCedearOrden.value = totalPrice;
+    console.log("Total calculado:", totalPrice);
+}
 
 
-   /*  nombreEmpresaNuevaOrden.addEventListener("input", () => {
-  const texto = nombreEmpresaNuevaOrden.value.toLowerCase();
-  RresultadosNuevaOrden.innerHTML = "";
+cantidadNuevaOrden.addEventListener("input", precioTotalOrden)
+precioCedearNuevaOrden.addEventListener("input", precioTotalOrden)
 
-  if (texto === "") return;
 
-  const sugeridos = CedearsTotales.filter(cedear =>
-    cedear.nombre.toLowerCase().includes(texto)
-  );
 
-  sugeridos.forEach(cedear => {
-    const lista = document.createElement("li");
-    lista.textContent = cedear.nombre;
-    lista.addEventListener("click", () => {
-      nombreEmpresaNuevaOrden.value = cedear.nombre;
-      tickerNuevaOrden.value = cedear.ticker;
-      RresultadosNuevaOrden.innerHTML = ""; // Ocultar sugerencias
-    });
-    RresultadosNuevaOrden.appendChild(lista);
-  });
+botonRealizarOperacion.addEventListener("click", () =>{
+    class NuevaOrden{
+        static id = ++ultimoId 
+        constructor(nombreEmpresaNuevaOrden, tickerNuevaOrden, precioCedearNuevaOrden, cantidadNuevaOrden, tipoDeOperacion, ultimoId, usuarioParaNuevaOrden, precioTotalCedearOrden){
+            this.Nombre = nombreEmpresaNuevaOrden.value,
+            this.ticker = tickerNuevaOrden.value,
+            this.precio = precioCedearNuevaOrden.value
+            this.cantidad = cantidadNuevaOrden.value,
+            this.orden = tipoDeOperacion,
+            this.precioTotal = precioTotalCedearOrden.value,
+            this.id = ultimoId,
+            this.usuario = usuarioParaNuevaOrden
+
+        }
+    }
+
   
-}); */
+
+
+    if (nombreEmpresaNuevaOrden.value === "" || tickerNuevaOrden.value === "" || precioCedearNuevaOrden.value === "" || cantidadNuevaOrden.value === "") {
+            alert("todos los campos son obligfatorios")
+            return
+    }else if (tipoDeOperacion === undefined){
+        alert("seleccion3em el tip de operacion")
+        return
+    }
+
+
+   let asdf = new NuevaOrden(nombreEmpresaNuevaOrden, tickerNuevaOrden, precioCedearNuevaOrden, cantidadNuevaOrden, tipoDeOperacion, ultimoId, usuarioParaNuevaOrden, precioTotalCedearOrden)
+    console.log(asdf);
+    
+})
+    
+    

@@ -62,22 +62,26 @@
 
             <section class="crearOrdenInformacion">
                 <label for="nombreEmpresa" >Nombre de empresa</label>
-                <input type="text" name="nombreEmpresa" id="nombreEmpresaNuevaOrden">
+                <input type="text" name="nombreEmpresa" id="nombreEmpresaNuevaOrden" required>
             </section>
             <div class="contenedorRresultadosNuevaOrden">
                 <div id="RresultadosNuevaOrden" class="RresultadosNuevaOrden"></div>
             </div>
             <section class="crearOrdenInformacion">
                 <label for="tickerCedearCrearOrden">Ticker de CEDEAR</label>
-                <input type="text" name="tickerCedearCrearOrden" id="tickerNuevaOrden">
+                <input type="text" name="tickerCedearCrearOrden" id="tickerNuevaOrden" required>
             </section>
             <section class="crearOrdenInformacion">
                 <label for="cantidad" >Cantidad</label>
-                <input type="number" name="cantidad" id="cantidadNuevaOrden">
+                <input type="number" name="cantidad" id="cantidadNuevaOrden" required>
             </section>
             <section class="crearOrdenInformacion">
                 <label for="precioCedearOrden" >Precio de CEDEAR</label>
-                <input type="number" name="precioCedearOrden" id="precioCedearNuevaOrden">
+                <input type="number" name="precioCedearOrden" id="precioCedearNuevaOrden" required>
+            </section>
+            <section class="crearOrdenInformacion">
+                <label for="precioTotalCedearOrden" >Coste total de Operción</label>
+                <input type="number" name="precioTotalCedearOrden" id="precioTotalCedearOrden" readonly>
             </section>
             <section class="sectionBotonRealizarOperacion">
                 <button class="botonRealizarOperacion" id="botonRealizarOperacion">Enviar</button>
