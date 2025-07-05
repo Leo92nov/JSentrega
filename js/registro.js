@@ -25,7 +25,7 @@ function mostrarMensaje(mensaje, tipo = "error") {
     if (tipo === "ok") {
         contenedor.classList.add("mensaje-ok");
     } else {
-        contenedor.classList.add("mensaje-error");
+        contenedor.classList.add("mensajeError");
     }
 }
 
@@ -68,24 +68,28 @@ Boton.addEventListener("click", (event)=>{
     }
     else if(ContraseñaUsuarioNuevo.value !== RepetirContraseña.value){
         mostrarMensaje("Las contraseñas no coinciden!!")
-    }else
-    {
+    }else{
         
-    const usuarioRegistrado = new crearUsuario(NuevoNombre, NuevoUsuario, ContraseñaUsuarioNuevo, PalabraSecreta, 0);
-    const carteraNueva = new crearCartera(0, 0, 0, 0)
+        const usuarioRegistrado = new crearUsuario(NuevoNombre, NuevoUsuario, ContraseñaUsuarioNuevo, PalabraSecreta, 0);
+        const carteraNueva = new crearCartera(0, 0, 0, 0)
     
 
-    Carteras.push(carteraNueva)
-    let CarterasJSON = JSON.stringify(Carteras)
+        Carteras.push(carteraNueva)
+        let CarterasJSON = JSON.stringify(Carteras)
 
-    localStorage.setItem("arrayDeCarteras", CarterasJSON)
+        localStorage.setItem("arrayDeCarteras", CarterasJSON)
 
-    Usuarios.push(usuarioRegistrado)
-    Usuarios = JSON.stringify(Usuarios)
-    localStorage.setItem("arrayDeUsuarios", Usuarios)
+        Usuarios.push(usuarioRegistrado)
+        Usuarios = JSON.stringify(Usuarios)
+        localStorage.setItem("arrayDeUsuarios", Usuarios)
+        mostrarMensaje("Registro Exitoso! Redireccionando...", "ok")
 
-    mostrarMensaje("Registro Exitoso! Redireccionando...")
-    window.location.replace("../index.html")
+        setTimeout(() => {
+        
+            window.location.replace("../index.html")
+        
+        }, 1500);
+
     }
 
 })

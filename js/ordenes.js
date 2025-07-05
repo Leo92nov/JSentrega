@@ -45,7 +45,7 @@ function mostrarMensaje(mensaje, tipo = "error") {
     if (tipo === "ok") {
         contenedor.classList.add("mensaje-ok");
     } else {
-        contenedor.classList.add("mensaje-error");
+        contenedor.classList.add("mensajeError");
     }
 }
 
@@ -322,7 +322,7 @@ confirmarOperacion.addEventListener("click", (event) => {
             const OrdenesAgrupadas = agruparOrdenesPorUsuario(OrdenesTotales);
             const OrdenesJSON = JSON.stringify(OrdenesAgrupadas);
             localStorage.setItem("arrayDeOrdenes", OrdenesJSON);
-    
+            
             mostrarMensaje("operacion realizada con exito!!");
             window.location.replace("../pages/ordenes.html");
         }
@@ -339,9 +339,12 @@ confirmarOperacion.addEventListener("click", (event) => {
 
 
 
-let ultimoId = OrdenesTotales[OrdenesTotales.length - 1].id
-let usuarioParaNuevaOrden = usuarioLoggeado.nombreUsuario
 
+
+
+    let ultimoId = OrdenesTotales[OrdenesTotales.length - 1].id
+    let usuarioParaNuevaOrden = usuarioLoggeado.nombreUsuario
+    let cedearOrdenaOperar
 
 
     const crearOrden = document.getElementById("crearOrden");
@@ -355,17 +358,31 @@ let usuarioParaNuevaOrden = usuarioLoggeado.nombreUsuario
     const RresultadosNuevaOrden = document.getElementById("RresultadosNuevaOrden");
     const precioTotalCedearOrden = document.getElementById("precioTotalCedearOrden");
     
-       let tipoDeOperacion; 
+    let tipoDeOperacion; 
 
-        operacionCompra.addEventListener("click", ()=>{
-        operacionCompra.classList.add("operacionCompraActiva")
-        operacionVenta.classList.remove ("operacionVentaActiva")
 
-        if (operacionCompra.classList.contains("operacionCompraActiva")){
-        tipoDeOperacion = "compra"
-        console.log(tipoDeOperacion);
-        }
-        return tipoDeOperacion
+    
+function mostrarMensajeOrdenesNuevas(mensaje, tipo = "error") {
+    const errorDePrecioTotal = document.getElementById("errorDePrecioTotal");
+    errorDePrecioTotal.textContent = mensaje;
+
+    if (tipo === "ok") {
+        
+        errorDePrecioTotal.classList.add("mensaje-ok");
+    } else {
+        errorDePrecioTotal.classList.add("mensajeError");
+    }
+}
+
+    operacionCompra.addEventListener("click", ()=>{
+    operacionCompra.classList.add("operacionCompraActiva")
+    operacionVenta.classList.remove ("operacionVentaActiva")
+
+    if (operacionCompra.classList.contains("operacionCompraActiva")){
+    tipoDeOperacion = "compra"
+    console.log(tipoDeOperacion);
+    }
+    return tipoDeOperacion
     })
     
     operacionVenta.addEventListener("click", () =>{
@@ -378,22 +395,24 @@ let usuarioParaNuevaOrden = usuarioLoggeado.nombreUsuario
         }
         return tipoDeOperacion
     })
-    console.log(tipoDeOperacion);
     
+    
+ 
 
+   
+   
     nombreEmpresaNuevaOrden.addEventListener("input", () =>{
 
         const texto = nombreEmpresaNuevaOrden.value.toLowerCase();
         RresultadosNuevaOrden.innerHTML = "";
-
         if(texto === ""){
             return
         }
-
+        
         const sugeridos = CedearsTotales.filter(cedear =>
             cedear.nombre.toLowerCase().includes(texto)
         )
-
+        
         sugeridos.forEach(cedear =>{
             const lista = document.createElement("li")
             lista.textContent = cedear.nombre
@@ -401,30 +420,36 @@ let usuarioParaNuevaOrden = usuarioLoggeado.nombreUsuario
                 nombreEmpresaNuevaOrden.value = cedear.nombre
                 tickerNuevaOrden.value = cedear.ticker
                 RresultadosNuevaOrden.innerHTML = ""
+                
             })
             RresultadosNuevaOrden.appendChild(lista);
         })
+        
     })
-
-function precioTotalOrden() {
-    let ammount = parseInt(cantidadNuevaOrden.value) || 0;
-    let price = parseInt(precioCedearNuevaOrden.value) || 0;
-    let totalPrice = ammount * price;
-
-    precioTotalCedearOrden.value = totalPrice;
-    console.log("Total calculado:", totalPrice);
-}
-
-
-cantidadNuevaOrden.addEventListener("input", precioTotalOrden)
-precioCedearNuevaOrden.addEventListener("input", precioTotalOrden)
-
-
-
-botonRealizarOperacion.addEventListener("click", () =>{
-    class NuevaOrden{
-        static id = ++ultimoId 
-        constructor(nombreEmpresaNuevaOrden, tickerNuevaOrden, precioCedearNuevaOrden, cantidadNuevaOrden, tipoDeOperacion, ultimoId, usuarioParaNuevaOrden, precioTotalCedearOrden){
+    console.log(cedearOrdenaOperar);
+    
+    
+    
+    
+    function precioTotalOrden() {
+        let ammount = parseInt(cantidadNuevaOrden.value) || 0;
+        let price = parseInt(precioCedearNuevaOrden.value) || 0;
+        let totalPrice = ammount * price;
+        
+        precioTotalCedearOrden.value = totalPrice;
+        console.log("Total calculado:", totalPrice);
+    }
+    
+    
+    cantidadNuevaOrden.addEventListener("input", precioTotalOrden)
+    precioCedearNuevaOrden.addEventListener("input", precioTotalOrden)
+    
+    
+    
+    botonRealizarOperacion.addEventListener("click", () =>{
+        class NuevaOrden{
+            static id = ++ultimoId 
+            constructor(nombreEmpresaNuevaOrden, tickerNuevaOrden, precioCedearNuevaOrden, cantidadNuevaOrden, tipoDeOperacion, ultimoId, usuarioParaNuevaOrden, precioTotalCedearOrden){
             this.Nombre = nombreEmpresaNuevaOrden.value,
             this.ticker = tickerNuevaOrden.value,
             this.precio = precioCedearNuevaOrden.value
@@ -441,17 +466,68 @@ botonRealizarOperacion.addEventListener("click", () =>{
 
 
     if (nombreEmpresaNuevaOrden.value === "" || tickerNuevaOrden.value === "" || precioCedearNuevaOrden.value === "" || cantidadNuevaOrden.value === "") {
-            alert("todos los campos son obligfatorios")
-            return
+        mostrarMensajeOrdenesNuevas("todos los campos son obligfatorios")
+        return
     }else if (tipoDeOperacion === undefined){
-        alert("seleccion3em el tip de operacion")
+        mostrarMensajeOrdenesNuevas("Seleccione el tipo de operacion!!")
         return
     }
 
 
-   let asdf = new NuevaOrden(nombreEmpresaNuevaOrden, tickerNuevaOrden, precioCedearNuevaOrden, cantidadNuevaOrden, tipoDeOperacion, ultimoId, usuarioParaNuevaOrden, precioTotalCedearOrden)
-    console.log(asdf);
+  if (tipoDeOperacion === "compra" && usuarioLoggeado.liquidez < precioTotalCedearOrden.value){
+        /*  */  /*  */  /*   */  /*  */  /*  */ /*  */  /*  */  /*   */  /*  */  /*  */ /*  */  /*  */  /*   */  /*  */  /*  */ /*  */  /*  */  /*   */  /*  */  /*  */
+        
+        
+        mostrarMensajeOrdenesNuevas("No posee el dinero suficiente para crear la orden!!")
+
+
+ /*  */  /*  */  /*   */  /*  */  /*  */ /*  */  /*  */  /*   */  /*  */  /*  */ /*  */  /*  */  /*   */  /*  */  /*  */ /*  */  /*  */  /*   */  /*  */  /*  */
+
+        return
+    }
+
     
+    if (tipoDeOperacion === "venta" && carteraON.find(cedear => cedear.ticker === tickerNuevaOrden.value)){
+        mostrarMensajeOrdenesNuevas("Cedear encontrado, realizando orden!!", "ok");
+        
+        setTimeout(() =>{
+
+        }, 1000)
+    }else if (tipoDeOperacion === "venta" && (carteraON.find(cedear => cedear.ticker === tickerNuevaOrden.value)) === undefined){
+        mostrarMensajeOrdenesNuevas("No posee el activo que intenta vender!!")
+        return;
+    }
+
+    let nuevaOrdenCreada = new NuevaOrden(nombreEmpresaNuevaOrden, tickerNuevaOrden, precioCedearNuevaOrden, cantidadNuevaOrden, tipoDeOperacion, ultimoId, usuarioParaNuevaOrden, precioTotalCedearOrden)
+    OrdenesTotales.push(nuevaOrdenCreada)
+    console.log(OrdenesTotales);
+    
+    function agruparOrdenesPorUsuario(ordenes) {
+        const agrupadas = {};
+    
+        ordenes.forEach(orden => {
+            if (!agrupadas[orden.usuario]) {
+            agrupadas[orden.usuario] = [];
+        }
+        agrupadas[orden.usuario].push(orden);
+        });
+    
+        return Object.values(agrupadas);
+
+    }
+    
+
+    const OrdenesAgrupadas = agruparOrdenesPorUsuario(OrdenesTotales);
+    const OrdenesJSON = JSON.stringify(OrdenesAgrupadas);
+    localStorage.setItem("arrayDeOrdenes", OrdenesJSON);
+
+    mostrarMensajeOrdenesNuevas("Orden creada con exito!!", "ok")
+
+    setTimeout(() => {
+
+    window.location.href = "../pages/inicio.html";
+        
+    }, 1500);
 })
     
     

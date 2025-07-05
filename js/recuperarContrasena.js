@@ -36,13 +36,17 @@ BotonRecuperar.addEventListener("click", (event) =>{
         localStorage.setItem("arrayDeUsuarios", Usuarios)
 
         
-        mostrarMensaje("Contraseña actualizada")
+        mostrarMensaje("Contraseña actualizada!!", "ok")
 
-       window.location.replace("../index.html")
+        setTimeout(() => {
+
+            window.location.replace("../index.html")
+            
+        }, 1000);
 
     }else{
 
-        mostrarMensaje("Error, verifique los datos ingresados")
+        mostrarMensaje("Error, verifique los datos ingresados!!")
     }
 
 })

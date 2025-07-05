@@ -167,12 +167,17 @@ const ingreso = document.getElementById("ingresoBoton")
 
             }else if(usuarioIngresado.value  === usuario.nombreUsuario && contrasenaIngresada.value === usuario.contrasena){
 
-                mostrarMensaje("bienvenido " + usuario.nombre);
+                mostrarMensaje("Bienvenido " + usuario.nombre + "!!", "ok");
                 usuarioExistente = true;
                 usuarioLogueado = usuario;
                 usuarioLogueadoJSON = JSON.stringify(usuarioLogueado);
                 localStorage.setItem("usuarioOn", usuarioLogueadoJSON);
-                window.location.href = "./pages/inicio.html";
+
+                setTimeout(() => {
+                    
+                    window.location.href = "./pages/inicio.html";
+
+                }, 1000);
                 break
             }
         }
