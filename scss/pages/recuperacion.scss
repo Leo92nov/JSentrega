@@ -4,6 +4,8 @@
 @use"../components/forms.scss";
 @use"../layout/footer.scss";
 @use"../layout/header.scss";
+@use"../abstracts/errores.scss";
+
 .bodyIndex{
     height: 100vh;
     max-width: 100%;

@@ -475,13 +475,8 @@ function mostrarMensajeOrdenesNuevas(mensaje, tipo = "error") {
 
 
   if (tipoDeOperacion === "compra" && usuarioLoggeado.liquidez < precioTotalCedearOrden.value){
-        /*  */  /*  */  /*   */  /*  */  /*  */ /*  */  /*  */  /*   */  /*  */  /*  */ /*  */  /*  */  /*   */  /*  */  /*  */ /*  */  /*  */  /*   */  /*  */  /*  */
-        
-        
+          
         mostrarMensajeOrdenesNuevas("No posee el dinero suficiente para crear la orden!!")
-
-
- /*  */  /*  */  /*   */  /*  */  /*  */ /*  */  /*  */  /*   */  /*  */  /*  */ /*  */  /*  */  /*   */  /*  */  /*  */ /*  */  /*  */  /*   */  /*  */  /*  */
 
         return
     }
@@ -489,7 +484,7 @@ function mostrarMensajeOrdenesNuevas(mensaje, tipo = "error") {
     
     if (tipoDeOperacion === "venta" && carteraON.find(cedear => cedear.ticker === tickerNuevaOrden.value)){
         mostrarMensajeOrdenesNuevas("Cedear encontrado, realizando orden!!", "ok");
-        
+
         setTimeout(() =>{
 
         }, 1000)

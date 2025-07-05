@@ -127,17 +127,6 @@
   color: aliceblue;
 }
 
-.bodyIndex {
-  max-width: 100%;
-  padding: 0;
-  margin: 0;
-  background-color: #e8eafc;
-}
-.bodyIndex .form .formIngreso .IngresoError {
-  color: red;
-  font-size: 2rem;
-}
-
 .mensajeError {
   display: flex;
   justify-content: center;
@@ -150,6 +139,17 @@
   justify-content: center;
   font-size: 1.5rem;
   color: rgb(23, 73, 23);
+}
+
+.bodyIndex {
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #e8eafc;
+}
+.bodyIndex .form .formIngreso .IngresoError {
+  color: red;
+  font-size: 2rem;
 }
 
 .botonesIngresoInvEgreso {
@@ -595,20 +595,6 @@
   background-color: rgb(10, 37, 64);
   color: aliceblue;
   font-size: 1rem;
-}
-
-.mensajeError {
-  display: flex;
-  justify-content: center;
-  font-size: 1.5rem;
-  color: rgb(83, 1, 1);
-}
-
-.mensaje-ok {
-  display: flex;
-  justify-content: center;
-  font-size: 1.5rem;
-  color: rgb(23, 73, 23);
 }
 
 .bodyIndex {
