@@ -362,6 +362,7 @@ confirmarOperacion.addEventListener("click", (event) => {
 
 
     
+
 function mostrarMensajeOrdenesNuevas(mensaje, tipo = "error") {
     const errorDePrecioTotal = document.getElementById("errorDePrecioTotal");
     errorDePrecioTotal.textContent = mensaje;
@@ -374,7 +375,8 @@ function mostrarMensajeOrdenesNuevas(mensaje, tipo = "error") {
     }
 }
 
-    operacionCompra.addEventListener("click", ()=>{
+
+operacionCompra.addEventListener("click", ()=>{
     operacionCompra.classList.add("operacionCompraActiva")
     operacionVenta.classList.remove ("operacionVentaActiva")
 
@@ -383,9 +385,9 @@ function mostrarMensajeOrdenesNuevas(mensaje, tipo = "error") {
     console.log(tipoDeOperacion);
     }
     return tipoDeOperacion
-    })
+})
     
-    operacionVenta.addEventListener("click", () =>{
+operacionVenta.addEventListener("click", () =>{
         operacionVenta.classList.add("operacionVentaActiva")
         operacionCompra.classList.remove("operacionCompraActiva")
 
@@ -394,51 +396,50 @@ function mostrarMensajeOrdenesNuevas(mensaje, tipo = "error") {
         console.log(tipoDeOperacion);
         }
         return tipoDeOperacion
-    })
+})
     
     
  
 
    
    
-    nombreEmpresaNuevaOrden.addEventListener("input", () =>{
+nombreEmpresaNuevaOrden.addEventListener("input", () =>{
 
-        const texto = nombreEmpresaNuevaOrden.value.toLowerCase();
-        RresultadosNuevaOrden.innerHTML = "";
-        if(texto === ""){
-            return
-        }
-        
-        const sugeridos = CedearsTotales.filter(cedear =>
-            cedear.nombre.toLowerCase().includes(texto)
-        )
-        
-        sugeridos.forEach(cedear =>{
-            const lista = document.createElement("li")
-            lista.textContent = cedear.nombre
-            lista.addEventListener("click", () =>{
-                nombreEmpresaNuevaOrden.value = cedear.nombre
-                tickerNuevaOrden.value = cedear.ticker
-                RresultadosNuevaOrden.innerHTML = ""
-                
-            })
-            RresultadosNuevaOrden.appendChild(lista);
-        })
-        
-    })
-    console.log(cedearOrdenaOperar);
-    
-    
-    
-    
-    function precioTotalOrden() {
-        let ammount = parseInt(cantidadNuevaOrden.value) || 0;
-        let price = parseInt(precioCedearNuevaOrden.value) || 0;
-        let totalPrice = ammount * price;
-        
-        precioTotalCedearOrden.value = totalPrice;
-        console.log("Total calculado:", totalPrice);
+    const texto = nombreEmpresaNuevaOrden.value.toLowerCase();
+    RresultadosNuevaOrden.innerHTML = "";
+    if(texto === ""){
+        return
     }
+        
+    const sugeridos = CedearsTotales.filter(cedear =>
+        cedear.nombre.toLowerCase().includes(texto)
+    )
+        
+    sugeridos.forEach(cedear =>{
+        const lista = document.createElement("li")
+        lista.textContent = cedear.nombre
+        lista.addEventListener("click", () =>{
+            nombreEmpresaNuevaOrden.value = cedear.nombre
+            tickerNuevaOrden.value = cedear.ticker
+            RresultadosNuevaOrden.innerHTML = ""
+                
+        })
+        RresultadosNuevaOrden.appendChild(lista);
+    })
+        
+})
+    ;
+    
+    
+    
+    
+function precioTotalOrden() {
+    let ammount = parseInt(cantidadNuevaOrden.value) || 0;
+    let price = parseInt(precioCedearNuevaOrden.value) || 0;
+    let totalPrice = ammount * price;
+        
+    precioTotalCedearOrden.value = totalPrice;
+}
     
     
     cantidadNuevaOrden.addEventListener("input", precioTotalOrden)
@@ -446,18 +447,18 @@ function mostrarMensajeOrdenesNuevas(mensaje, tipo = "error") {
     
     
     
-    botonRealizarOperacion.addEventListener("click", () =>{
-        class NuevaOrden{
-            static id = ++ultimoId 
-            constructor(nombreEmpresaNuevaOrden, tickerNuevaOrden, precioCedearNuevaOrden, cantidadNuevaOrden, tipoDeOperacion, ultimoId, usuarioParaNuevaOrden, precioTotalCedearOrden){
-            this.Nombre = nombreEmpresaNuevaOrden.value,
-            this.ticker = tickerNuevaOrden.value,
-            this.precio = precioCedearNuevaOrden.value
-            this.cantidad = cantidadNuevaOrden.value,
-            this.orden = tipoDeOperacion,
-            this.precioTotal = precioTotalCedearOrden.value,
-            this.id = ultimoId,
-            this.usuario = usuarioParaNuevaOrden
+botonRealizarOperacion.addEventListener("click", () =>{
+    class NuevaOrden{
+        static id = ++ultimoId 
+        constructor(nombreEmpresaNuevaOrden, tickerNuevaOrden, precioCedearNuevaOrden, cantidadNuevaOrden, tipoDeOperacion, ultimoId, usuarioParaNuevaOrden, precioTotalCedearOrden){
+        this.Nombre = nombreEmpresaNuevaOrden.value,
+        this.ticker = tickerNuevaOrden.value,
+        this.precio = precioCedearNuevaOrden.value
+        this.cantidad = cantidadNuevaOrden.value,
+        this.orden = tipoDeOperacion,
+        this.precioTotal = precioTotalCedearOrden.value,
+        this.id = ultimoId,
+        this.usuario = usuarioParaNuevaOrden
 
         }
     }
@@ -466,7 +467,7 @@ function mostrarMensajeOrdenesNuevas(mensaje, tipo = "error") {
 
 
     if (nombreEmpresaNuevaOrden.value === "" || tickerNuevaOrden.value === "" || precioCedearNuevaOrden.value === "" || cantidadNuevaOrden.value === "") {
-        mostrarMensajeOrdenesNuevas("todos los campos son obligfatorios")
+        mostrarMensajeOrdenesNuevas("todos los campos son obligatorios!!")
         return
     }else if (tipoDeOperacion === undefined){
         mostrarMensajeOrdenesNuevas("Seleccione el tipo de operacion!!")
@@ -474,24 +475,26 @@ function mostrarMensajeOrdenesNuevas(mensaje, tipo = "error") {
     }
 
 
-  if (tipoDeOperacion === "compra" && usuarioLoggeado.liquidez < precioTotalCedearOrden.value){
+    if (tipoDeOperacion === "compra" && usuarioLoggeado.liquidez < precioTotalCedearOrden.value){
           
         mostrarMensajeOrdenesNuevas("No posee el dinero suficiente para crear la orden!!")
 
         return
     }
 
+    let cedearDeOperacionOrden = carteraON.find(cedear => cedear.ticker === tickerNuevaOrden.value)
+    console.log(cedearDeOperacionOrden);
     
-    if (tipoDeOperacion === "venta" && carteraON.find(cedear => cedear.ticker === tickerNuevaOrden.value)){
-        mostrarMensajeOrdenesNuevas("Cedear encontrado, realizando orden!!", "ok");
-
-        setTimeout(() =>{
-
-        }, 1000)
-    }else if (tipoDeOperacion === "venta" && (carteraON.find(cedear => cedear.ticker === tickerNuevaOrden.value)) === undefined){
+    if (tipoDeOperacion === "venta" && cedearDeOperacionOrden === undefined){
         mostrarMensajeOrdenesNuevas("No posee el activo que intenta vender!!")
         return;
     }
+
+    if(tipoDeOperacion === "venta" && (cedearDeOperacionOrden.cantidad < cantidadNuevaOrden.value)){
+        mostrarMensajeOrdenesNuevas("No posee la cantidad que desea vender!!")
+        return
+    }
+
 
     let nuevaOrdenCreada = new NuevaOrden(nombreEmpresaNuevaOrden, tickerNuevaOrden, precioCedearNuevaOrden, cantidadNuevaOrden, tipoDeOperacion, ultimoId, usuarioParaNuevaOrden, precioTotalCedearOrden)
     OrdenesTotales.push(nuevaOrdenCreada)
@@ -522,7 +525,7 @@ function mostrarMensajeOrdenesNuevas(mensaje, tipo = "error") {
 
     window.location.href = "../pages/inicio.html";
         
-    }, 1500);
+    }, 2000);
 })
     
     
