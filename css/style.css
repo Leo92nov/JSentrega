@@ -149,10 +149,6 @@
   margin: 0;
   background-color: #e8eafc;
 }
-.bodyIndex .form .formIngreso .IngresoError {
-  color: red;
-  font-size: 2rem;
-}
 
 .botonesIngresoInvEgreso {
   margin-top: 1rem;
@@ -630,6 +626,34 @@
   background-color: rgb(10, 37, 64);
   color: aliceblue;
   font-size: 1rem;
+}
+
+.bodyPrestamos {
+  width: 80%;
+  margin: 0 10% 0 10%;
+  background-color: aliceblue;
+}
+.bodyPrestamos .contenedorHeadPrestamos {
+  width: 100%;
+}
+.bodyPrestamos .contenedorHeadPrestamos .h1Prestamos {
+  margin-top: 2rem;
+  text-align: center;
+  width: 100%;
+}
+.bodyPrestamos .contenedorHeadPrestamos .divImgsPrestamos {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+.bodyPrestamos .contenedorHeadPrestamos .divImgsPrestamos .imgsPrestamos {
+  margin-top: 3rem;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  max-width: 100%;
+  border-radius: 15px;
 }
 
 .bodyIndex {

@@ -177,7 +177,7 @@ const ingreso = document.getElementById("ingresoBoton")
                     
                     window.location.href = "./pages/inicio.html";
 
-                }, 1000);
+                }, 1500);
                 break
             }
         }

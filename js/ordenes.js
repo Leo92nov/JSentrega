@@ -42,14 +42,26 @@ const precioTotalOperar = document.getElementById("precioTotalOperar");
 const confirmarOperacion = document.getElementById("confirmarOperacion");
 const idOperacion = document.getElementById("idOperacion");
 
-function mostrarMensaje(mensaje, tipo = "error") {
-    const contenedor = document.getElementById("IngresoError");
-    contenedor.textContent = mensaje;
+function mostrarMensajeOrdenesNuevas(mensaje, tipo = "error") {
+    const errorDePrecioTotal = document.getElementById("errorDePrecioTotal");
+    errorDePrecioTotal.textContent = mensaje;
 
     if (tipo === "ok") {
-        contenedor.classList.add("mensaje-ok");
+        
+        errorDePrecioTotal.classList.add("mensaje-ok");
     } else {
-        contenedor.classList.add("mensajeError");
+        errorDePrecioTotal.classList.add("mensajeError");
+    }
+}
+function errorDeEjecucionOrdenes(mensaje, tipo = "error") {
+    const errorDeEjecucionOrdenes = document.getElementById("errorDeEjecucionOrdenes");
+    errorDeEjecucionOrdenes.textContent = mensaje;
+
+    if (tipo === "ok") {
+        
+        errorDeEjecucionOrdenes.classList.add("mensaje-ok");
+    } else {
+        errorDeEjecucionOrdenes.classList.add("mensajeError");
     }
 }
 
@@ -85,16 +97,7 @@ let cedearApuntadoCartera = encontrarCedearEnCartera();
 let cedearABuscar = document.getElementById("inputCEDEAR");
 let busqueda = document.getElementById("botonBusquedaCajaDeCPuntas");
 
-function mostrarMensaje(mensaje, tipo = "error") {
-    const contenedor = document.getElementById("mensajedeError");
-    contenedor.textContent = mensaje;
 
-    if (tipo === "ok") {
-        contenedor.classList.add("mensaje-ok");
-    } else {
-        contenedor.classList.add("mensaje-error");
-    }
-}
 
 busqueda.addEventListener("click", () =>{
     const busquedaOrden = cedearABuscar.value.toLowerCase();
@@ -176,7 +179,7 @@ confirmarOperacion.addEventListener("click", (event) => {
     
     if (parseInt(precioTotalOperar.value) > usuarioLoggeado.liquidez) {
         
-        mostrarMensaje("Imposble realizar la operacion, fondos insuficientes");
+        errorDeEjecucionOrdenes("Imposble realizar la operacion, fondos insuficientes");
         
         return;
     }
@@ -244,7 +247,7 @@ confirmarOperacion.addEventListener("click", (event) => {
         const OrdenesJSON = JSON.stringify(OrdenesAgrupadas);
         localStorage.setItem("arrayDeOrdenes", OrdenesJSON);
         
-        mostrarMensaje("Operacion realizada con exito!!");
+        mostrarMensajeOrdenesNerrorDeEjecucionOrdenesuevas("Operacion realizada con exito!!");
         
         
         window.location.replace("../pages/ordenes.html");
@@ -296,7 +299,7 @@ confirmarOperacion.addEventListener("click", (event) => {
         localStorage.setItem("arrayDeOrdenes", OrdenesJSON);
         
         
-      mostrarMensaje("operación realizada con exito!!!");
+      errorDeEjecucionOrdenes("Operación realizada con exito!!!");
         window.location.replace("../pages/inicio.html");
         
     }
@@ -335,13 +338,13 @@ confirmarOperacion.addEventListener("click", (event) => {
 
 
     if(!cedearApuntadoCartera && tipoOperacion.value === "compra"){
-        mostrarMensaje("No puedes vender un activo que no posees");
+        mostrarMensajeOrdenesNuevas("No puedes vender un activo que no posees");
         return;
     }
     
     if(tipoOperacion.value === "compra" && parseInt(cantidadCedearOperar.value) > cedearApuntadoCartera.cantidad){
         
-        mostrarMensaje("no posees la cantidad de activos suficientes para realizar la operación");
+        mostrarMensajeOrdenesNuevas("no posees la cantidad de activos suficientes para realizar la operación");
         return;
         
     }else if(cedearApuntadoCartera && tipoOperacion.value === "compra"){
@@ -389,7 +392,7 @@ confirmarOperacion.addEventListener("click", (event) => {
             const OrdenesJSON = JSON.stringify(OrdenesAgrupadas);
             localStorage.setItem("arrayDeOrdenes", OrdenesJSON);
             
-            mostrarMensaje("operacion realizada con exito!!");
+            mostrarMensajeOrdenesNuevas("operacion realizada con exito!!");
             window.location.replace("../pages/ordenes.html");
         }
     })

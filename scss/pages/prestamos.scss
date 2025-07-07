@@ -5,3 +5,37 @@
 @use"../layout/footer.scss";
 @use"../layout/header.scss";
 @use"../abstracts/errores.scss";
+
+.bodyPrestamos{
+    width: 80%;
+    margin: 0 10% 0 10%;
+    background-color: aliceblue;
+
+
+    .contenedorHeadPrestamos{
+        width: 100%;
+
+        
+        .h1Prestamos{
+            margin-top: 2rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .divImgsPrestamos{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+
+            .imgsPrestamos{
+                margin-top: 3rem;
+                width: 250px;
+                height: 250px;
+                object-fit: cover;
+                max-width: 100%;
+                border-radius: 15px;
+            }
+        }
+    }
+}
