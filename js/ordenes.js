@@ -7,6 +7,8 @@ let carteras = JSON.parse(carterasJSON);
 let usuarioJSON = localStorage.getItem("usuarioOn");
 let usuarioLoggeado = JSON.parse(usuarioJSON);
 
+
+
 console.log(usuarioLoggeado);
 
 let CedearsTotales =[
@@ -76,21 +78,11 @@ cantidadCedearOperar.addEventListener("input", actualizarPrecioTotal);
 precioCedearOperar.addEventListener("input", actualizarPrecioTotal);
 
 
-
-
-
-
-
 function encontrarCedearEnCartera() {
     return carteraON.find(cedear => cedear.ticker === cedearAOperar.value.trim());
 }
 
 let cedearApuntadoCartera = encontrarCedearEnCartera();
-
-
-
-
-
 
 
 

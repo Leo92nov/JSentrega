@@ -629,9 +629,8 @@
 }
 
 .bodyPrestamos {
-  width: 80%;
-  margin: 0 10% 0 10%;
-  background-color: aliceblue;
+  width: 100%;
+  background-color: #e8eafc;
 }
 .bodyPrestamos .contenedorHeadPrestamos {
   width: 100%;
@@ -649,11 +648,33 @@
 }
 .bodyPrestamos .contenedorHeadPrestamos .divImgsPrestamos .imgsPrestamos {
   margin-top: 3rem;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   max-width: 100%;
   border-radius: 15px;
+}
+.bodyPrestamos .formulariosPrestamos {
+  display: flex;
+}
+.bodyPrestamos .formulariosPrestamos .datosPrestamo {
+  width: 40%;
+  margin: 2rem 4rem 0 4rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.bodyPrestamos .formulariosPrestamos .datosPrestamo .formPrestamo {
+  min-width: 100%;
+}
+.bodyPrestamos .formulariosPrestamos .datosPrestamo .formPrestamo .fieldsetPrestamo .sectioFormPrestamo {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .bodyIndex {
