@@ -27,6 +27,8 @@ if (Usuarios) {
     Usuarios = ArrUsuarios
 }
 
+
+
 if(Carteras){
     
 }else{
@@ -98,38 +100,7 @@ if (Ordenes){;
     
 }else{
     
-    const Ordenes = [
-        [
-            {Nombre: "Coca cola company", ticker: "KO", precio: 1500, cantidad: 10, orden: "compra", id: "1", usuario: "36765496"},
-            {Nombre: "Realty Income Corporation", ticker: "O", precio: 650, cantidad: 48, orden: "compra", id: "2", usuario: "36765496"},
-            {Nombre: "Verizon Communications Inc", ticker: "VZ", precio: 1530, cantidad: 20, orden: "compra", id: "3", usuario: "36765496"},
-            {Nombre: "Amazon.com Inc", ticker: "AMZN", precio: 550, cantidad: 60, orden: "venta", id: "4", usuario: "36765496"}
-        ],
-        [
-            {Nombre: "Coca cola company", ticker: "KO", precio: 1400, cantidad: 40, orden: "compra", id: "5", usuario: "diego"},
-            {Nombre: "Realty Income Corporation", ticker: "O", precio: 650, cantidad: 48, orden: "venta", id: "6", usuario: "diego"},
-            {Nombre: "Verizon Communications Inc", ticker: "VZ", precio: 1530, cantidad: 20, orden: "compra", id: "7", usuario: "diego"},
-            {Nombre: "Intel Corporation", ticker: "INTC", precio: 1400, cantidad: 4, orden: "compra", id: "8", usuario: "diego"},
-            {Nombre: "Berkshire Hathaway Inc", ticker: "BRK-B", precio: 3100, cantidad: 61, orden: "venta", id: "9", usuario: "diego"},
-        ],
-        [
-            {Nombre: "Coca cola company", ticker: "KO", precio: 1550, cantidad: 25, orden: "venta", id: "10", usuario: "pablin"},
-            {Nombre: "Berkshire Hathaway Inc", ticker: "BRK-B", precio: 3100, cantidad: 34, orden: "venta", id: "11", usuario: "pablin"},
-        ],
-        [
-            {Nombre: "Lockheed Martin", ticker: "LMT", precio: 2600, cantidad: 70, orden: "compra", id: "12", usuario: "ale"},
-        ],
-        [
-            {Nombre: "Apple Inc", ticker: "AAPL", precio: 2500, cantidad: 60, orden: "venta", id: "13", usuario: "santi"},
-            {Nombre: "Amazon.com Inc", ticker: "AMZN", precio: 550, cantidad: 60, orden: "venta", id: "14", usuario: "santi"}
-        ],
-        [
-            {Nombre: "Intel Corporation", ticker: "INTC", precio: 1400, cantidad: 3, orden: "compra", id: "15", usuario: "juan"},
-        ],
-        [
-            {Nombre: "Berkshire Hathaway Inc", ticker: "BRK-B", precio: 3100, cantidad: 40, orden: "compra", id: "16", usuario: "gabi"},
-        ]
-    ]
+
     const OrdenesJSON = JSON.stringify(Ordenes)
     localStorage.setItem("arrayDeOrdenes", OrdenesJSON)
 

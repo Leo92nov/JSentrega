@@ -1,56 +1,47 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-* .header {
-  background-color: rgb(10, 37, 64);
-  width: 100%;
-}
-* .header .divHeader {
-  width: 100%;
-  display: flex;
-  height: 5rem;
-  justify-content: space-between;
-}
-* .header .divHeader .sectionHeader {
-  height: 4rem;
-}
-* .header .divHeader .sectionHeader .logoHeader {
-  margin-left: 1rem;
-  margin-top: 0.5rem;
-  height: 110%;
+.botonesIngresoInvEgreso {
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
-  align-items: center;
-}
-* .header .divHeader .ulHeader {
-  width: 70%;
-  display: flex;
-}
-* .header .divHeader .ulHeader .ulList {
-  font-size: 1.5rem;
-  color: aliceblue;
-  width: 100%;
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-around;
+  width: 100%;
 }
-* .header .divHeader .ulHeader .ulList :hover {
-  transform: scale(1.1);
-  transition: 0.2s;
+.botonesIngresoInvEgreso .botonIngresoDinero {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  height: 3rem;
+  width: 25rem;
+  border: 2px;
+  border-top: 4px solid rgb(10, 37, 64);
+  box-shadow: 0 1px 1px 1px rgb(175, 173, 173);
 }
-* .header .divHeader .ulHeader .ulList .headerListItem {
-  text-decoration: none;
+.botonesIngresoInvEgreso .botonInvertir {
+  height: 3rem;
+  width: 62rem;
+  font-size: 1.5rem;
+  background-color: rgb(0, 179, 6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px;
   color: aliceblue;
+  box-shadow: 0 1px 1px 1px rgb(175, 173, 173);
 }
-
-.footerContainer {
-  background-color: rgb(10, 37, 64);
-  margin-top: 3rem;
-  height: 6rem;
+.botonesIngresoInvEgreso .botonEgresoDinero {
+  background-color: white;
+  box-shadow: 0 1px 1px 1px rgb(175, 173, 173);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  height: 3rem;
+  margin-right: 2rem;
+  width: 25rem;
+  border: 2px;
+  border-top: 4px solid rgb(177, 0, 0);
 }
 
 .bodyIndex {
@@ -127,6 +118,61 @@
   color: aliceblue;
 }
 
+.footerContainer {
+  background-color: rgb(10, 37, 64);
+  margin-top: 3rem;
+  height: 6rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+* .header {
+  background-color: rgb(10, 37, 64);
+  width: 100%;
+}
+* .header .divHeader {
+  width: 100%;
+  display: flex;
+  height: 5rem;
+  justify-content: space-between;
+}
+* .header .divHeader .sectionHeader {
+  height: 4rem;
+}
+* .header .divHeader .sectionHeader .logoHeader {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  height: 110%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+* .header .divHeader .ulHeader {
+  width: 70%;
+  display: flex;
+}
+* .header .divHeader .ulHeader .ulList {
+  font-size: 1.5rem;
+  color: aliceblue;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+* .header .divHeader .ulHeader .ulList :hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+* .header .divHeader .ulHeader .ulList .headerListItem {
+  text-decoration: none;
+  color: aliceblue;
+}
+
 .mensajeError {
   display: flex;
   justify-content: center;
@@ -141,110 +187,6 @@
   font-size: 1.5rem;
   color: rgb(23, 73, 23);
   margin-top: 6px;
-}
-
-.bodyIndex {
-  max-width: 100%;
-  padding: 0;
-  margin: 0;
-  background-color: #e8eafc;
-}
-
-.botonesIngresoInvEgreso {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
-}
-.botonesIngresoInvEgreso .botonIngresoDinero {
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.5rem;
-  margin-left: 2rem;
-  height: 3rem;
-  width: 25rem;
-  border: 2px;
-  border-top: 4px solid rgb(10, 37, 64);
-  box-shadow: 0 1px 1px 1px rgb(175, 173, 173);
-}
-.botonesIngresoInvEgreso .botonInvertir {
-  height: 3rem;
-  width: 62rem;
-  font-size: 1.5rem;
-  background-color: rgb(0, 179, 6);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px;
-  color: aliceblue;
-  box-shadow: 0 1px 1px 1px rgb(175, 173, 173);
-}
-.botonesIngresoInvEgreso .botonEgresoDinero {
-  background-color: white;
-  box-shadow: 0 1px 1px 1px rgb(175, 173, 173);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.5rem;
-  height: 3rem;
-  margin-right: 2rem;
-  width: 25rem;
-  border: 2px;
-  border-top: 4px solid rgb(177, 0, 0);
-}
-
-.bodyIndex {
-  height: 100vh;
-  max-width: 100%;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-  background-color: #f4f5ff;
-}
-.bodyIndex .header {
-  background-color: rgb(10, 37, 64);
-}
-.bodyIndex .header .divHeader {
-  width: 100%;
-  display: flex;
-  height: 5rem;
-  justify-content: space-between;
-}
-.bodyIndex .header .divHeader .sectionHeader {
-  height: 4rem;
-}
-.bodyIndex .header .divHeader .sectionHeader .logoHeader {
-  margin-left: 1rem;
-  margin-top: 0.5rem;
-  height: 110%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.bodyIndex .header .divHeader .ulHeader {
-  width: 70%;
-  display: flex;
-}
-.bodyIndex .header .divHeader .ulHeader .ulList {
-  font-size: 1.5rem;
-  color: aliceblue;
-  width: 100%;
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
-.bodyIndex .header .divHeader .ulHeader .ulList :hover {
-  transform: scale(1.1);
-  transition: 0.2s;
-}
-.bodyIndex .header .divHeader .ulHeader .ulList .headerListItem {
-  text-decoration: none;
-  color: aliceblue;
 }
 
 .bodyInicio .contenedorInversiones {
@@ -357,6 +299,57 @@
 .bodyInicio .noHayOrdenes {
   font-size: 2rem;
   text-align: center;
+}
+
+.bodyIndex {
+  height: 100vh;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background-color: #f4f5ff;
+}
+.bodyIndex .header {
+  background-color: rgb(10, 37, 64);
+}
+.bodyIndex .header .divHeader {
+  width: 100%;
+  display: flex;
+  height: 5rem;
+  justify-content: space-between;
+}
+.bodyIndex .header .divHeader .sectionHeader {
+  height: 4rem;
+}
+.bodyIndex .header .divHeader .sectionHeader .logoHeader {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  height: 110%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.bodyIndex .header .divHeader .ulHeader {
+  width: 70%;
+  display: flex;
+}
+.bodyIndex .header .divHeader .ulHeader .ulList {
+  font-size: 1.5rem;
+  color: aliceblue;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.bodyIndex .header .divHeader .ulHeader .ulList :hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+.bodyIndex .header .divHeader .ulHeader .ulList .headerListItem {
+  text-decoration: none;
+  color: aliceblue;
 }
 
 * {
@@ -677,22 +670,67 @@
   justify-content: space-between;
 }
 
-.bodyIndex {
-  height: 100vh;
-  max-width: 100%;
-  overflow: hidden;
+.bodyPanelGeneral {
+  width: 100%;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  background-color: #e8eafc;
+  overflow-x: hidden;
 }
-
-.bodyIndex {
-  height: 100vh;
-  max-width: 100%;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-  background-color: #e8eafc;
+.bodyPanelGeneral .contenedorTitulos {
+  margin: 4rem auto;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  width: 95%;
+  padding: 0 1.5rem 2rem 1.5rem;
+  background-color: aliceblue;
+  box-shadow: 1px 1px 5px black;
+}
+.bodyPanelGeneral .contenedorTitulos .TitulosEncabezado {
+  text-align: center;
+  width: 100%;
+  display: grid;
+  min-height: 2rem;
+  border-bottom: 1px solid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  background-color: rgb(227, 232, 255);
+}
+.bodyPanelGeneral .contenedorTitulos .TitulosEncabezado .misTitulosOperar {
+  width: auto;
+}
+.bodyPanelGeneral .contenedorTitulos .spanTitulos {
+  margin-top: 1.5rem;
+  padding: 1rem 0;
+  width: 100%;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bodyPanelGeneral .contenedorTitulos .divTitulos {
+  width: 100%;
+  text-align: center;
+  box-shadow: 1 0 5px black;
+}
+.bodyPanelGeneral .contenedorTitulos .divTitulos .sectionTitulos {
+  width: 100%;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border-bottom: 1px solid gray;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 0;
+  cursor: pointer;
+}
+.bodyPanelGeneral .contenedorTitulos .divTitulos .sectionTitulos:hover {
+  background-color: rgb(227, 232, 255);
+}
+.bodyPanelGeneral .contenedorTitulos .divTitulos .sectionTitulos .buena {
+  color: rgb(0, 179, 6);
+}
+.bodyPanelGeneral .contenedorTitulos .divTitulos .sectionTitulos .mala {
+  color: rgb(177, 0, 0);
 }
 
 /*# sourceMappingURL=style.css.map */
