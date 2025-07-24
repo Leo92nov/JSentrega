@@ -37,10 +37,12 @@
         }
     }
     .formulariosPrestamos{
+        width: 100%;
         display: flex;
-
+        justify-content: center;
+        
         .datosPrestamo{
-            width: 40%;
+            width: 30%;
             margin: 2rem 4rem 0 4rem;
             height: auto;
             display: flex;
@@ -52,14 +54,15 @@
                 min-width: 100%;
 
                 .fieldsetPrestamo{
-
+                    padding: 1rem 0;
                     .sectioFormPrestamo{
                         width: 100%;
-                        margin-top: 1rem;
                         display: flex;
                         flex-direction: column;
-                        justify-content: space-between;
-
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 1rem;
+                        font-size: 1.2rem;
                     }
                 }
             }
