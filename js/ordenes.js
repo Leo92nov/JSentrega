@@ -15,6 +15,8 @@ let carteras = JSON.parse(carterasJSON)
 let carteraJSON = localStorage.getItem("carteraOn");
 let carteraOn = JSON.parse(carteraJSON);
 
+let cedearAUtilizar = localStorage.getItem("cedearAUsar")
+let cedearAUsar = JSON.parse(cedearAUtilizar)
 
 const OrdenesJSON = localStorage.getItem("arrayDeOrdenes");
 const OrdenesTotales = JSON.parse(OrdenesJSON).flat();
@@ -75,7 +77,7 @@ let cedearApuntadoCartera = encontrarCedearEnCartera();
 let cedearABuscar = document.getElementById("inputCEDEAR");
 let busqueda = document.getElementById("botonBusquedaCajaDeCPuntas");
 
-
+cedearABuscar.value = cedearAUsar.ticker
 
 busqueda.addEventListener("click", () =>{
     const busquedaOrden = cedearABuscar.value.toLowerCase();

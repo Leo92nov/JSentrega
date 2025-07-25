@@ -34,7 +34,7 @@ function renderCedears(Cedears) {
                 ticker: cedear.ticker
             };
             const cedearAComprar = JSON.stringify(CompraClick)
-            localStorage.setItem("cedearAVender", cedearAComprar)
+            localStorage.setItem("cedearAUsar", cedearAComprar)
             window.location.replace("./ordenes.html")
         })
         
