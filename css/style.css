@@ -76,7 +76,7 @@
   margin-top: 3rem;
   background-color: rgb(10, 37, 64);
   width: 100%;
-  height: 19rem;
+  height: auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(8, 1fr);
@@ -671,6 +671,7 @@
 
 .bodyPrestamos {
   width: 100%;
+  background-color: rgb(235, 225, 225);
 }
 .bodyPrestamos .contenedorHeadPrestamos {
   width: 100%;
@@ -713,7 +714,7 @@
   width: auto;
   padding: 0 2rem;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-  background-color: rgb(11, 42, 127);
+  background-color: rgb(10, 37, 64);
   height: 100%;
 }
 .bodyPrestamos .formulariosPrestamos .datosPrestamo .formPrestamo .fieldsetPrestamo {
@@ -721,7 +722,7 @@
   border: none;
 }
 .bodyPrestamos .formulariosPrestamos .datosPrestamo .formPrestamo .fieldsetPrestamo .sectioFormPrestamo {
-  color: aliceblue;
+  color: rgb(162, 162, 162);
   width: 100%;
   display: flex;
   flex-direction: column;

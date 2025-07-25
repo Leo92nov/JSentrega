@@ -103,7 +103,7 @@ tickerAbuscar.addEventListener("input", () => {
             ordenesFiltradas.forEach(orden => {
                 const ordenes = document.createElement("li");
                 ordenes.textContent = orden.ticker;
-                ordenes.className ="ordenEnCaja";
+                ordenes.className = "ordenEnCaja";
                 ordenes.innerHTML = `
                     <div>${orden.cantidad}</div>
                     <div>${orden.precio}</div>
@@ -220,10 +220,13 @@ confirmarOperacion.addEventListener("click", (event) => {
         const OrdenesJSON = JSON.stringify(OrdenesAgrupadas);
         localStorage.setItem("arrayDeOrdenes", OrdenesJSON);
 
-        mostrarMensajeOrdenesNuevas("Operacion realizada con exito!!");
-
-
-        /*  window.location.replace("../index.html"); */
+        Swal.fire({
+            title: "Compra ejecutada con éxito!!",
+            icon: "success",
+            draggable: true
+        }).then(() => {
+            window.location.href = "../index.html";
+        });
 
     } else if (cedearApuntadoCartera && tipoOperacion.value === "venta") {
 
@@ -269,9 +272,13 @@ confirmarOperacion.addEventListener("click", (event) => {
         localStorage.setItem("arrayDeOrdenes", OrdenesJSON);
 
 
-        errorDeEjecucionOrdenes("Operación realizada con exito!!!");
-        /*   window.location.replace("../index.html"); */
-
+        Swal.fire({
+            title: "Compra ejecutada con éxito!!",
+            icon: "success",
+            draggable: true
+        }).then(() => {
+            window.location.href = "../index.html";
+        });
     }
 
 
@@ -334,8 +341,13 @@ confirmarOperacion.addEventListener("click", (event) => {
         const OrdenesJSON = JSON.stringify(OrdenesAgrupadas);
         localStorage.setItem("arrayDeOrdenes", OrdenesJSON);
 
-        mostrarMensajeOrdenesNuevas("operacion realizada con exito!!");
-        window.location.replace("../index.html");
+        Swal.fire({
+            title: "Venta ejecutada con éxito!!",
+            icon: "success",
+            draggable: true
+        }).then(() => {
+            window.location.href = "../index.html";
+        });
     }
 })
 
@@ -359,10 +371,10 @@ const precioTotalCedearOrden = document.getElementById("precioTotalCedearOrden")
 
 let tipoDeOperacion;
 
-if(!cedearAUsar){
+if (!cedearAUsar) {
     nombreEmpresaNuevaOrden.value = ""
     tickerNuevaOrden.value = ""
-}else{
+} else {
     nombreEmpresaNuevaOrden.value = cedearAUsar.Nombre
     tickerNuevaOrden.value = cedearAUsar.ticker
 }
@@ -469,7 +481,7 @@ botonRealizarOperacion.addEventListener("click", () => {
 
 
     if (nombreEmpresaNuevaOrden.value === "" || tickerNuevaOrden.value === "" || precioCedearNuevaOrden.value === "" || cantidadNuevaOrden.value === "") {
-        mostrarMensajeOrdenesNuevas("todos los campos son obligatorios!!")
+        mostrarMensajeOrdenesNuevas("Todos los campos son obligatorios!!")
         return
     } else if (tipoDeOperacion === undefined) {
         mostrarMensajeOrdenesNuevas("Seleccione el tipo de operacion!!")
@@ -518,11 +530,16 @@ botonRealizarOperacion.addEventListener("click", () => {
     const OrdenesJSON = JSON.stringify(OrdenesAgrupadas);
     localStorage.setItem("arrayDeOrdenes", OrdenesJSON);
 
-    mostrarMensajeOrdenesNuevas("Orden creada con exito!!", "ok")
+    let mensajeFinal = tipoDeOperacion === "compra"
+        ? "Orden de compra enviada con éxito!!"
+        : "Orden de venta enviada con éxito!!";
 
-    setTimeout(() => {
-
+    Swal.fire({
+        title: mensajeFinal,
+        icon: "success",
+        draggable: true
+    }).then(() => {
         window.location.href = "../index.html";
+    });
 
-    }, 2000);
 })

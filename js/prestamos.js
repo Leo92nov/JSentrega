@@ -72,7 +72,7 @@ calcularPrestamo.addEventListener("click", (event) => {
   ) {
     mostrarMensajeErrorPrestamo("Campos incompletos o incorrectos!!");
     return;
-  }else if (parseInt(cantidadDeseadaPrestamo.value) < 20000) {
+  } else if (parseInt(cantidadDeseadaPrestamo.value) < 20000) {
     mostrarMensajeErrorPrestamo("Seleccione un monto mayor a $20.000");
     return;
   }
@@ -133,9 +133,9 @@ checkBoxPrestamo.addEventListener("change", (e) => {
 });
 
 recibirPrestamoBoton.addEventListener("click", (event) => {
-  if(checkBoxPrestamo.checked){
+  if (checkBoxPrestamo.checked) {
 
-  }else{
+  } else {
     mostrarMensajeOrdenesNuevas("Habilite su garantia antes de continuar")
     return
   }
@@ -148,6 +148,7 @@ recibirPrestamoBoton.addEventListener("click", (event) => {
   } else if (!usuarioLoggeado.deuda) {
     let deuda = parseInt(totalADevolver.value)
     usuarioLoggeado.deuda = deuda
+    usuarioLoggeado.deudaBruta = cantidadDeseadaPrestamo.value
     usuarioLoggeado.liquidez = usuarioLoggeado.liquidez + deuda
     let usuarioPrestamo = JSON.stringify(usuarioLoggeado)
     localStorage.setItem("usuarioOn", usuarioPrestamo)
@@ -155,7 +156,7 @@ recibirPrestamoBoton.addEventListener("click", (event) => {
       title: "Prestamo Otorgado!!",
       icon: "success",
       draggable: true
-    }).then(()=>{
+    }).then(() => {
       window.location.href = "../index.html";
     })
   } else {

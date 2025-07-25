@@ -7,7 +7,7 @@
 
 .bodyPrestamos{
     width: 100%;
-
+    background-color: rgb(235, 225, 225);
     .contenedorHeadPrestamos{
         width: 100%;
 
@@ -53,13 +53,13 @@
                 width: auto;
                 padding: 0 2rem;
                 box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-                background-color: rgb(11, 42, 127);
+                 background-color: variables.$color-principal;
                 height: 100%;
                 .fieldsetPrestamo{
                     padding: 1rem 0;
                     border: none;
                     .sectioFormPrestamo{
-                        color: aliceblue;
+                        color: rgb(162, 162, 162);
                         width: 100%;
                         display: flex;
                         flex-direction: column;
