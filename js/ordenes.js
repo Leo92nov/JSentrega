@@ -68,7 +68,6 @@ function encontrarCedearEnCartera() {
 
 let cedearApuntadoCartera = encontrarCedearEnCartera();
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 let tickerAbuscar = document.getElementById("inputCEDEAR");
 let tickersABuscar = document.getElementById("tickersABuscar")
@@ -98,7 +97,10 @@ tickerAbuscar.addEventListener("input", () => {
             tickerAbuscar.value = orden.ticker;
             tickersABuscar.innerHTML = "";
 
-            const ordenesFiltradas = OrdenesTotales.filter(orden => orden.ticker === tickerAbuscar.value)
+            const ordenesFiltradas = OrdenesTotales.filter(orden =>
+                orden.ticker === tickerAbuscar.value &&
+                orden.usuario !== usuarioLoggeado.nombreUsuario
+            );
 
             ordenesFiltradas.forEach(orden => {
                 const ordenes = document.createElement("li");
