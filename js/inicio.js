@@ -115,7 +115,6 @@ if (Carteras) {
         ]
     ]
 }
-console.log(Carteras);
 
 
 const CarterasJSON = JSON.stringify(Carteras)
@@ -206,12 +205,9 @@ if (Ordenes) {
     ]
 
 }
-console.log(Ordenes);
-
 
 let arrOrdenes = JSON.stringify(Ordenes)
 localStorage.setItem('arrayDeOrdenes', arrOrdenes)
-
 
 if (carteraOn) {
 
@@ -233,8 +229,6 @@ localStorage.setItem('carteraOn', cartera)
 
 
 const OrdenesOn = Ordenes.flat().filter(e => e.usuario === usuarioLoggeado.nombreUsuario)
-console.log(OrdenesOn);
-
 
 function mostrarOrdenes(OrdenesOn) {
 
@@ -248,7 +242,7 @@ function mostrarOrdenes(OrdenesOn) {
         ordenes.innerHTML = `
         <section>${e.Nombre}</section>
         <section>${e.ticker}</section>
-        <section>$${e.precio}</section>
+        <section>${(e.precio).toLocaleString('es-AR', { style: 'currency', currency: 'ARS' })}</section>
         <section>${e.cantidad}</section>
         <section class="ordenesUsuario">${e.orden}</section>
         
@@ -293,9 +287,9 @@ function mostrarInversiones(carteraOn) {
         lineas.innerHTML = `
             <section>${e.Nombre}</section>
             <section>${e.ticker}</section>
-            <section>$${e.precio}</section>
+            <section>${(e.precio).toLocaleString('es-AR', { style: 'currency', currency: 'ARS' })}</section>
             <section>${e.cantidad}</section>
-            <section>$${e.cantidad * e.precio}</section>
+            <section>${(e.cantidad * e.precio).toLocaleString('es-AR', { style: 'currency', currency: 'ARS' })}</section>
             <section class="inversionesVenderComprar"><a href="./pages/ordenes.html" class="inversionesComprar">Comprar</a><a href="./pages/ordenes.html" class="inversionesVender">Vender</a></section>
             `;
 
@@ -308,6 +302,14 @@ const totalInversion = carteraOn.reduce((acumulador, e) => {
     return acumulador + (e.cantidad * e.precio);
 }, 0);
 
-const totalInversiones = document.getElementById("spanTotalInvertido")
-totalInversiones.innerText = "$" + totalInversion
 
+const totalInversiones = document.getElementById("spanTotalInvertido")
+totalInversiones.innerText = totalInversion.toLocaleString('es-AR', { style: 'currency', currency: 'ARS' });
+
+const spanNombreCuenta = document.getElementById("spanNombreCuenta")
+const spanLiquidezCuenta = document.getElementById("spanLiquidezCuenta")
+const spanInversionCuenta = document.getElementById("spanInversionCuenta")
+
+spanNombreCuenta.innerHTML = usuarioLoggeado.nombreUsuario
+spanLiquidezCuenta.innerHTML = usuarioLoggeado.liquidez.toLocaleString('es-AR', { style: 'currency', currency: 'ARS' });
+spanInversionCuenta.innerHTML = totalInversion.toLocaleString('es-AR', { style: 'currency', currency: 'ARS' });

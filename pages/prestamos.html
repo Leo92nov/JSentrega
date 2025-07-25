@@ -76,6 +76,7 @@
                         <input type="number" name="cuotas" placeholder="Meses total devolucion" id="plazoTotalMesesprestamo">
                     </section>
                     <section class="sectioFormPrestamo">
+                         <div id="errorDePrecioTotal"></div>
                         <button type="submit" id="calcularPrestamo">Calcular Prestamo</button>
                     </section>
                 </fieldset>
@@ -102,9 +103,11 @@
                     </section>
                     <section class="sectioFormPrestamo">
                         <label for="cuotas">Utilizar mis titulos y liquidez como garantia</label>
-                        <input type="checkbox" name="cuotas" placeholder="Meses total devolucion" required>
+                        <input type="checkbox" name="cuotas" placeholder="Meses total devolucion" required id="checkBoxPrestamo">
                     </section>
+                   
                     <section class="sectioFormPrestamo">
+                        <div id="errorDePrestamoTotal"></div>
                         <button type="submit" id="recibirPrestamoBoton">Recibir Prestamo</button>
                     </section>
                 </fieldset>
@@ -121,8 +124,8 @@
             </div>
             <div class="enlaces">
                 <a href="../index.html" class="enlacei">Inicio</a>
-                <a href="./ordenes.html" class="enlacei">Operar</a>
                 <a href="./panelGeneral.html" class="enlacei">Panel General</a>
+                <a href="./ordenes.html" class="enlacei">Operar</a>
                 <a href="./prestamos.html" class="enlacei">Prestamos</a>
             </div>
             
@@ -131,6 +134,7 @@
         
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

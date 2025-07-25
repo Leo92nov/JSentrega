@@ -1,12 +1,38 @@
 @use"../abstracts/variables.scss";
 @use"../base/fonts.scss";
 @use"../components/buttons.scss";
-@use"../components/forms.scss";
 @use"../layout/footer.scss";
 @use"../layout/header.scss";
 @use"../abstracts/errores.scss";
 
 .bodyInicio{
+
+    .divDatosCuenta{
+        width: 95%;
+        margin: 2rem auto;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 1rem;
+        font-size: 1.5rem;
+
+        .sectionDatoscuenta{
+            padding: 0.5re 0;
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            align-items: center;
+            .spanNombreCuenta{
+                font-weight: bolder;
+            }
+            .spanLiquidezCuenta{
+                font-weight: bolder;
+            }
+            .spanInversionCuenta{
+                font-weight: bolder;
+            }
+        }
+    }
 
     .contenedorInversiones{
         margin: 0 auto;

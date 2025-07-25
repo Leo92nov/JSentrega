@@ -20,24 +20,41 @@
                 <div class="ulHeader">
                     <ul class="ulList">
                         <li class="headerListItem"><a href="./index.html" class="headerListItem">Inicio</a></li>
+                        <li class="headerListItem"><a href="./pages/panelGeneral.html" class="headerListItem">Panel
+                                General</a></li>
                         <li class="headerListItem"><a href="./pages/ordenes.html" class="headerListItem">Operar</a></li>
-                        <li class="headerListItem"><a href="./pages/panelGeneral.html" class="headerListItem">Panel General</a></li>
-                        <li class="headerListItem"><a href="./pages/prestamos.html" class="headerListItem">Préstamos</a></li>
+                        <li class="headerListItem"><a href="./pages/prestamos.html" class="headerListItem">Préstamos</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+    <div>
+        <div class="divDatosCuenta">
+            <section class="sectionDatoscuenta">Nombre de Cuenta
+                <span id="spanNombreCuenta" class="spanNombreCuenta"></span>
+            </section>
+            <section class="sectionDatoscuenta">Dinero Disponible
+                <span id="spanLiquidezCuenta" class="spanLiquidezCuenta"></span>
+            </section>
+            <section class="sectionDatoscuenta">Dinero Invertido
+                <span id="spanInversionCuenta" class="spanInversionCuenta"></span>
+            </section>
+        </div>
+    </div>
     <div class="botonesIngresoInvEgreso">
         <section>
-            <button class="botonIngresoDinero">
-                <span>
-                    Ingresa Dinero
-                </span>
-                <span>
-                    ►
-                </span>
-            </button>
+            <a href="./pages/ingresoDinero.html" class="linkBotonIngreso">
+                <button class="botonIngresoDinero">
+                    <span>
+                        Ingresa Dinero
+                    </span>
+                    <span>
+                        ►
+                    </span>
+                </button>
+            </a>
         </section>
         <section>
             <a href="./pages/ordenes.html" class="linkBotonInverti">
@@ -51,6 +68,7 @@
             </a>
         </section>
         <section>
+            <a href="./pages/egresoDinero.html" class="linkBotonEgreso">
             <button class="botonEgresoDinero">
                 <span>
                     Egreso de Dinero
@@ -58,6 +76,7 @@
                 <span>
                     ►
                 </span></button>
+                </a>
         </section>
     </div>
     <div class="infoCuenta">
@@ -99,12 +118,13 @@
 
         <div class="divMisOrdenes" id="divMisOrdenes"></div>
     </div>
-     <footer class="footer">
+    <footer class="footer">
         <div class="div-footer">
             <div class="logo-footer"><img src="./assets/images/inicio/LogoFooter.png" alt=""></div>
-            <div class="derechos"><p class="p-derechos">© 2025 Coder Market brokers All Rights Reserved.</p>
+            <div class="derechos">
+                <p class="p-derechos">© 2025 Coder Market brokers All Rights Reserved.</p>
             </div>
-            <div class="links"> 
+            <div class="links">
                 <h2 class="h2-footer-enlaces">Helpful Links</h2>
             </div>
             <div class="enlaces">
@@ -113,12 +133,17 @@
                 <a href="./pages/panelGeneral.html" class="enlacei">Panel General</a>
                 <a href="./pages/prestamos.html" class="enlacei">Prestamos</a>
             </div>
-            
-            <div class="accion"><h2 class="h2accion">Cedear</h2></div>   
-            <div class="h2precio"><p>$425.68</p></div>
-        
+
+            <div class="accion">
+                <h2 class="h2accion">Cedear</h2>
+            </div>
+            <div class="h2precio">
+                <p>$425.68</p>
+            </div>
+
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

@@ -22,5 +22,6 @@
             {"Nombre": "SHELL", "ticker": "SHEL", "precio": 2750, "ultimoPrecio": 2600},
             {"Nombre": "General Dynamics", "ticker": "GD", "precio": 3550, "ultimoPrecio": 3400},
             {"Nombre": "Business Machines Company", "ticker": "IBM", "precio": 2550, "ultimoPrecio": 2600},
-            {"Nombre": "Roku Inc", "ticker": "ROKU", "precio": 1550, "ultimoPrecio": 1600}
+            {"Nombre": "Roku Inc", "ticker": "ROKU", "precio": 1550, "ultimoPrecio": 1600},
+            {"Nombre": "Coder Market Group", "ticker": "CMG", "precio": 425.68, "ultimoPrecio": 418.20}
 ]

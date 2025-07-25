@@ -9,6 +9,7 @@
         flex-direction: row;
         justify-content: space-between;
         box-sizing: border-box;
+        text-decoration: none;
 
         .botonIngresoDinero {
             background-color: white;
@@ -22,6 +23,15 @@
             border: 2px;
             border-top: 4px solid variables.$color-principal;
             box-shadow: 0 1px 1px 1px rgb(175, 173, 173);
+            cursor: pointer;
+            transition: transform 0.2s;
+
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+        .linkBotonIngreso{
+            text-decoration: none;
         }
         .linkBotonInverti{
             text-decoration: none;
@@ -38,7 +48,11 @@
             color: aliceblue;
             box-shadow: 0 1px 1px 1px rgb(175, 173, 173);
             cursor: pointer;
+            transition: transform 0.2s;
 
+            &:hover{
+                transform: scale(1.1);
+            }
         }
     }
         .botonEgresoDinero {
@@ -53,5 +67,14 @@
             min-width: 20vw;
             border: 2px;
             border-top: 4px solid variables.$color-perdida;
+            cursor: pointer;
+            transition: transform 0.2s;
+
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+        .linkBotonEgreso{
+            text-decoration: none;
         }
     }

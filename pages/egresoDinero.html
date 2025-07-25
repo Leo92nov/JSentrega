@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/egresoDinero.js" defer></script>
+    <title>Egreso de Dinero</title>
+</head>
+
+<body class="bodiEgresoDinero">
+    <header class="header">
+        <nav>
+            <div class="divHeader">
+                <section class="sectionHeader">
+                    <a href="../index.html"><img src="../assets/images/inicio/Header.jpg" alt="logo"
+                            class="logoHeader"></a>
+                </section>
+                <div class="ulHeader">
+                    <ul class="ulList">
+                        <li class="headerListItem"><a href="../index.html" class="headerListItem">Inicio</a></li>
+                        <li class="headerListItem"><a href="./panelGeneral.html" class="headerListItem">Panel
+                                General</a></li>
+                        <li class="headerListItem"><a href="./ordenes.html" class="headerListItem">Operar</a></li>
+                        <li class="headerListItem"><a href="./prestamos.html" class="headerListItem">Préstamos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <main class="mainEgreso">
+        <form action="" class="formEgresoDinero">
+            <section class="sectionEgreso">
+                <label for="egreso" class="labelEgreso">Ingresa tu Direccion de retiro</label>
+                <input class="inputegreso" type="number" name="egreso" placeholder="CVU/CBU">
+                <label for="" class="labelEgreso">Revise bien la direccion antes de enviar el dinero</label>
+            </section>
+            <section class="sectionEgreso">
+                <label for="cantidad" class="labelEgreso">Cantidad a Egresar</label>
+                <input class="inputegreso" type="number" name="cantidad" id="cantidadAegresar">
+            </section>
+            <button id="SimularEgresoDinero" type="button" class="buttonEgreso">Egresar Dinero</button>
+        </form>
+    </main>
+
+
+
+    <footer class="footer">
+        <div class="div-footer">
+            <div class="logo-footer"><img src="../assets/images/inicio/LogoFooter.png" alt=""></div>
+            <div class="derechos">
+                <p class="p-derechos">© 2025 Coder Market brokers All Rights Reserved.</p>
+            </div>
+            <div class="links">
+                <h2 class="h2-footer-enlaces">Helpful Links</h2>
+            </div>
+            <div class="enlaces">
+                <a href="../index.html" class="enlacei">Inicio</a>
+                <a href="./ordenes.html" class="enlacei">Operar</a>
+                <a href="./panelGeneral.html" class="enlacei">Panel General</a>
+                <a href="./prestamos.html" class="enlacei">Prestamos</a>
+            </div>
+
+            <div class="accion">
+                <h2 class="h2accion">Stock</h2>
+            </div>
+            <div class="h2precio">
+                <p>$425.68</p>
+            </div>
+
+        </div>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

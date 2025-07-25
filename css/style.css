@@ -6,6 +6,7 @@
   flex-direction: row;
   justify-content: space-between;
   box-sizing: border-box;
+  text-decoration: none;
 }
 .botonesIngresoInvEgreso .botonIngresoDinero {
   background-color: white;
@@ -19,6 +20,14 @@
   border: 2px;
   border-top: 4px solid rgb(10, 37, 64);
   box-shadow: 0 1px 1px 1px rgb(175, 173, 173);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.botonesIngresoInvEgreso .botonIngresoDinero:hover {
+  transform: scale(1.1);
+}
+.botonesIngresoInvEgreso .linkBotonIngreso {
+  text-decoration: none;
 }
 .botonesIngresoInvEgreso .linkBotonInverti {
   text-decoration: none;
@@ -36,6 +45,10 @@
   color: aliceblue;
   box-shadow: 0 1px 1px 1px rgb(175, 173, 173);
   cursor: pointer;
+  transition: transform 0.2s;
+}
+.botonesIngresoInvEgreso .linkBotonInverti .botonInvertir:hover {
+  transform: scale(1.1);
 }
 .botonesIngresoInvEgreso .botonEgresoDinero {
   background-color: white;
@@ -49,80 +62,14 @@
   min-width: 20vw;
   border: 2px;
   border-top: 4px solid rgb(177, 0, 0);
+  cursor: pointer;
+  transition: transform 0.2s;
 }
-
-.bodyIndex {
-  height: 100vh;
-  max-width: 100%;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-  background-color: #f4f5ff;
+.botonesIngresoInvEgreso .botonEgresoDinero:hover {
+  transform: scale(1.1);
 }
-.bodyIndex .form {
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  object-fit: cover;
-}
-.bodyIndex .form .formIngreso {
-  width: 28rem;
-  height: auto;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-  background-color: #ffffff;
-}
-.bodyIndex .form .formIngreso .contenidoFormulario {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-.bodyIndex .form .formIngreso .contenidoFormulario .imagenTextoForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.bodyIndex .form .formIngreso .contenidoFormulario .imagenTextoForm p {
-  font-size: 1.5rem;
-}
-.bodyIndex .form .formIngreso .contenidoFormulario .imagenTextoForm .formImagen {
-  height: 10rem;
-  width: 10rem;
-  margin: 0;
-  padding-top: 1rem;
-}
-.bodyIndex .form .formIngreso .contenidoFormulario .sectionform {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1rem;
-}
-.bodyIndex .form .formIngreso .contenidoFormulario .sectionform input {
-  width: 85%;
-  height: 3rem;
-  border: 1px solid gray;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-.bodyIndex .form .formIngreso .contenidoFormulario .sectionform input:hover {
-  border: 1px solid black;
-}
-.bodyIndex .form .formIngreso .contenidoFormulario .sectionform input:focus {
-  border: 2px solid #000ba0;
-  outline: none;
-  top: -0.6rem;
-  left: 0.5rem;
-}
-.bodyIndex .form .formIngreso .contenidoFormulario .sectionform .boton {
-  background-color: #0a2540;
-  color: aliceblue;
+.botonesIngresoInvEgreso .linkBotonEgreso {
+  text-decoration: none;
 }
 
 .footer .div-footer {
@@ -278,6 +225,7 @@
 
 .mensajeError {
   display: flex;
+  margin: 0.5rem 0;
   justify-content: center;
   font-size: 1.5rem;
   color: rgb(83, 1, 1);
@@ -292,6 +240,31 @@
   margin-top: 6px;
 }
 
+.bodyInicio .divDatosCuenta {
+  width: 95%;
+  margin: 2rem auto;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  font-size: 1.5rem;
+}
+.bodyInicio .divDatosCuenta .sectionDatoscuenta {
+  padding: 0.5re 0;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+.bodyInicio .divDatosCuenta .sectionDatoscuenta .spanNombreCuenta {
+  font-weight: bolder;
+}
+.bodyInicio .divDatosCuenta .sectionDatoscuenta .spanLiquidezCuenta {
+  font-weight: bolder;
+}
+.bodyInicio .divDatosCuenta .sectionDatoscuenta .spanInversionCuenta {
+  font-weight: bolder;
+}
 .bodyInicio .contenedorInversiones {
   margin: 0 auto;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
@@ -403,57 +376,6 @@
   text-align: center;
 }
 
-.bodyIndex {
-  height: 100vh;
-  max-width: 100%;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-  background-color: #f4f5ff;
-}
-.bodyIndex .header {
-  background-color: rgb(10, 37, 64);
-}
-.bodyIndex .header .divHeader {
-  width: 100%;
-  display: flex;
-  height: 5rem;
-  justify-content: space-between;
-}
-.bodyIndex .header .divHeader .sectionHeader {
-  height: 4rem;
-}
-.bodyIndex .header .divHeader .sectionHeader .logoHeader {
-  margin-left: 1rem;
-  margin-top: 0.5rem;
-  height: 110%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.bodyIndex .header .divHeader .ulHeader {
-  width: 70%;
-  display: flex;
-}
-.bodyIndex .header .divHeader .ulHeader .ulList {
-  font-size: 1.5rem;
-  color: aliceblue;
-  width: 100%;
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
-.bodyIndex .header .divHeader .ulHeader .ulList :hover {
-  transform: scale(1.1);
-  transition: 0.2s;
-}
-.bodyIndex .header .divHeader .ulHeader .ulList .headerListItem {
-  text-decoration: none;
-  color: aliceblue;
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -467,7 +389,8 @@
 }
 .bodyOrdenes .contenedorCajaDePuntas {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .bodyOrdenes .contenedorCajaDePuntas .cajaDePuntas {
   width: 50%;
@@ -476,24 +399,41 @@
   align-items: center;
   border: 1px solid black;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: repeat(4, auto);
 }
 .bodyOrdenes .contenedorCajaDePuntas .cajaDePuntas .cedearCajaDePuntas {
   width: 100%;
-  height: 3rem;
+  height: auto;
   font-size: 2rem;
   display: grid;
   grid-column: 1/5;
   grid-row: 1;
-  display: flex;
   border-bottom: 1px solid black;
   align-items: center;
   justify-content: center;
   background-color: rgb(204, 230, 252);
 }
 .bodyOrdenes .contenedorCajaDePuntas .cajaDePuntas .cedearCajaDePuntas .inputCEDEAR {
+  margin: 1rem 0;
   height: 2rem;
   font-size: 1.5rem;
+}
+.bodyOrdenes .contenedorCajaDePuntas .cajaDePuntas .cedearCajaDePuntas .tickersABuscar {
+  display: grid;
+  grid-row: 2;
+  grid-column: 2;
+  font-size: 1.2rem;
+  justify-self: flex-start;
+  list-style: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.bodyOrdenes .contenedorCajaDePuntas .cajaDePuntas .cedearCajaDePuntas .tickersABuscar li {
+  padding: 0.3rem 0;
+}
+.bodyOrdenes .contenedorCajaDePuntas .cajaDePuntas .cedearCajaDePuntas .tickersABuscar li:hover {
+  transform: scale(1.2);
+  font-weight: bold;
 }
 .bodyOrdenes .contenedorCajaDePuntas .cajaDePuntas .ordenesDeCompra {
   width: 100%;
@@ -511,6 +451,7 @@
   font-size: 1.5rem;
   border-right: 1px solid black;
   grid-column: 1/3;
+  grid-row: 4;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -518,11 +459,13 @@
 }
 .bodyOrdenes .contenedorCajaDePuntas .cajaDePuntas .ordenesCompraCargar .ordenEnCaja {
   width: 100%;
+  grid-row: 4;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
   padding: 4px 0;
+  cursor: pointer;
 }
 .bodyOrdenes .contenedorCajaDePuntas .cajaDePuntas .ordenesDeVenta {
   width: 100%;
@@ -539,6 +482,7 @@
   width: 100%;
   font-size: 1.5rem;
   border-left: 2px solid black;
+  grid-row: 4;
   grid-column: 3/5;
   display: flex;
   flex-direction: column;
@@ -546,11 +490,13 @@
 }
 .bodyOrdenes .contenedorCajaDePuntas .cajaDePuntas .ordenesVentaCargar .ordenEnCaja {
   width: 100%;
+  grid-row: 4;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
   padding: 4px 0;
+  cursor: pointer;
 }
 .bodyOrdenes .Ordenes {
   width: 100%;
@@ -725,7 +671,6 @@
 
 .bodyPrestamos {
   width: 100%;
-  background-color: #e8eafc;
 }
 .bodyPrestamos .contenedorHeadPrestamos {
   width: 100%;
@@ -755,21 +700,28 @@
   justify-content: center;
 }
 .bodyPrestamos .formulariosPrestamos .datosPrestamo {
-  width: 30%;
+  width: auto;
   margin: 2rem 4rem 0 4rem;
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  background-color: aqua;
 }
 .bodyPrestamos .formulariosPrestamos .datosPrestamo .formPrestamo {
-  min-width: 100%;
+  width: auto;
+  padding: 0 2rem;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  background-color: rgb(11, 42, 127);
+  height: 100%;
 }
 .bodyPrestamos .formulariosPrestamos .datosPrestamo .formPrestamo .fieldsetPrestamo {
   padding: 1rem 0;
+  border: none;
 }
 .bodyPrestamos .formulariosPrestamos .datosPrestamo .formPrestamo .fieldsetPrestamo .sectioFormPrestamo {
+  color: aliceblue;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -840,6 +792,94 @@
 }
 .bodyPanelGeneral .contenedorTitulos .divTitulos .sectionTitulos .mala {
   color: rgb(177, 0, 0);
+}
+
+.bodiIngresoDinero {
+  background-image: url("../../assets/images/Backgrounds/landing3.avif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+.bodiIngresoDinero .mainIngreso {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.bodiIngresoDinero .mainIngreso .formIngresoDinero {
+  margin-top: 2rem;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 25rem;
+  font-weight: bold;
+}
+.bodiIngresoDinero .mainIngreso .formIngresoDinero .sectionIngreso {
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+.bodiIngresoDinero .mainIngreso .formIngresoDinero .sectionIngreso .labelIngreso {
+  font-size: 1.2rem;
+  padding: 1rem 0;
+}
+.bodiIngresoDinero .mainIngreso .formIngresoDinero .sectionIngreso .inputingreso {
+  height: 1.5rem;
+}
+.bodiIngresoDinero .mainIngreso .formIngresoDinero .buttonIngreso {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.bodiEgresoDinero {
+  background-image: url("../../assets/images/Backgrounds/landing5.avif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+.bodiEgresoDinero .mainEgreso {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.bodiEgresoDinero .mainEgreso .formEgresoDinero {
+  margin-top: 2rem;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 25rem;
+  font-weight: bold;
+}
+.bodiEgresoDinero .mainEgreso .formEgresoDinero .sectionEgreso {
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+.bodiEgresoDinero .mainEgreso .formEgresoDinero .sectionEgreso .labelEgreso {
+  font-size: 1.2rem;
+  padding: 1rem 0;
+}
+.bodiEgresoDinero .mainEgreso .formEgresoDinero .sectionEgreso .inputegreso {
+  height: 1.5rem;
+}
+.bodiEgresoDinero .mainEgreso .formEgresoDinero .buttonEgreso {
+  font-size: 1.2rem;
+  margin: 1rem 0;
 }
 
 /*# sourceMappingURL=style.css.map */

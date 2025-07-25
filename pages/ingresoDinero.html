@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <script defer src="../js/panelGeneral.js"></script>
+    <script src="../js/ingresoDinero.js" defer></script>
     <title>Document</title>
 </head>
-<body class="bodyPanelGeneral">
-       <header class="header">
+
+<body class="bodiIngresoDinero">
+    <header class="header">
         <nav>
             <div class="divHeader">
                 <section class="sectionHeader">
@@ -25,28 +27,28 @@
             </div>
         </nav>
     </header>
-
-    <div class="contenedorTitulos">
-        <span class="spanTitulos">Títulos Extranjeros</span>
-
-        <div class="TitulosEncabezado">
-            <section>Ticker</section>
-            <section>Nombre</section>
-            <section>Precio</section>
-            <section>Ultimo precio</section>
-            <section>Variación %</section>
-            <section>Variación $</section>
-        </div>
-
-        <div class="divTitulos" id="divTitulos"></div>
-
-    </div>
-  <footer class="footer">
+<main class="mainIngreso">
+        <form action="" class="formIngresoDinero">
+            <section class="sectionIngreso">
+                <label for="ingreso" class="labelIngreso">Parar inyectar liquidez a tu ceunta utiliza el siguiente
+                    CVU</label>
+                <input class="inputingreso" type="number" name="ingreso" value="1430001713021232020013" readonly>
+                <label for="" class="labelIngreso">Revise bien la direccion antes de enviar el dinero</label>
+            </section>
+            <section class="sectionIngreso">
+                <label for="cantidad" class="labelIngreso">Cantidad a ingresar</label>
+                <input class="inputingreso" type="number" name="cantidad" id="cantidadAIngresar">
+            </section>
+            <button id="SimularIngresoDinero" type="button" class="buttonIngreso">Simular Ingreso de Dinero</button>
+        </form>
+        </main>
+    <footer class="footer">
         <div class="div-footer">
             <div class="logo-footer"><img src="../assets/images/inicio/LogoFooter.png" alt=""></div>
-            <div class="derechos"><p class="p-derechos">© 2025 Coder Market brokers All Rights Reserved.</p>
+            <div class="derechos">
+                <p class="p-derechos">© 2025 Coder Market brokers All Rights Reserved.</p>
             </div>
-            <div class="links"> 
+            <div class="links">
                 <h2 class="h2-footer-enlaces">Helpful Links</h2>
             </div>
             <div class="enlaces">
@@ -55,12 +57,18 @@
                 <a href="./panelGeneral.html" class="enlacei">Panel General</a>
                 <a href="./prestamos.html" class="enlacei">Prestamos</a>
             </div>
-            
-            <div class="accion"><h2 class="h2accion">Stock</h2></div>   
-            <div class="h2precio"><p>$425.68</p></div>
-        
+
+            <div class="accion">
+                <h2 class="h2accion">Stock</h2>
+            </div>
+            <div class="h2precio">
+                <p>$425.68</p>
+            </div>
+
         </div>
+
     </footer>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+
 </html>
