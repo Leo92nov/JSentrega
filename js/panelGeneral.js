@@ -34,7 +34,7 @@ function renderCedears(Cedears) {
         `;
 
         divTitulos.appendChild(linea);
-        linea.addEventListener("click", () =>{
+        linea.addEventListener("click", () => {
             const CompraClick = {
                 Nombre: cedear.Nombre,
                 ticker: cedear.ticker
@@ -43,6 +43,6 @@ function renderCedears(Cedears) {
             localStorage.setItem("cedearAUsar", cedearAComprar)
             window.location.replace("./ordenes.html")
         })
-        
+
     });
 }

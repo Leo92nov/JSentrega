@@ -5,9 +5,9 @@
 @use"../layout/header.scss";
 @use"../abstracts/errores.scss";
 
-.bodyInicio{
+.bodyInicio {
 
-    .divDatosCuenta{
+    .divDatosCuenta {
         width: 95%;
         margin: 2rem auto;
         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
@@ -16,50 +16,53 @@
         padding: 1rem 1rem;
         font-size: 1.5rem;
 
-        .sectionDatoscuenta{
+        .sectionDatoscuenta {
             padding: 0.5re 0;
             display: flex;
             flex-direction: column;
             justify-items: center;
             align-items: center;
-            .spanNombreCuenta{
+
+            .spanNombreCuenta {
                 font-weight: bolder;
             }
-            .spanLiquidezCuenta{
+
+            .spanLiquidezCuenta {
                 font-weight: bolder;
             }
-            .spanInversionCuenta{
+
+            .spanInversionCuenta {
                 font-weight: bolder;
             }
         }
     }
 
-    .contenedorInversiones{
+    .contenedorInversiones {
         margin: 0 auto;
         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
         width: 95%;
-        padding: 0 1.5rem 0 1.5rem;        
+        padding: 0 1.5rem 0 1.5rem;
         background-color: aliceblue;
         padding-bottom: 1rem;
         box-shadow: 1px 1px 5px black;
 
-        .inversionesEncabezado{
+        .inversionesEncabezado {
             text-align: center;
             width: 100%;
             display: grid;
             min-height: 2rem;
-            
+
             border-bottom: 1px solid;
             grid-template-columns: repeat(6, 1fr);
             align-items: center;
             background-color: rgb(227, 232, 255);
-            
-            .misInversionesOperar{
+
+            .misInversionesOperar {
                 width: auto;
             }
         }
 
-        .spanInversiones{
+        .spanInversiones {
             margin-top: 1.5rem;
             padding: 1rem 0 1rem 0;
             width: 100%;
@@ -67,15 +70,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-        
+
         }
-        .divInversiones{
+
+        .divInversiones {
             width: 100%;
             text-align: center;
             box-shadow: 1 0 5px black;
-           
-            .sectionInversion{
-                
+
+            .sectionInversion {
+
                 width: 100%;
                 background-color: white;
                 display: grid;
@@ -84,24 +88,26 @@
                 align-items: center;
                 padding: 4px 0;
 
-                .inversionesVenderComprar{
+                .inversionesVenderComprar {
                     padding-right: 4px;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
 
-                    .inversionesComprar{
+                    .inversionesComprar {
                         text-decoration: none;
                         color: variables.$color-ganancia;
                     }
-                    .inversionesVender{
+
+                    .inversionesVender {
                         text-decoration: none;
                         color: variables.$color-perdida;
                     }
                 }
             }
         }
-        .divTotalInversion{
+
+        .divTotalInversion {
             background-color: rgb(227, 232, 255);
             border: 1px solid black;
             min-height: 2rem;
@@ -112,17 +118,17 @@
     }
 
 
-    .contenedorMisOrdenes{
+    .contenedorMisOrdenes {
         height: auto;
         margin: 2rem auto;
         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
         width: 95%;
-        padding: 0 1.5rem 0 1.5rem;        
+        padding: 0 1.5rem 0 1.5rem;
         background-color: aliceblue;
         padding-bottom: 1rem;
         box-shadow: 1px 1px 5px black;
 
-        .spanOrdenes{
+        .spanOrdenes {
             margin-top: 1.5rem;
             padding: 1rem 0 1rem 0;
             width: 100%;
@@ -132,7 +138,7 @@
             align-items: center;
         }
 
-        .ordenesEncabezado{
+        .ordenesEncabezado {
             text-align: center;
             width: 100%;
             display: grid;
@@ -144,7 +150,7 @@
 
         }
 
-        .sectionMisOrdenes{
+        .sectionMisOrdenes {
             width: 100%;
             background-color: white;
             display: grid;
@@ -155,7 +161,8 @@
             text-align: center;
         }
     }
-    .noHayOrdenes{
+
+    .noHayOrdenes {
         font-size: 2rem;
         text-align: center;
     }

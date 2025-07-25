@@ -201,7 +201,7 @@ if (Ordenes) {
             { Nombre: "General Dynamics", "ticker": "GD", precio: 3550, cantidad: 60, orden: "venta", id: "39", usuario: "miguelon" },
             { Nombre: "Business Machines Company", ticker: "IBM", precio: 2550, cantidad: 60, orden: "venta", id: "40", usuario: "miguelon" },
             { Nombre: "Roku Inc", "ticker": "ROKU", precio: 1550, cantidad: 60, orden: "venta", id: "41", usuario: "miguelon" }
-        ] 
+        ]
     ]
 
 }

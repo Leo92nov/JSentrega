@@ -5,26 +5,27 @@
 @use"../layout/header.scss";
 @use"../abstracts/errores.scss";
 
-.bodyPrestamos{
+.bodyPrestamos {
     width: 100%;
     background-color: rgb(235, 225, 225);
-    .contenedorHeadPrestamos{
+
+    .contenedorHeadPrestamos {
         width: 100%;
 
-        
-        .h1Prestamos{
+
+        .h1Prestamos {
             margin-top: 2rem;
             text-align: center;
             width: 100%;
         }
 
-        .divImgsPrestamos{
+        .divImgsPrestamos {
             width: 100%;
             display: flex;
             justify-content: center;
             gap: 3rem;
 
-            .imgsPrestamos{
+            .imgsPrestamos {
                 margin-top: 3rem;
                 width: 200px;
                 height: 200px;
@@ -34,12 +35,13 @@
             }
         }
     }
-    .formulariosPrestamos{
+
+    .formulariosPrestamos {
         width: 100%;
         display: flex;
         justify-content: center;
-        
-        .datosPrestamo{
+
+        .datosPrestamo {
             width: auto;
             margin: 2rem 4rem 0 4rem;
             height: auto;
@@ -49,16 +51,18 @@
             justify-content: space-between;
             background-color: aqua;
 
-            .formPrestamo{
+            .formPrestamo {
                 width: auto;
                 padding: 0 2rem;
                 box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-                 background-color: variables.$color-principal;
+                background-color: variables.$color-principal;
                 height: 100%;
-                .fieldsetPrestamo{
+
+                .fieldsetPrestamo {
                     padding: 1rem 0;
                     border: none;
-                    .sectioFormPrestamo{
+
+                    .sectioFormPrestamo {
                         color: rgb(162, 162, 162);
                         width: 100%;
                         display: flex;
@@ -72,6 +76,6 @@
             }
         }
 
-        
+
     }
 }

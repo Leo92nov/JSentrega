@@ -51,4 +51,3 @@ SimularEgresoDinero.addEventListener("click", (event) => {
 
 
 
-    
