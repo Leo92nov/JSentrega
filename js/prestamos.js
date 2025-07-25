@@ -64,6 +64,8 @@ let recibirPrestamoBoton = document.getElementById("recibirPrestamoBoton")
 let tasaMes = 0.02
 let checkBoxPrestamo = document.getElementById("checkBoxPrestamo")
 
+inputNombreUsuarioPrestamo.value = usuarioLoggeado.nombreUsuario
+numeroDocumento.value = usuarioLoggeado.DNI
 calcularPrestamo.addEventListener("click", (event) => {
   event.preventDefault();
   if (
